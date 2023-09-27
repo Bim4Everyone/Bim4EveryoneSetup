@@ -16,16 +16,20 @@ namespace BIM4EveryoneSetup {
             Directory.CreateDirectory(Constants.BinPath);
             
             // Выкачиваем установщик pyRevit
+            Console.WriteLine("Выкачиваем установщик pyRevit");
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
             
             // Выкачиваем файл расширений платформы
+            Console.WriteLine("Выкачиваем файл расширений платформы");
             Extensions.DownloadFile(Constants.ExtensionsFileUrl, Constants.ExtensionsAssetFile);
             
             // Выкачиваем все расширения
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+                Console.WriteLine($"Выкачиваем расширение платформы: {featureExtension.Name}");
                 featureExtension.GitClone();
             }
             
+            Console.WriteLine("Начинаем сборку установочного файла");
             BuildMsi();
         }
 
