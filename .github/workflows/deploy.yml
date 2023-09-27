@@ -1,0 +1,23 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      - run: dotnet tool install --global wix
+      - run: wix --version
+      - run: dotnet build -c Release
+
+      - uses: actions/upload-artifact@v3
+        with:
+          path: bin/Bim4Everyone.msi
