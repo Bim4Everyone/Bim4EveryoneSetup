@@ -1,4 +1,4 @@
-name: deploy
+name: release
 
 on:
   workflow_dispatch:
@@ -53,7 +53,7 @@ jobs:
           tag_name: v${{ steps.current-date.outputs.content }}
           name: Bim4Everyone v${{ steps.current-date.outputs.content }}
           body: Проект установщика платформы Bim4Everyone
-          draft: true
+          draft: false
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
