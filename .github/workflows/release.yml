@@ -2,6 +2,8 @@ name: deploy
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
 
 jobs:
   build:
@@ -21,7 +23,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
 
       # Install wix: https://wixtoolset.org/docs/intro/
-      - name: Install wix tool
+      - name: Install WIX Tool
         run: dotnet tool install --global wix
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
@@ -29,7 +31,7 @@ jobs:
         run: dotnet build -c Release
       
       # Get msi version
-      - name: Get msi version
+      - name: Get MSI Version
         id: current-date
         uses: juliangruber/read-file-action@v1
         with:
@@ -43,14 +45,14 @@ jobs:
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
       
       # Publish release: https://github.com/softprops/action-gh-release
-      - name: Publish Release (Release)
+      - name: Publish Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.current-date.outputs.content }}
           name: Bim4Everyone v${{ steps.current-date.outputs.content }}
-          body: Publish Release
+          body: Проект установщика платформы Bim4Everyone
           draft: true
           prerelease: false
           files: |
