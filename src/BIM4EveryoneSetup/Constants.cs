@@ -29,14 +29,15 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitInstallFile =
             Path.Combine(BinPath, $"pyRevit_{pyRevitVersion}_signed.exe");
 
+        public static readonly string MsiVersionFile = Path.Combine(BinPath, "msi_version.txt");
         public static readonly Version CurrentVersion = new Version(DateTime.Now.ToString("yy.MM.dd"));
 
         public static readonly string
             MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        
+
         public static readonly string
             AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        
+
         public static readonly string PluginSettingsPath = Path.Combine(MyDocuments, "dosymep");
 
         // ReSharper disable once InconsistentNaming
@@ -50,15 +51,15 @@ namespace BIM4EveryoneSetup {
         public static readonly string ConfigureFileProp = "_configure.bat_";
         public static readonly string ConfigureFile = Path.Combine(BundlesPath, "configure.bat");
         public static readonly string ConfigureAssetFile = Path.Combine(AssetsPath, "configure.bat");
-       
+
         public static readonly string CoreExtensionFileProp = "_extension.json_";
         public static readonly string CoreExtensionFile = Path.Combine(CoreExtensionPath, "extension.json");
         public static readonly string CoreExtensionAssetFile = Path.Combine(AssetsPath, "extension.json");
-        
+
         public static readonly string ExtensionsFileProp = "_extensions.json_";
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
         public static readonly string ExtensionsAssetFile = Path.Combine(BinPath, "extensions.json");
-        
+
         public static readonly string RevitIconAssetFile = Path.Combine(AssetsPath, "revit.png");
         public static readonly string ProductLicenceAssetFile = Path.Combine(AssetsPath, "license.rtf");
         public static readonly string ProductIconAssetFile = Path.Combine(AssetsPath, "Bim4Everyone_transparent.ico");
@@ -67,19 +68,19 @@ namespace BIM4EveryoneSetup {
 
         public static readonly string ExtensionsFileUrl =
             @"https://raw.githubusercontent.com/dosymep/BIMExtensions/master/extensions.json";
-        
+
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyrevit/Extensions");
-        
+
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $"%AppDataFolder%/pyRevit/Extensions";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersionProp = "pyRevitVersion";
-        
+
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstalledProp = "pyRevitInstalled";
-        
+
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFileProp = "pyRevitInstallFile";
 

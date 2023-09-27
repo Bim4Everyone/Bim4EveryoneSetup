@@ -28,8 +28,30 @@ jobs:
       - name: Build
         run: dotnet build -c Release
       
+      # Get msi version
+      - name: Get msi version
+        id: current-date
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: bin/msi_version.txt
+      
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload
         uses: actions/upload-artifact@v3
         with:
-          path: bin/Bim4Everyone.msi
+          name: Bim4Everyone
+          path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
+      
+      # Publish release: https://github.com/softprops/action-gh-release
+      - name: Publish Release (Release)
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.current-date.outputs.content }}
+          name: Bim4Everyone v${{ steps.current-date.outputs.content }}
+          body: Publish Release
+          draft: true
+          prerelease: false
+          files: |
+            bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi

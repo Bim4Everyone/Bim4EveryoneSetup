@@ -9,11 +9,16 @@ using Newtonsoft.Json;
 using WixSharp;
 using WixSharp.CommonTasks;
 
+using File = System.IO.File;
+
 namespace BIM4EveryoneSetup {
     internal class Program {
         public static void Main() {
             // Создаем папку, куда сохраняем билд
             Directory.CreateDirectory(Constants.BinPath);
+            
+            // Создаем файл с версией
+            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersion.ToString());
             
             // Выкачиваем установщик pyRevit
             Console.WriteLine("Выкачиваем установщик pyRevit");
@@ -44,6 +49,7 @@ namespace BIM4EveryoneSetup {
                 .ToArray()));
             
             project.OutDir = Constants.BinPath;
+            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
 
             project.SetBinaries();
             project.SetProductUI();
