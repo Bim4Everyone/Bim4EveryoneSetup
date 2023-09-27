@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Platforms>x64</Platforms>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="*.msi" />
+    <None Remove="*.exe" />
+    <None Remove="*.wxs" />
+    <None Remove="*.wixpdb" />
+    <None Remove="*.wixobj" />
+    <None Remove="CustomAction.config" />
+    <Content Include="../../assets/*.*" Link="assets/%(FileName)$(FileExt)" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
+    <PackageReference Include="Caliburn.Micro.Core" Version="4.0.212" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="WixSharp_wix4" Version="2.0.1" />
+    <PackageReference Include="WixSharp_wix4.bin" Version="2.0.1" />
+    <PackageReference Include="WixSharp-wix4.WPF" Version="2.0.1" />
+    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.2" />
+    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd .\&#xD;&#xA;set ide=true&#xD;&#xA;&quot;$(TargetPath)&quot;" />
+  </Target>
+
+</Project>
