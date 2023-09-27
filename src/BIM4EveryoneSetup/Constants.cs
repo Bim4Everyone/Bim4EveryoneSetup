@@ -32,7 +32,12 @@ namespace BIM4EveryoneSetup {
         public static readonly Version CurrentVersion = new Version(DateTime.Now.ToString("yy.MM.dd"));
 
         public static readonly string
+            MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        
+        public static readonly string
             AppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        
+        public static readonly string PluginSettingsPath = Path.Combine(MyDocuments, "dosymep");
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitPath = Path.Combine(AppDataPath, "pyRevit-Master");

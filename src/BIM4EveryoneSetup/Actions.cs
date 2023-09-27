@@ -56,7 +56,13 @@ namespace BIM4EveryoneSetup {
                 new DirectoryInfo(pyRevitBundlesPath).RemoveDirectory();
                 session.Log($"Removed pyRevit bundles directory: \"{pyRevitBundlesPath}\"");
             }
-
+            
+            string pluginSettings = Constants.PluginSettingsPath;
+            if(Directory.Exists(pluginSettings)) {
+                new DirectoryInfo(pluginSettings).RemoveDirectory();
+                session.Log($"Removed plugin settings directory: \"{pyRevitBundlesPath}\"");
+            }
+            
             session.Log("Finished uninstall bundles");
             return ActionResult.Success;
         }
