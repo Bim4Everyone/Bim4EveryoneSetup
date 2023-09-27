@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +12,9 @@ using WixSharp.CommonTasks;
 namespace BIM4EveryoneSetup {
     internal class Program {
         public static void Main() {
+            // Создаем папку, куда сохраняем билд
+            Directory.CreateDirectory(Constants.BinPath);
+            
             // Выкачиваем установщик pyRevit
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
             
