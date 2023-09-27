@@ -14,6 +14,7 @@
     <None Remove="*.wixobj" />
     <None Remove="CustomAction.config" />
     <Content Include="../../assets/*.*" Link="assets/%(FileName)$(FileExt)" />
+    <Content Include="../../.github/workflows/*.yml" Link="ci/%(FileName)$(FileExt)" />
   </ItemGroup>
   
   <ItemGroup>
