@@ -18,23 +18,24 @@ namespace BIM4EveryoneSetup {
             Directory.CreateDirectory(Constants.BinPath);
             
             // Создаем файл с версией
+            Console.WriteLine("Creating msi version file");
             File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersion.ToString());
             
             // Выкачиваем установщик pyRevit
-            Console.WriteLine("Выкачиваем установщик pyRevit");
+            Console.WriteLine("Downloading pyRevit installer");
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
             
             // Выкачиваем файл расширений платформы
-            Console.WriteLine("Выкачиваем файл расширений платформы");
+            Console.WriteLine("Downloading platform extensions.json");
             Extensions.DownloadFile(Constants.ExtensionsFileUrl, Constants.ExtensionsAssetFile);
             
             // Выкачиваем все расширения
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
-                Console.WriteLine($"Выкачиваем расширение платформы: {featureExtension.Name}");
+                Console.WriteLine($"Downloading platform extension: {featureExtension.Name}");
                 featureExtension.GitClone();
             }
             
-            Console.WriteLine("Начинаем сборку установочного файла");
+            Console.WriteLine("Building platform settings msi");
             BuildMsi();
         }
 
