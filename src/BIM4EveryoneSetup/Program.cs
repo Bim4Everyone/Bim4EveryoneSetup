@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -8,20 +9,33 @@ using Newtonsoft.Json;
 using WixSharp;
 using WixSharp.CommonTasks;
 
+using File = System.IO.File;
+
 namespace BIM4EveryoneSetup {
     internal class Program {
         public static void Main() {
+            // Создаем папку, куда сохраняем билд
+            Directory.CreateDirectory(Constants.BinPath);
+            
+            // Создаем файл с версией
+            Console.WriteLine("Creating msi version file");
+            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersion.ToString());
+            
             // Выкачиваем установщик pyRevit
+            Console.WriteLine("Downloading pyRevit installer");
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
             
             // Выкачиваем файл расширений платформы
+            Console.WriteLine("Downloading platform extensions.json");
             Extensions.DownloadFile(Constants.ExtensionsFileUrl, Constants.ExtensionsAssetFile);
             
             // Выкачиваем все расширения
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+                Console.WriteLine($"Downloading platform extension: {featureExtension.Name}");
                 featureExtension.GitClone();
             }
             
+            Console.WriteLine("Building platform settings msi");
             BuildMsi();
         }
 
@@ -36,6 +50,7 @@ namespace BIM4EveryoneSetup {
                 .ToArray()));
             
             project.OutDir = Constants.BinPath;
+            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
 
             project.SetBinaries();
             project.SetProductUI();
