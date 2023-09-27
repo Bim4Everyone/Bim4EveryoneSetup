@@ -28,17 +28,10 @@ namespace BIM4EveryoneSetup {
                 FileName = "git",
                 Arguments = $"clone {RepositoryName} {Path.GetFullPath(SourcePath)}",
                 CreateNoWindow = true,
-                UseShellExecute = false,
-                RedirectStandardError = true,
-                RedirectStandardOutput = true,
+                UseShellExecute = false
             };
 
             using(Process process = Process.Start(processStartInfo)) {
-                process.EnableRaisingEvents = true;
-                process.ErrorDataReceived += (sender, args) => Console.WriteLine(args.Data);
-                process.OutputDataReceived += (sender, args) => Console.WriteLine(args.Data);
-
-                process.BeginOutputReadLine();
                 process.WaitForExit();
             }
         }
