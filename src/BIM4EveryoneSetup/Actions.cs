@@ -72,8 +72,12 @@ namespace BIM4EveryoneSetup {
             session.Log("Started configure pyRevit");
 
             string batFile = Constants.ConfigureFile;
+            string invokePath = Constants.InvokeDllFile;
             string corePath = Constants.CoreExtensionFile;
             try {
+                session.SaveBinary(Constants.InvokeDllFileProp, invokePath);
+                session.Log($"Saved {Constants.InvokeDllFileProp}: \"{invokePath}\"");
+                
                 session.SaveBinary(Constants.CoreExtensionFileProp, corePath);
                 session.Log($"Saved {Constants.CoreExtensionFileProp}: \"{corePath}\"");
 
