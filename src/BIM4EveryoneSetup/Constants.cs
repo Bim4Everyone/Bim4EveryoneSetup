@@ -76,7 +76,7 @@ namespace BIM4EveryoneSetup {
         public static readonly string WixUIDialogBmp = Path.Combine(AssetsPath, "WixUIDialogBmp.png");
 
         public static readonly string ExtensionsFileUrl =
-            @"https://raw.githubusercontent.com/dosymep/BIMExtensions/master/extensions.json";
+            @"https://raw.githubusercontent.com/Bim4Everyone/BIMExtensions/master/extensions.json";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyrevit/Extensions");
