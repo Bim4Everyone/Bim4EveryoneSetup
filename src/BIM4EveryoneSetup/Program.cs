@@ -51,11 +51,11 @@ namespace BIM4EveryoneSetup {
 
             // XXX: WIX1026: id is too long for an identifier.
             // Standard identifiers are 72 characters
-            project.CustomIdAlgorithm = entity => {
-                return entity.Id.Length > 72
-                    ? Guid.NewGuid().ToString()
-                    : null;
-            };
+            // project.CustomIdAlgorithm = entity => {
+            //     return entity.Id.Length > 72
+            //         ? Guid.NewGuid().ToString()
+            //         : null;
+            // };
             
             project.OutDir = Constants.BinPath;
             project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
