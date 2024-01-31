@@ -1,9 +1,20 @@
 name: release
 
 on:
+  # on pull_request to master
+  pull_request:
+    branches:
+      - master
+  
+  # manual
   workflow_dispatch:
+  
+  # every month on the first day
   schedule:
     - cron: '0 0 1 * *'
+
+env:
+  release_branch: "master"
 
 jobs:
   build:
@@ -46,6 +57,7 @@ jobs:
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
+        if: (github.base_ref == env.release_branch)
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
