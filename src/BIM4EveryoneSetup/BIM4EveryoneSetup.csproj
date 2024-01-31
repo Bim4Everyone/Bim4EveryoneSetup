@@ -21,11 +21,11 @@
     <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
     <PackageReference Include="Caliburn.Micro.Core" Version="4.0.212" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="WixSharp_wix4" Version="2.0.5" />
-    <PackageReference Include="WixSharp_wix4.bin" Version="2.0.5" />
-    <PackageReference Include="WixSharp-wix4.WPF" Version="2.0.5" />
-    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.3" />
-    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.3" />
+    <PackageReference Include="WixSharp_wix4" Version="2.0.1" />
+    <PackageReference Include="WixSharp_wix4.bin" Version="2.0.1" />
+    <PackageReference Include="WixSharp-wix4.WPF" Version="2.0.1" />
+    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.2" />
+    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.2" />
   </ItemGroup>
 
   <ItemGroup>
