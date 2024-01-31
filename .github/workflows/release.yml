@@ -14,7 +14,7 @@ on:
     - cron: '0 0 1 * *'
 
 env:
-  release_branch: "master"
+  release_branch: "refs/heads/master"
 
 jobs:
   build:
@@ -57,7 +57,7 @@ jobs:
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
-        if: (github.base_ref == env.release_branch)
+        if: github.ref == env.release_branch
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
