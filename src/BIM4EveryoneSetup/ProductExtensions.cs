@@ -50,14 +50,6 @@ namespace BIM4EveryoneSetup {
             self.AddBinaries(new Binary(
                 new Id(Constants.ConfigureFileProp), Constants.ConfigureAssetFile));
 
-            // Файл InvokableDLLEngine.cs, нужно будет удалить, когда pyRevit обновим на 4.8.14
-            self.AddBinaries(new Binary(
-                new Id(Constants.InvokeDllFileProp), Constants.InvokeDllAssetFile));
-            
-            // Файл extension.json, нужно будет удалить, когда pyRevit обновим на 4.8.14
-            self.AddBinaries(new Binary(
-                new Id(Constants.CoreExtensionFileProp), Constants.CoreExtensionAssetFile));
-
             // Файл настроек расширений платформы
             self.AddBinaries(new Binary(
                 new Id(Constants.ExtensionsFileProp), Constants.ExtensionsAssetFile));

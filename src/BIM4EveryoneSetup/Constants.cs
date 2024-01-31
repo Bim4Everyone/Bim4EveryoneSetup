@@ -55,16 +55,6 @@ namespace BIM4EveryoneSetup {
         public static readonly string ConfigureFile = Path.Combine(BundlesPath, "configure.bat");
         public static readonly string ConfigureAssetFile = Path.Combine(AssetsPath, "configure.bat");
 
-        // нужно для костылей
-        public static readonly string CoreExtensionFileProp = "_extension.json_";
-        public static readonly string CoreExtensionFile = Path.Combine(CoreExtensionPath, "extension.json");
-        public static readonly string CoreExtensionAssetFile = Path.Combine(AssetsPath, "extension.json");
-        
-        // нужно для костылей
-        public static readonly string InvokeDllFileProp = "_InvokableDLLEngine.cs_";
-        public static readonly string InvokeDllFile = Path.Combine(InvokeDllPath, "InvokableDLLEngine.cs");
-        public static readonly string InvokeDllAssetFile = Path.Combine(AssetsPath, "InvokableDLLEngine.cs");
-
         public static readonly string ExtensionsFileProp = "_extensions.json_";
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
         public static readonly string ExtensionsAssetFile = Path.Combine(BinPath, "extensions.json");
