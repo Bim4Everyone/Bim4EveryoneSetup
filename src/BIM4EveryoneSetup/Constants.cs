@@ -51,10 +51,6 @@ namespace BIM4EveryoneSetup {
         public static readonly string AssetsPath = @"..\..\assets";
         public static readonly string BundlesPath = Path.Combine(AppDataPath, "pyRevit");
 
-        public static readonly string ConfigureFileProp = "_configure.bat_";
-        public static readonly string ConfigureFile = Path.Combine(BundlesPath, "configure.bat");
-        public static readonly string ConfigureAssetFile = Path.Combine(AssetsPath, "configure.bat");
-
         public static readonly string ExtensionsFileProp = "_extensions.json_";
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
         public static readonly string ExtensionsAssetFile = Path.Combine(BinPath, "extensions.json");

@@ -47,10 +47,6 @@ namespace BIM4EveryoneSetup {
             self.AddBinaries(new Binary(
                 new Id(Constants.pyRevitInstallFileProp), Constants.pyRevitInstallFile));
 
-            // Батник дефолтной настройки pyRevit
-            self.AddBinaries(new Binary(
-                new Id(Constants.ConfigureFileProp), Constants.ConfigureAssetFile));
-
             // Файл настроек расширений платформы
             self.AddBinaries(new Binary(
                 new Id(Constants.ExtensionsFileProp), Constants.ExtensionsAssetFile));
