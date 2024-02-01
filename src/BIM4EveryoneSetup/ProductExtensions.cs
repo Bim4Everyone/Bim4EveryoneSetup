@@ -196,7 +196,6 @@ namespace BIM4EveryoneSetup {
                 "configs checkupdates enable",
                 "configs usercanextend yes",
                 "configs usercanconfig yes",
-                "configs usercanconfig yes",
             };
             
             self.AddXmlElement(
