@@ -1,26 +1,37 @@
 name: release
 
 on:
+  # on pull_request to master
+  pull_request:
+    branches:
+      - master
+  
+  # manual
   workflow_dispatch:
+  
+  # every month on the first day
   schedule:
     - cron: '0 0 1 * *'
+
+env:
+  release_branch: "refs/heads/master"
 
 jobs:
   build:
     name: build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       
-      # Install the .NET Core workload
-      - name: Install .NET Core
-        uses: actions/setup-dotnet@v3
+      # Install the .NET 8.0 workload
+      - name: Install .NET 8.0
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 7.0.x
+          dotnet-version: 8.0.x
       
-      # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-      - name: Setup MSBuild.exe
-        uses: microsoft/setup-msbuild@v1.0.2
+      # Install  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+      - name: Install MSBuild.exe
+        uses: microsoft/setup-msbuild@v2
 
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
@@ -39,13 +50,14 @@ jobs:
       
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Bim4Everyone
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
+        if: github.ref == env.release_branch
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

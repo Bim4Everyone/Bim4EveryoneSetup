@@ -19,11 +19,11 @@ namespace BIM4EveryoneSetup {
         public static readonly string BinPath = "../../bin";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitVersion = "4.8.13.23182";
-
+        public static readonly string pyRevitVersion = "4.8.14.24016";
+        
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallUrl =
-            $@"https://github.com/eirannejad/pyRevit/releases/download/v{pyRevitVersion}+2215/pyRevit_{pyRevitVersion}_signed.exe";
+            $@"https://github.com/eirannejad/pyRevit/releases/download/v{pyRevitVersion}+1909/pyRevit_{pyRevitVersion}_signed.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFile =
@@ -54,16 +54,6 @@ namespace BIM4EveryoneSetup {
         public static readonly string ConfigureFileProp = "_configure.bat_";
         public static readonly string ConfigureFile = Path.Combine(BundlesPath, "configure.bat");
         public static readonly string ConfigureAssetFile = Path.Combine(AssetsPath, "configure.bat");
-
-        // нужно для костылей
-        public static readonly string CoreExtensionFileProp = "_extension.json_";
-        public static readonly string CoreExtensionFile = Path.Combine(CoreExtensionPath, "extension.json");
-        public static readonly string CoreExtensionAssetFile = Path.Combine(AssetsPath, "extension.json");
-        
-        // нужно для костылей
-        public static readonly string InvokeDllFileProp = "_InvokableDLLEngine.cs_";
-        public static readonly string InvokeDllFile = Path.Combine(InvokeDllPath, "InvokableDLLEngine.cs");
-        public static readonly string InvokeDllAssetFile = Path.Combine(AssetsPath, "InvokableDLLEngine.cs");
 
         public static readonly string ExtensionsFileProp = "_extensions.json_";
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
