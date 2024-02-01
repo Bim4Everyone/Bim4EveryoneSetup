@@ -69,9 +69,10 @@ namespace BIM4EveryoneSetup {
             @"https://raw.githubusercontent.com/Bim4Everyone/BIMExtensions/master/extensions.json";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyrevit/Extensions");
+        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyRevit/Extensions");
 
         // ReSharper disable once InconsistentNaming
+        public static readonly string pyRevitBinDirPath = $"%AppDataFolder%/pyRevit-master/bin";
         public static readonly string pyRevitExtensionsDirPath = $"%AppDataFolder%/pyRevit/Extensions";
 
         // ReSharper disable once InconsistentNaming
@@ -83,9 +84,10 @@ namespace BIM4EveryoneSetup {
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFileProp = "pyRevitInstallFile";
 
-        public static readonly Condition Install = new Condition(" (NOT Installed) ");
-        public static readonly Condition Change = new Condition(" (REMOVE) ");
-        public static readonly Condition Repair = new Condition(" (REINSTALL) ");
-        public static readonly Condition Remove = new Condition(" (REMOVE=\"ALL\") ");
+        public static readonly Condition InstallCondition = new Condition(" (NOT Installed) ");
+        public static readonly Condition ChangeCondition = new Condition(" (REMOVE) ");
+        public static readonly Condition RepairCondition = new Condition(" (REINSTALL) ");
+        public static readonly Condition RemoveCondition = new Condition(" (REMOVE=\"ALL\") ");
+        public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
     }
 }

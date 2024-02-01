@@ -56,7 +56,7 @@ namespace BIM4EveryoneSetup {
             //         ? Guid.NewGuid().ToString()
             //         : null;
             // };
-            
+
             project.OutDir = Constants.BinPath;
             project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
 
@@ -65,6 +65,7 @@ namespace BIM4EveryoneSetup {
             project.SetProductInfo();
             project.SetProductActions();
             project.SetProductSettings();
+            project.SetProductConfiguration();
             
             // Устанавливаем стратегию обновлений
             // разрешаем устанавливать более младшие версии

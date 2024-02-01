@@ -68,31 +68,6 @@ namespace BIM4EveryoneSetup {
         }
 
         [CustomAction]
-        public static ActionResult Configure(Session session) {
-            session.Log("Started configure pyRevit");
-
-            string batFile = Constants.ConfigureFile;
-            try {
-                session.SaveBinary(Constants.ConfigureFileProp, batFile);
-                session.Log($"Saved {Constants.ConfigureFileProp}: \"{batFile}\"");
-
-                var startInfo = new ProcessStartInfo(batFile) {CreateNoWindow = true, UseShellExecute = false};
-                Process.Start(startInfo)?.WaitForExit();
-                session.Log($"Started {Constants.ConfigureFileProp}: \"{batFile}\"");
-            } finally {
-                try {
-                    File.Delete(batFile);
-                    session.Log($"Removed {Constants.ConfigureFileProp}: \"{batFile}\"");
-                } catch {
-                    // do nothing
-                }
-            }
-
-            session.Log("Finished configure pyRevit");
-            return ActionResult.Success;
-        }
-
-        [CustomAction]
         public static ActionResult ModifyExtensions(Session session) {
             if(!session.IsModifying()) {
                 session.Log("Skipped remove is not modify");
