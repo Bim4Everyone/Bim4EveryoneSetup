@@ -69,6 +69,8 @@ namespace BIM4EveryoneSetup {
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitBinDirPath = $"%AppDataFolder%/pyRevit-master/bin";
+        
+        // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $"%AppDataFolder%/pyRevit/Extensions";
 
         // ReSharper disable once InconsistentNaming
