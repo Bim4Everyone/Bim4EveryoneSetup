@@ -187,12 +187,12 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateConfigureDefaultParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs core:user_locale ru",
-                "configs rocketmode enable",
-                "configs autoupdate enable",
-                "configs checkupdates enable", 
-                "configs usercanextend yes", 
-                "configs usercanconfig yes",
+                "configs core:user_locale [COREUSERLOCALE]",
+                "configs rocketmode [ROCKETMODE]",
+                "configs autoupdate [AUTOUPDATE]",
+                "configs checkupdates [CHECKUPDATES]", 
+                "configs usercanextend [USERCANEXTEND]", 
+                "configs usercanconfig [USERCANCONFIG]",
             };
 
             args.ForEach(item =>

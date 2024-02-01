@@ -75,10 +75,24 @@ namespace BIM4EveryoneSetup {
                 DowngradeErrorMessage = "Установлена более поздняя версия продукта!"
             };
             
+            Console.WriteLine("Environment");
+            Console.WriteLine($"\tAUTOUPDATE: {Environment.GetEnvironmentVariable("AUTOUPDATE")}");
+            Console.WriteLine($"\tROCKETMODE: {Environment.GetEnvironmentVariable("ROCKETMODE")}");
+            Console.WriteLine($"\tCHECKUPDATES: {Environment.GetEnvironmentVariable("CHECKUPDATES")}");
+            Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
+            Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
+            Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
+
             // Добавляем свойства
             project.AddProperties(
                 new Property(Constants.pyRevitVersionProp, "0.0.0"),
-                new Property(Constants.pyRevitInstalledProp, "False")
+                new Property(Constants.pyRevitInstalledProp, "False"),
+                new Property("AUTOUPDATE", Environment.GetEnvironmentVariable("AUTOUPDATE")),
+                new Property("ROCKETMODE", Environment.GetEnvironmentVariable("ROCKETMODE")),
+                new Property("CHECKUPDATES", Environment.GetEnvironmentVariable("CHECKUPDATES")),
+                new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
+                new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
+                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE"))
             );
 
             // Добавляем изображения платформы
@@ -89,7 +103,7 @@ namespace BIM4EveryoneSetup {
             
             // Добавляем зависимости библиотек CustomActions
             project.DefaultRefAssemblies.Add(typeof(JsonConvert).Assembly.Location);
-            
+
             return project.BuildMsi();
         }
     }
