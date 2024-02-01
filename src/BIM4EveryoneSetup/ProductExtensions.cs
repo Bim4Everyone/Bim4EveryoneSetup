@@ -179,7 +179,7 @@ namespace BIM4EveryoneSetup {
             string name = "_UpdateExtensions_";
             string[] args = new[] {
                 "extensions paths forget --all",
-                "extensions paths add \"%appdata%\pyRevit\Extensions\"",
+                "extensions paths add \"%appdata%\\pyRevit\\Extensions\"",
                 "extensions update --all",
             };
             
