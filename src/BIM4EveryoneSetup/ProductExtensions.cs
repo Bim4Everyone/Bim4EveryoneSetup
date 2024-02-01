@@ -248,7 +248,8 @@ namespace BIM4EveryoneSetup {
         }
 
         private static Action CreateConfigireAction(string name,string args,
-            Condition condition = Constants.ConfigInstallCondition) {
+            Condition condition = null) {
+            condition = condition ?? Constants.ConfigInstallCondition;
             return new PathFileAction("pyrevit", args,
                 Constants.pyRevitBinDirPath, Return.check, When.After, Step.InstallFinalize, condition) {Name = name};
         }
