@@ -184,7 +184,7 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={name};Message=Обновление установленных расширений");
 
-            return args.Select(item => CreateConfigireAction(name, item)).ToArray();
+            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
         }
         
         private static Action[] CreateConfigureDefaultParams<T>(this T self) where T : Project {
@@ -204,7 +204,7 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={name};Message=Настройка дефолтных параметров");
 
-            return args.Select(item => CreateConfigireAction(name, item)).ToArray();
+            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
         }
         
         private static Action[] CreateConfigureDisableBuiltinExtensions<T>(this T self) where T : Project {
@@ -225,7 +225,7 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={name};Message=Отключение встроенных расширений pyRevit");
 
-            return args.Select(item => CreateConfigireAction(name, item)).ToArray();
+            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
         }
         
         private static Action[] CreateAttachRevits<T>(this T self) where T : Project {
@@ -244,10 +244,10 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={name};Message=Прикрепление поддерживаемых версий Revit");
 
-            return args.Select(item => CreateConfigireAction(name, item)).ToArray();
+            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
         }
 
-        private static Action CreateConfigireAction(string name,string args,
+        private static Action CreateConfigureAction(string name,string args,
             Condition condition = null) {
             condition = condition ?? Constants.ConfigInstallCondition;
             return new PathFileAction("pyrevit", args,
