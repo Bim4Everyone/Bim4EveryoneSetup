@@ -159,36 +159,30 @@ namespace BIM4EveryoneSetup {
 
         public static void SetProductConfiguration<T>(this T self) where T : Project {
             // Прикрепление поддерживаемых версий Revit
-            self.AddActions(self.CreateAttachRevits());
+            self.CreateAttachRevits();
 
             // Обновление установленных расширений
-            self.AddActions(self.CreateConfigureUpdateExtensions());
+            self.CreateConfigureUpdateExtensions();
 
             // Настройка дефолтных параметров
-            self.AddActions(self.CreateConfigureDefaultParams());
+            self.CreateConfigureDefaultParams();
 
             // Отключение встроенных расширений pyRevit
-            self.AddActions(self.CreateConfigureDisableBuiltinExtensions());
+            self.CreateConfigureDisableBuiltinExtensions();
         }
 
-        private static Action[] CreateConfigureUpdateExtensions<T>(this T self) where T : Project {
-            string name = "_UpdateExtensions_";
+        private static void CreateConfigureUpdateExtensions<T>(this T self) where T : Project {
             string[] args = new[] {
                 "extensions paths forget --all",
                 "extensions paths add \"%appdata%\\pyRevit\\Extensions\"",
                 "extensions update --all",
             };
-            
-            self.AddXmlElement(
-                "Wix/Package/UI",
-                "ProgressText",
-                $"Action={name};Message=Обновление установленных расширений");
 
-            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
+            args.ForEach(item => 
+                self.CreateConfigureAction(item, "Обновление установленных расширений"));
         }
         
-        private static Action[] CreateConfigureDefaultParams<T>(this T self) where T : Project {
-            string name = "_ConfigureDefaultParams_";
+        private static void CreateConfigureDefaultParams<T>(this T self) where T : Project {
             string[] args = new[] {
                 "configs core:user_locale ru", 
                 "configs rocketmode enable", 
@@ -197,17 +191,12 @@ namespace BIM4EveryoneSetup {
                 "configs usercanextend yes",
                 "configs usercanconfig yes",
             };
-            
-            self.AddXmlElement(
-                "Wix/Package/UI",
-                "ProgressText",
-                $"Action={name};Message=Настройка дефолтных параметров");
 
-            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
+            args.ForEach(item => 
+                self.CreateConfigureAction(item, "Настройка дефолтных параметров"));
         }
         
-        private static Action[] CreateConfigureDisableBuiltinExtensions<T>(this T self) where T : Project {
-            string name = "_DisableBuiltinExtensions_";
+        private static void CreateConfigureDisableBuiltinExtensions<T>(this T self) where T : Project {
             string[] args = new[] {
                 "extensions disable pyRevitBundlesCreatorExtension.extension",
                 "extensions disable pyRevitCore.extension",
@@ -218,17 +207,12 @@ namespace BIM4EveryoneSetup {
                 "extensions disable pyRevitTools.extension",
                 "extensions disable pyRevitTutor.extension",
             };
-            
-            self.AddXmlElement(
-                "Wix/Package/UI",
-                "ProgressText",
-                $"Action={name};Message=Отключение встроенных расширений pyRevit");
 
-            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
+            args.ForEach(item =>
+                self.CreateConfigureAction(item, "Отключение встроенных расширений pyRevit"));
         }
         
-        private static Action[] CreateAttachRevits<T>(this T self) where T : Project {
-            string name = "_AttachRevits_";
+        private static void CreateAttachRevits<T>(this T self) where T : Project {
             string[] args = new[] {
                 "detach --all",
                 "attach master 277 2020",
@@ -237,20 +221,24 @@ namespace BIM4EveryoneSetup {
                 "attach master 277 2023",
                 "attach master 277 2024",
             };
-            
+
+             args.ForEach(item => 
+                 self.CreateConfigureAction(item, "Прикрепление поддерживаемых версий Revit"));
+        }
+
+        private static void CreateConfigureAction<T>(this T self,
+            string args, string message, Condition condition = null) where T : Project {
+            condition = condition ?? Constants.ConfigInstallCondition;
+
+            Action action = new WixQuietExecAction(
+                Constants.pyRevitCliPath, args,
+                Return.check, When.After, Step.InstallFinalize, condition);
+
+            self.AddAction(action);
             self.AddXmlElement(
                 "Wix/Package/UI",
                 "ProgressText",
-                $"Action={name};Message=Прикрепление поддерживаемых версий Revit");
-
-            return args.Select(item => CreateConfigureAction(name, item)).ToArray();
-        }
-
-        private static Action CreateConfigureAction(string name,string args,
-            Condition condition = null) {
-            condition = condition ?? Constants.ConfigInstallCondition;
-            return new PathFileAction(Constants.pyRevitCliPath, args,
-                "INSTALLDIR", Return.check, When.After, Step.InstallFinalize, condition) {Name = name};
+                $"Action={action.Id};Message={message}");
         }
     }
 }
