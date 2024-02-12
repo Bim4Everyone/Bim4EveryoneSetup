@@ -21,7 +21,7 @@ jobs:
     name: build
     runs-on: windows-latest
     outputs:
-      release_url: ${{ steps.publish_release.outputs.upload_url }}
+      release_url: ${{ fromJSON(steps.publish_release.outputs.assets)[0].browser_download_url }}
       release_name: Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
     steps:
       - uses: actions/checkout@v4
