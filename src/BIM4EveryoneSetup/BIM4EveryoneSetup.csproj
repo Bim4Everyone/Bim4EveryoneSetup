@@ -36,8 +36,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <AUTOUPDATE>enable</AUTOUPDATE>
+    <ROCKETMODE>enable</ROCKETMODE>
+    <CHECKUPDATES>enable</CHECKUPDATES>
+    <USERCANEXTEND>yes</USERCANEXTEND>
+    <USERCANCONFIG>yes</USERCANCONFIG>
+    <COREUSERLOCALE>ru</COREUSERLOCALE>
+  </PropertyGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd .\&#xD;&#xA;set ide=true&#xD;&#xA;&quot;$(TargetPath)&quot;" />
+    <Exec Command="cd .\
+set ide=true
+set AUTOUPDATE=$(AUTOUPDATE)
+set ROCKETMODE=$(ROCKETMODE)
+set CHECKUPDATES=$(CHECKUPDATES)
+set USERCANEXTEND=$(USERCANEXTEND)
+set USERCANCONFIG=$(USERCANCONFIG)
+set COREUSERLOCALE=$(COREUSERLOCALE)
+&quot;$(TargetPath)&quot;" />
   </Target>
 
 </Project>

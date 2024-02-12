@@ -51,10 +51,6 @@ namespace BIM4EveryoneSetup {
         public static readonly string AssetsPath = @"..\..\assets";
         public static readonly string BundlesPath = Path.Combine(AppDataPath, "pyRevit");
 
-        public static readonly string ConfigureFileProp = "_configure.bat_";
-        public static readonly string ConfigureFile = Path.Combine(BundlesPath, "configure.bat");
-        public static readonly string ConfigureAssetFile = Path.Combine(AssetsPath, "configure.bat");
-
         public static readonly string ExtensionsFileProp = "_extensions.json_";
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
         public static readonly string ExtensionsAssetFile = Path.Combine(BinPath, "extensions.json");
@@ -69,8 +65,11 @@ namespace BIM4EveryoneSetup {
             @"https://raw.githubusercontent.com/Bim4Everyone/BIMExtensions/master/extensions.json";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyrevit/Extensions");
+        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyRevit/Extensions");
 
+        // ReSharper disable once InconsistentNaming
+        public static readonly string pyRevitCliPath = $"%AppDataFolder%/pyRevit-master/bin/pyrevit.exe";
+        
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $"%AppDataFolder%/pyRevit/Extensions";
 
@@ -83,9 +82,10 @@ namespace BIM4EveryoneSetup {
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFileProp = "pyRevitInstallFile";
 
-        public static readonly Condition Install = new Condition(" (NOT Installed) ");
-        public static readonly Condition Change = new Condition(" (REMOVE) ");
-        public static readonly Condition Repair = new Condition(" (REINSTALL) ");
-        public static readonly Condition Remove = new Condition(" (REMOVE=\"ALL\") ");
+        public static readonly Condition InstallCondition = new Condition(" (NOT Installed) ");
+        public static readonly Condition ChangeCondition = new Condition(" (REMOVE) ");
+        public static readonly Condition RepairCondition = new Condition(" (REINSTALL) ");
+        public static readonly Condition RemoveCondition = new Condition(" (REMOVE=\"ALL\") ");
+        public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
     }
 }
