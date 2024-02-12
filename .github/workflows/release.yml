@@ -70,14 +70,19 @@ jobs:
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
-      
+
+  notificate:
+    concurrency: ci-${{ github.ref }}
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
       # Telegram Notify: https://github.com/appleboy/telegram-action/
       - name: Telegram Notify
         # if: github.ref == env.release_branch
-        uses: appleboy/telegram-action@v0.1.1
+        uses: appleboy/telegram-action@v0.1.*
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: "Вышла новая версия [Bim4Everyone_${{ steps.current-date.outputs.content }}.msi](${{ fromJSON(steps.publish_release.outputs.assets)[0].browser_download_url }})"
-            
+          
