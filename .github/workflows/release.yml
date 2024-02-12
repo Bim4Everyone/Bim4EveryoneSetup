@@ -57,7 +57,8 @@ jobs:
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
-        if: github.ref == env.release_branch
+        id: publish_release
+        # if: github.ref == env.release_branch
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +66,18 @@ jobs:
           tag_name: v${{ steps.current-date.outputs.content }}
           name: Bim4Everyone v${{ steps.current-date.outputs.content }}
           body: Проект установщика платформы Bim4Everyone
-          draft: false
+          draft: true
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
+      
+      # Telegram Notify: https://github.com/appleboy/telegram-action/
+      - name: Telegram Notify
+        # if: github.ref == env.release_branch
+        uses: appleboy/telegram-action@v1
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: "Вышла новая версия [Bim4Everyone_${{ steps.current-date.outputs.content }}.msi](${{ fromJSON(steps.publish_release.outputs.assets)[0].browser_download_url }})"
+            
