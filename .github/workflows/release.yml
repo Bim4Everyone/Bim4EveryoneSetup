@@ -61,7 +61,7 @@ jobs:
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
         id: publish-release
-        # if: github.ref == env.release_branch
+        if: github.ref == env.release_branch
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -90,7 +90,7 @@ jobs:
     steps:
       # Telegram Notify: https://github.com/appleboy/telegram-action/
       - name: Telegram Notify
-        # if: github.ref == env.release_branch
+        if: github.ref == env.release_branch
         uses: appleboy/telegram-action@v0.1.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
