@@ -21,8 +21,8 @@ jobs:
     name: build
     runs-on: windows-latest
     outputs:
-      release_url: ${{ fromJSON(steps.publish_release.outputs.assets)[0].browser_download_url }}
-      release_name: Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
+      release_name: ${{ fromJSON(steps.publish-release.outputs.assets)[0].name }}
+      release_download_url: ${{ fromJSON(steps.publish-release.outputs.assets)[0].browser_download_url }}
     steps:
       - uses: actions/checkout@v4
       
@@ -60,7 +60,7 @@ jobs:
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
-        id: publish_release
+        id: publish-release
         # if: github.ref == env.release_branch
         uses: softprops/action-gh-release@v1
         env:
@@ -68,7 +68,7 @@ jobs:
         with:
           tag_name: v${{ steps.current-date.outputs.content }}
           name: Bim4Everyone v${{ steps.current-date.outputs.content }}
-          body: Проект установщика платформы Bim4Everyone
+          body: Обновлен установщик платформы Bim4Everyone
           draft: true
           prerelease: false
           files: |
@@ -87,5 +87,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
-          message: Вышла новая версия [${{ needs.build.outputs.release_name }}](${{ needs.build.outputs.release_url }})
+          message: Обновлен установщик платформы!!! [${{ needs.build.outputs.release_name }}](${{ needs.build.outputs.release_download_url }})
           
