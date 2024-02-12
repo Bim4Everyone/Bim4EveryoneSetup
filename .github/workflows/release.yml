@@ -68,11 +68,20 @@ jobs:
         with:
           tag_name: v${{ steps.current-date.outputs.content }}
           name: Bim4Everyone v${{ steps.current-date.outputs.content }}
-          body: Обновлен установщик платформы Bim4Everyone
           draft: true
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
+          body: |
+            ## 👋 Обновлен установщик платформы Bim4Everyone 
+  
+            [ ![ GitHub all releases ](https://img.shields.io/github/downloads/Bim4Everyone/Bim4EveryoneSetup/total) ](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
+  
+            [ ![ Telegram News ](https://img.shields.io/badge/Telegram-News-blue.svg) ](https://t.me/bim4everyone_news)
+            [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/bim4everyone_group)
+            [![Telegram Discuss](https://img.shields.io/badge/Telegram-Discuss-blue.svg)](https://t.me/bim4everyone_discuss)
+  
+            Bim4Everyone - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
 
   notificate:
     concurrency: ci-${{ github.ref }}
@@ -87,5 +96,14 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
-          message: Обновлен установщик платформы!!! [${{ needs.build.outputs.release_name }}](${{ needs.build.outputs.release_download_url }})
+          message: |
+            ## 👋 Обновлен установщик платформы Bim4Everyone 
+            
+            [ ![ GitHub all releases ](https://img.shields.io/github/downloads/Bim4Everyone/Bim4EveryoneSetup/total) ](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
+            
+            [ ![ Telegram News ](https://img.shields.io/badge/Telegram-News-blue.svg) ](https://t.me/bim4everyone_news)
+            [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/bim4everyone_group)
+            [![Telegram Discuss](https://img.shields.io/badge/Telegram-Discuss-blue.svg)](https://t.me/bim4everyone_discuss)
+            
+            Bim4Everyone - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
           
