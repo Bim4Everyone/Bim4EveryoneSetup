@@ -269,10 +269,16 @@ namespace BIM4EveryoneSetup {
 
             // Настройка дефолтных параметров
             self.CreateConfigureDefaultParams();
+            
+            // Настройка социальных сетей
+            self.CreateConfigureSocialsParams();
+            
+            // Настройка телеметрии
+            self.CreateConfigureTelemetryParams();
 
             // Отключение встроенных расширений pyRevit
             self.CreateConfigureDisableBuiltinExtensions();
-            
+
             return self;
         }
 
