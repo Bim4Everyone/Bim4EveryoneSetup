@@ -169,6 +169,31 @@ namespace BIM4EveryoneSetup {
             return self;
         }
         
+        public static T SetProductSocialsProperties<T>(this T self) where T : Project {
+            Console.WriteLine("Socials");
+            Console.WriteLine($"\tSOCIALS_MAIN: {Environment.GetEnvironmentVariable("SOCIALS_MAIN")}");
+            Console.WriteLine($"\tSOCIALS_NEWS: {Environment.GetEnvironmentVariable("SOCIALS_NEWS")}");
+            Console.WriteLine($"\tSOCIALS_DISCUSS: {Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")}");
+            Console.WriteLine($"\tSOCIALS_2D: {Environment.GetEnvironmentVariable("SOCIALS_2D")}");
+            Console.WriteLine($"\tSOCIALS_BIM: {Environment.GetEnvironmentVariable("SOCIALS_BIM")}");
+            Console.WriteLine($"\tSOCIALS_AR: {Environment.GetEnvironmentVariable("SOCIALS_AR")}");
+            Console.WriteLine($"\tSOCIALS_KR: {Environment.GetEnvironmentVariable("SOCIALS_KR")}");
+            Console.WriteLine($"\tSOCIALS_OVVK: {Environment.GetEnvironmentVariable("SOCIALS_OVVK")}");
+
+            self.AddProperties(
+                new Property("SOCIALS_MAIN", Environment.GetEnvironmentVariable("SOCIALS_MAIN")),
+                new Property("SOCIALS_NEWS", Environment.GetEnvironmentVariable("SOCIALS_NEWS")),
+                new Property("SOCIALS_DISCUSS", Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")),
+                new Property("SOCIALS_2D", Environment.GetEnvironmentVariable("SOCIALS_2D")),
+                new Property("SOCIALS_BIM", Environment.GetEnvironmentVariable("SOCIALS_BIM")),
+                new Property("SOCIALS_AR", Environment.GetEnvironmentVariable("SOCIALS_AR")),
+                new Property("SOCIALS_KR", Environment.GetEnvironmentVariable("SOCIALS_KR")),
+                new Property("SOCIALS_OVVK", Environment.GetEnvironmentVariable("SOCIALS_OVVK"))
+            );
+            
+            return self;
+        }
+        
         public static T SetProductSettingsProperties<T>(this T self) where T : Project {
             Console.WriteLine("Settings");
             Console.WriteLine($"\tAUTOUPDATE: {Environment.GetEnvironmentVariable("AUTOUPDATE")}");
@@ -274,6 +299,22 @@ namespace BIM4EveryoneSetup {
 
             args.ForEach(item =>
                 self.CreateConfigureAction(item, "Настройка параметров по умолчанию"));
+        }
+        
+        private static void CreateConfigureSocialsParams<T>(this T self) where T : Project {
+            string[] args = new[] {
+                "configs socials:socials_main [SOCIALS_MAIN]",
+                "configs socials:socials_news [SOCIALS_NEWS]",
+                "configs socials:socials_discuss [SOCIALS_DISCUSS]",
+                "configs socials:socials_2d [SOCIALS_2D]",
+                "configs socials:socials_bim [SOCIALS_BIM]",
+                "configs socials:socials_ar [SOCIALS_AR]",
+                "configs socials:socials_kr [SOCIALS_KR]",
+                "configs socials:socials_ovvk [SOCIALS_OVVK]",
+            };
+
+            args.ForEach(item =>
+                self.CreateConfigureAction(item, "Настройка параметров социальных сетей"));
         }
         
         private static void CreateConfigureTelemetryParams<T>(this T self) where T : Project {

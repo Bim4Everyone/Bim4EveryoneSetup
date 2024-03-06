@@ -62,6 +62,17 @@
     <LOG_TRACE_LEVEL>Information</LOG_TRACE_LEVEL>
     <LOG_TRACE_SERVER_URL>localhost</LOG_TRACE_SERVER_URL>
   </PropertyGroup>
+  
+  <PropertyGroup Label="Socials">
+    <SOCIALS_MAIN>https://t.me/bim4everyone_group</SOCIALS_MAIN>
+    <SOCIALS_NEWS>https://t.me/bim4everyone_news</SOCIALS_NEWS>
+    <SOCIALS_DISCUSS>https://t.me/bim4everyone_discuss</SOCIALS_DISCUSS>
+    <SOCIALS_2D>https://t.me/bim4everyone_group/12</SOCIALS_2D>
+    <SOCIALS_BIM>https://t.me/bim4everyone_group/11</SOCIALS_BIM>
+    <SOCIALS_AR>https://t.me/bim4everyone_group/8</SOCIALS_AR>
+    <SOCIALS_KR>https://t.me/bim4everyone_group/7</SOCIALS_KR>
+    <SOCIALS_OVVK>https://t.me/bim4everyone_group/6</SOCIALS_OVVK>
+  </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="cd .\
@@ -80,6 +91,15 @@ set TELEMETRY_SERVER_URL=$(TELEMETRY_SERVER_URL)
 set APPTELEMETRY_ACTIVE=$(APPTELEMETRY_ACTIVE)
 set APPTELEMETRY_EVENT_FLAGS=$(APPTELEMETRY_EVENT_FLAGS)
 set APPTELEMETRY_SERVER_URL=$(APPTELEMETRY_SERVER_URL)
+
+set SOCIALS_MAIN=$(SOCIALS_MAIN)
+set SOCIALS_NEWS=$(SOCIALS_NEWS)
+set SOCIALS_DISCUSS=$(SOCIALS_DISCUSS)
+set SOCIALS_2D=$(SOCIALS_2D)
+set SOCIALS_BIM=$(SOCIALS_BIM)
+set SOCIALS_AR=$(SOCIALS_AR)
+set SOCIALS_KR=$(SOCIALS_KR)
+set SOCIALS_OVVK=$(SOCIALS_OVVK)
 
 set LOG_TRACE_ACTIVE=$(LOG_TRACE_ACTIVE)
 set LOG_TRACE_LEVEL=$(LOG_TRACE_LEVEL)

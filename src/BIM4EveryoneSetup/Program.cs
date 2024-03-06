@@ -68,6 +68,7 @@ namespace BIM4EveryoneSetup {
             project.SetProductConfiguration();
             
             project.SetProductProperties();
+            project.SetProductSocialsProperties();
             project.SetProductTelemetryProperties();
             project.SetProductAppTelemetryProperties();
             project.SetProductLogTraceProperties();
