@@ -160,7 +160,82 @@ namespace BIM4EveryoneSetup {
             return self;
         }
 
-        public static void SetProductConfiguration<T>(this T self) where T : Project {
+        public static T SetProductProperties<T>(this T self) where T : Project {
+            self.AddProperties(
+                new Property(Constants.pyRevitVersionProp, "0.0.0"),
+                new Property(Constants.pyRevitInstalledProp, "False")
+            );
+            
+            return self;
+        }
+        
+        public static T SetProductSettingsProperties<T>(this T self) where T : Project {
+            Console.WriteLine("Settings");
+            Console.WriteLine($"\tAUTOUPDATE: {Environment.GetEnvironmentVariable("AUTOUPDATE")}");
+            Console.WriteLine($"\tROCKETMODE: {Environment.GetEnvironmentVariable("ROCKETMODE")}");
+            Console.WriteLine($"\tCHECKUPDATES: {Environment.GetEnvironmentVariable("CHECKUPDATES")}");
+            Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
+            Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
+            Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
+            
+            self.AddProperties(
+                new Property("AUTOUPDATE", Environment.GetEnvironmentVariable("AUTOUPDATE")),
+                new Property("ROCKETMODE", Environment.GetEnvironmentVariable("ROCKETMODE")),
+                new Property("CHECKUPDATES", Environment.GetEnvironmentVariable("CHECKUPDATES")),
+                new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
+                new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
+                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE"))
+            );
+            
+            return self;
+        }
+        
+        public static T SetProductTelemetryProperties<T>(this T self) where T : Project {
+            Console.WriteLine("Telemetry");
+            Console.WriteLine($"\tTELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")}");
+            Console.WriteLine($"\tTELEMETRY_USE_UTC: {Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")}");
+            Console.WriteLine($"\tTELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL")}");
+            
+            self.AddProperties(
+                new Property("TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")),
+                new Property("TELEMETRY_USE_UTC", Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")),
+                new Property("TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL"))
+            );
+            
+            return self;
+        }
+        
+        public static T SetProductAppTelemetryProperties<T>(this T self) where T : Project {
+            Console.WriteLine("AppTelemetry");
+            Console.WriteLine($"\tAPPTELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("APPTELEMETRY_ACTIVE")}");
+            Console.WriteLine($"\tAPPTELEMETRY_EVENT_FLAGS: {Environment.GetEnvironmentVariable("APPTELEMETRY_EVENT_FLAGS")}");
+            Console.WriteLine($"\tAPPTELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("APPTELEMETRY_SERVER_URL")}");
+            
+            self.AddProperties(
+                new Property("APPTELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("APPTELEMETRY_ACTIVE")),
+                new Property("APPTELEMETRY_EVENT_FLAGS", Environment.GetEnvironmentVariable("APPTELEMETRY_EVENT_FLAGS")),
+                new Property("APPTELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("APPTELEMETRY_SERVER_URL"))
+            );
+            
+            return self;
+        }
+        
+        public static T SetProductLogTraceProperties<T>(this T self) where T : Project {
+            Console.WriteLine("LogTrace");
+            Console.WriteLine($"\tLOG_TRACE_ACTIVE: {Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")}");
+            Console.WriteLine($"\tLOG_TRACE_LEVEL: {Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")}");
+            Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL")}");
+            
+            self.AddProperties(
+                new Property("LOG_TRACE_ACTIVE", Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")),
+                new Property("LOG_TRACE_LEVEL", Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")),
+                new Property("LOG_TRACE_SERVER_URL", Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL"))
+            );
+            
+            return self;
+        }
+
+        public static T SetProductConfiguration<T>(this T self) where T : Project {
             // Прикрепление поддерживаемых версий Revit
             self.CreateAttachRevits();
 
@@ -172,6 +247,8 @@ namespace BIM4EveryoneSetup {
 
             // Отключение встроенных расширений pyRevit
             self.CreateConfigureDisableBuiltinExtensions();
+            
+            return self;
         }
 
         private static void CreateConfigureUpdateExtensions<T>(this T self) where T : Project {
@@ -196,7 +273,26 @@ namespace BIM4EveryoneSetup {
             };
 
             args.ForEach(item =>
-                self.CreateConfigureAction(item, "Настройка дефолтных параметров"));
+                self.CreateConfigureAction(item, "Настройка параметров по умолчанию"));
+        }
+        
+        private static void CreateConfigureTelemetryParams<T>(this T self) where T : Project {
+            string[] args = new[] {
+                "configs telemetry [TELEMETRY_ACTIVE]",
+                "configs telemetry utc [TELEMETRY_USE_UTC]",
+                "configs telemetry server [TELEMETRY_SERVER_URL]",
+                
+                "configs apptelemetry [APPTELEMETRY_ACTIVE]",
+                "configs apptelemetry flags [APPTELEMETRY_EVENT_FLAGS]", 
+                "configs apptelemetry server [APPTELEMETRY_SERVER_URL]",
+                
+                "configs log_trace:active [LOG_TRACE_ACTIVE]",
+                "configs log_trace:level [LOG_TRACE_LEVEL]",
+                "configs log_trace:server_name [LOG_TRACE_SERVER_URL]",
+            };
+
+            args.ForEach(item =>
+                self.CreateConfigureAction(item, "Настройка параметров телеметрии"));
         }
 
         private static void CreateConfigureDisableBuiltinExtensions<T>(this T self) where T : Project {
