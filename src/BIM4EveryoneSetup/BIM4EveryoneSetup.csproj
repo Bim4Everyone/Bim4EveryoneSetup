@@ -43,6 +43,8 @@
     <USERCANEXTEND>yes</USERCANEXTEND>
     <USERCANCONFIG>yes</USERCANCONFIG>
     <COREUSERLOCALE>ru</COREUSERLOCALE>
+    <VENDOR_NAME>dosymep</VENDOR_NAME>
+    <CORP_SETTINGS_PATH>""</CORP_SETTINGS_PATH>
   </PropertyGroup>
   
   <PropertyGroup Label="Telemetry">

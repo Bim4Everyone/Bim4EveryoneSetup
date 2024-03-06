@@ -202,6 +202,8 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
             Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
             Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
+            Console.WriteLine($"\tVENDOR_NAME: {Environment.GetEnvironmentVariable("VENDOR_NAME")}");
+            Console.WriteLine($"\tCORP_SETTINGS_PATH: {Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH")}");
             
             self.AddProperties(
                 new Property("AUTOUPDATE", Environment.GetEnvironmentVariable("AUTOUPDATE")),
@@ -209,7 +211,9 @@ namespace BIM4EveryoneSetup {
                 new Property("CHECKUPDATES", Environment.GetEnvironmentVariable("CHECKUPDATES")),
                 new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
                 new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
-                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE"))
+                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE")),
+                new Property("VENDOR_NAME", Environment.GetEnvironmentVariable("VENDOR_NAME")),
+                new Property("CORP_SETTINGS_PATH", Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH"))
             );
             
             return self;
