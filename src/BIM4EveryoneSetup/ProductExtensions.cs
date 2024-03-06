@@ -305,6 +305,8 @@ namespace BIM4EveryoneSetup {
                 "configs checkupdates [CHECKUPDATES]", 
                 "configs usercanextend [USERCANEXTEND]", 
                 "configs usercanconfig [USERCANCONFIG]",
+                "configs core:vendor_name [VENDOR_NAME]",
+                "configs core:corp_settings_path [CORP_SETTINGS_PATH]",
             };
 
             args.ForEach(item =>
