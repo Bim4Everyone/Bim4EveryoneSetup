@@ -20,6 +20,33 @@ dotnet build -c Release
 * `USERCANEXTEND` - `yes/no` разрешение добавление расширений пользователю (`yes`)
 * `USERCANCONFIG` -  `yes/no` разрешение редактировать конфигурацию пользователю (`yes`)
 * `COREUSERLOCALE` - `en/en_us/ru/fr/...etc` локализация pyRevit при запуске (`ru`)
+* `CORP_NAME` - `any value` имя компании установки (`Bim4Everyone`)
+* `CORP_SETTINGS_PATH` - `path` путь до корпоративных настроек компании (`""`)
+
+### Cвойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
+
+* `TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии (`disable`)
+* `TELEMETRY_USE_UTC` - `yes/no` включение отправки времени как utc (`yes`)
+* `TELEMETRY_SERVER_URL` - `link` ссылка до точки доступа телеметрии (`localhost`)
+* `APP_TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии приложения (`disable`)
+* `APP_TELEMETRY_EVENT_FLAGS` - `HEX` флаги телеметрии приложения (`0x4000400004001`)
+* `APP_TELEMETRY_SERVER_URL` - `link` ссылка до точки доступа телеметрии (`localhost`)
+* `LOG_TRACE_ACTIVE` - `enable/disable` включение трасировки логов (`disable`)
+* `LOG_TRACE_LEVEL` - `debug/fatal/information` уровень логгирования (`information`)
+* `LOG_TRACE_SERVER_URL` - `link` ссылка до точки доступа трассировки логов (`localhost`)
+
+### Cвойства социальных сетей:
+
+* `SOCIALS_MAIN` - `link` ссылка на основной чат (`https://t.me/bim4everyone_group`)
+* `SOCIALS_NEWS` - `link` ссылка на новосной канал (`https://t.me/bim4everyone_news`)
+* `SOCIALS_DISCUSS` - `link` ссылка на обсуждение новостей (`https://t.me/bim4everyone_discuss`)
+* `SOCIALS_2D` - `link` ссылка на чат вкладки 2D (`https://t.me/bim4everyone_group/12`)
+* `SOCIALS_BIM` - `link` ссылка на чат вкладки BIM (`https://t.me/bim4everyone_group/11`)
+* `SOCIALS_AR` - `link` ссылка на чат вкладки АР (`https://t.me/bim4everyone_group/8`)
+* `SOCIALS_KR` - `link` ссылка на чат вкладки КР (`https://t.me/bim4everyone_group/7`)
+* `SOCIALS_OVVK` - `link` ссылка на чат вкладки ОВиВК (`https://t.me/bim4everyone_group/6`)
+* `SOCIALS_PAGE` - `link` ссылка на страницу (`https://github.com/Bim4Everyone`)
+* `SOCIALS_DOWNLOADS` - `link` ссылка на закачку (`https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest`)
 
 ### Пример использовании свойств
 ```
