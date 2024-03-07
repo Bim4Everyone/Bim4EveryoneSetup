@@ -21,9 +21,9 @@ dotnet build -c Release
 * `USERCANCONFIG` -  `yes/no` разрешение редактировать конфигурацию пользователю (`yes`)
 * `COREUSERLOCALE` - `en/en_us/ru/fr/...etc` локализация pyRevit при запуске (`ru`)
 * `CORP_NAME` - `any value` имя компании установки (`Bim4Everyone`)
-* `CORP_SETTINGS_PATH` - `путь` путь до корпоративных настроек компании (`""`)
+* `CORP_SETTINGS_PATH` - `path` путь до корпоративных настроек компании (`""`)
 
-### Cвойства настроек телеметрии:
+### Cвойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
 
 * `TELEMETRY_ACTIVE` - `enable/disable` ссылка на основной чат (`disable`)
 * `TELEMETRY_USE_UTC` - `yes/no` ссылка на основной чат (`yes`)
