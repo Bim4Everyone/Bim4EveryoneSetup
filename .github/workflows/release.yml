@@ -57,6 +57,12 @@ jobs:
         with:
           name: Bim4Everyone
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
+          
+      # default values
+      - name: Publish Release
+        id: publish-release
+        if: github.ref != env.release_branch
+        run: echo "assets=[{'name':'empty', 'browser_download_url':'empty'}]" >> "$GITHUB_OUTPUT"
       
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
