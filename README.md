@@ -25,15 +25,15 @@ dotnet build -c Release
 
 ### Cвойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
 
-* `TELEMETRY_ACTIVE` - `enable/disable` ссылка на основной чат (`disable`)
-* `TELEMETRY_USE_UTC` - `yes/no` ссылка на основной чат (`yes`)
-* `TELEMETRY_SERVER_URL` - `link` ссылка на основной чат (`localhost`)
-* `APP_TELEMETRY_ACTIVE` - `enable/disable` ссылка на основной чат (`disable`)
-* `APP_TELEMETRY_EVENT_FLAGS` - `HEX` ссылка на основной чат (`0x4000400004001`)
-* `APP_TELEMETRY_SERVER_URL` - `link` ссылка на основной чат (`localhost`)
-* `LOG_TRACE_ACTIVE` - `enable/disable` ссылка на основной чат (`disable`)
-* `LOG_TRACE_LEVEL` - `debug/fatal/information` ссылка на основной чат (`information`)
-* `LOG_TRACE_SERVER_URL` - `link` ссылка на основной чат (`localhost`)
+* `TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии (`disable`)
+* `TELEMETRY_USE_UTC` - `yes/no` включение отправки времени как utc (`yes`)
+* `TELEMETRY_SERVER_URL` - `link` ссылка до точки доступа телеметрии (`localhost`)
+* `APP_TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии приложения (`disable`)
+* `APP_TELEMETRY_EVENT_FLAGS` - `HEX` флаги телеметрии приложения (`0x4000400004001`)
+* `APP_TELEMETRY_SERVER_URL` - `link` ссылка до точки доступа телеметрии (`localhost`)
+* `LOG_TRACE_ACTIVE` - `enable/disable` включение трасировки логов (`disable`)
+* `LOG_TRACE_LEVEL` - `debug/fatal/information` уровень логгирования (`information`)
+* `LOG_TRACE_SERVER_URL` - `link` ссылка до точки доступа трассировки логов (`localhost`)
 
 ### Cвойства социальных сетей:
 
