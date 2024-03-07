@@ -202,7 +202,7 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
             Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
             Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
-            Console.WriteLine($"\tVENDOR_NAME: {Environment.GetEnvironmentVariable("VENDOR_NAME")}");
+            Console.WriteLine($"\tCORP_NAME: {Environment.GetEnvironmentVariable("CORP_NAME")}");
             Console.WriteLine($"\tCORP_SETTINGS_PATH: {Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH")}");
             
             self.AddProperties(
@@ -305,7 +305,7 @@ namespace BIM4EveryoneSetup {
                 "configs checkupdates [CHECKUPDATES]", 
                 "configs usercanextend [USERCANEXTEND]", 
                 "configs usercanconfig [USERCANCONFIG]",
-                "configs core:vendor_name [VENDOR_NAME]",
+                "configs core:corp_name [CORP_NAME]",
                 "configs core:corp_settings_path [CORP_SETTINGS_PATH]",
             };
 

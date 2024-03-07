@@ -20,8 +20,7 @@ dotnet build -c Release
 * `USERCANEXTEND` - `yes/no` разрешение добавление расширений пользователю (`yes`)
 * `USERCANCONFIG` -  `yes/no` разрешение редактировать конфигурацию пользователю (`yes`)
 * `COREUSERLOCALE` - `en/en_us/ru/fr/...etc` локализация pyRevit при запуске (`ru`)
-* `COREUSERLOCALE` - `en/en_us/ru/fr/...etc` локализация pyRevit при запуске (`ru`)
-* `VENDOR_NAME` - `any value` имя компании установки (`Bim4Everyone`)
+* `CORP_NAME` - `any value` имя компании установки (`Bim4Everyone`)
 * `CORP_SETTINGS_PATH` - `путь` путь до корпоративных настроек компании (`""`)
 
 ### Cвойства настроек телеметрии:
