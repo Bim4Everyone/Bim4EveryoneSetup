@@ -236,14 +236,14 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductAppTelemetryProperties<T>(this T self) where T : Project {
             Console.WriteLine("AppTelemetry");
-            Console.WriteLine($"\tAPPTELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("APPTELEMETRY_ACTIVE")}");
-            Console.WriteLine($"\tAPPTELEMETRY_EVENT_FLAGS: {Environment.GetEnvironmentVariable("APPTELEMETRY_EVENT_FLAGS")}");
-            Console.WriteLine($"\tAPPTELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("APPTELEMETRY_SERVER_URL")}");
+            Console.WriteLine($"\tAPP_TELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")}");
+            Console.WriteLine($"\tAPP_TELEMETRY_EVENT_FLAGS: {Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")}");
+            Console.WriteLine($"\tAPP_TELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL")}");
             
             self.AddProperties(
-                new Property("APPTELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("APPTELEMETRY_ACTIVE")),
-                new Property("APPTELEMETRY_EVENT_FLAGS", Environment.GetEnvironmentVariable("APPTELEMETRY_EVENT_FLAGS")),
-                new Property("APPTELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("APPTELEMETRY_SERVER_URL"))
+                new Property("APP_TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")),
+                new Property("APP_TELEMETRY_EVENT_FLAGS", Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")),
+                new Property("APP_TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL"))
             );
             
             return self;
@@ -335,9 +335,9 @@ namespace BIM4EveryoneSetup {
                 "configs telemetry utc [TELEMETRY_USE_UTC]",
                 "configs telemetry server [TELEMETRY_SERVER_URL]",
                 
-                "configs apptelemetry [APPTELEMETRY_ACTIVE]",
-                "configs apptelemetry flags [APPTELEMETRY_EVENT_FLAGS]", 
-                "configs apptelemetry server [APPTELEMETRY_SERVER_URL]",
+                "configs apptelemetry [APP_TELEMETRY_ACTIVE]",
+                "configs apptelemetry flags [APP_TELEMETRY_EVENT_FLAGS]", 
+                "configs apptelemetry server [APP_TELEMETRY_SERVER_URL]",
                 
                 "configs log_trace:active [LOG_TRACE_ACTIVE]",
                 "configs log_trace:level [LOG_TRACE_LEVEL]",
