@@ -331,21 +331,34 @@ namespace BIM4EveryoneSetup {
         
         private static void CreateConfigureTelemetryParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs telemetry [TELEMETRY_ACTIVE]",
+                "configs telemetry [TELEMETRY_ACTIVE]", 
                 "configs telemetry utc [TELEMETRY_USE_UTC]",
                 "configs telemetry server [TELEMETRY_SERVER_URL]",
-                
-                "configs apptelemetry [APP_TELEMETRY_ACTIVE]",
-                "configs apptelemetry flags [APP_TELEMETRY_EVENT_FLAGS]", 
+            };
+            
+            args.ForEach(item =>
+                self.CreateConfigureAction(item, 
+                    "Настройка параметров телеметрии", "(TELEMETRY_ACTIVE=\"enable\")"));
+            
+            args = new[] {
+                "configs apptelemetry [APP_TELEMETRY_ACTIVE]", 
+                "configs apptelemetry flags [APP_TELEMETRY_EVENT_FLAGS]",
                 "configs apptelemetry server [APP_TELEMETRY_SERVER_URL]",
-                
+            };
+            
+            args.ForEach(item =>
+                self.CreateConfigureAction(item, 
+                    "Настройка параметров телеметрии", "(APP_TELEMETRY_ACTIVE=\"enable\")"));
+            
+            args = new[] {
                 "configs log_trace:active [LOG_TRACE_ACTIVE]",
                 "configs log_trace:level [LOG_TRACE_LEVEL]",
                 "configs log_trace:server_name [LOG_TRACE_SERVER_URL]",
             };
 
             args.ForEach(item =>
-                self.CreateConfigureAction(item, "Настройка параметров телеметрии"));
+                self.CreateConfigureAction(item, 
+                    "Настройка параметров телеметрии", "(LOG_TRACE_ACTIVE=\"enable\")"));
         }
 
         private static void CreateConfigureDisableBuiltinExtensions<T>(this T self) where T : Project {
