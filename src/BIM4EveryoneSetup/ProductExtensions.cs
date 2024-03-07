@@ -216,7 +216,7 @@ namespace BIM4EveryoneSetup {
                 new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
                 new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
                 new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE")),
-                new Property("VENDOR_NAME", Environment.GetEnvironmentVariable("VENDOR_NAME")),
+                new Property("CORP_NAME", Environment.GetEnvironmentVariable("CORP_NAME")),
                 new Property("CORP_SETTINGS_PATH", Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH"))
             );
             
