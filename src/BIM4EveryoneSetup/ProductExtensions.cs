@@ -179,6 +179,8 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"\tSOCIALS_AR: {Environment.GetEnvironmentVariable("SOCIALS_AR")}");
             Console.WriteLine($"\tSOCIALS_KR: {Environment.GetEnvironmentVariable("SOCIALS_KR")}");
             Console.WriteLine($"\tSOCIALS_OVVK: {Environment.GetEnvironmentVariable("SOCIALS_OVVK")}");
+            Console.WriteLine($"\tSOCIALS_PAGE: {Environment.GetEnvironmentVariable("SOCIALS_PAGE")}");
+            Console.WriteLine($"\tSOCIALS_DOWNLOADS: {Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS")}");
 
             self.AddProperties(
                 new Property("SOCIALS_MAIN", Environment.GetEnvironmentVariable("SOCIALS_MAIN")),
@@ -188,7 +190,9 @@ namespace BIM4EveryoneSetup {
                 new Property("SOCIALS_BIM", Environment.GetEnvironmentVariable("SOCIALS_BIM")),
                 new Property("SOCIALS_AR", Environment.GetEnvironmentVariable("SOCIALS_AR")),
                 new Property("SOCIALS_KR", Environment.GetEnvironmentVariable("SOCIALS_KR")),
-                new Property("SOCIALS_OVVK", Environment.GetEnvironmentVariable("SOCIALS_OVVK"))
+                new Property("SOCIALS_OVVK", Environment.GetEnvironmentVariable("SOCIALS_OVVK")),
+                new Property("SOCIALS_PAGE", Environment.GetEnvironmentVariable("SOCIALS_PAGE")),
+                new Property("SOCIALS_DOWNLOADS", Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS"))
             );
             
             return self;
@@ -305,8 +309,8 @@ namespace BIM4EveryoneSetup {
                 "configs checkupdates [CHECKUPDATES]", 
                 "configs usercanextend [USERCANEXTEND]", 
                 "configs usercanconfig [USERCANCONFIG]",
-                "configs core:corp_name [CORP_NAME]",
-                "configs core:corp_settings_path [CORP_SETTINGS_PATH]",
+                "configs corp:name [CORP_NAME]",
+                "configs corp:settings_path [CORP_SETTINGS_PATH]",
             };
 
             args.ForEach(item =>
@@ -315,14 +319,16 @@ namespace BIM4EveryoneSetup {
         
         private static void CreateConfigureSocialsParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs socials:socials_main [SOCIALS_MAIN]",
-                "configs socials:socials_news [SOCIALS_NEWS]",
-                "configs socials:socials_discuss [SOCIALS_DISCUSS]",
-                "configs socials:socials_2d [SOCIALS_2D]",
-                "configs socials:socials_bim [SOCIALS_BIM]",
-                "configs socials:socials_ar [SOCIALS_AR]",
-                "configs socials:socials_kr [SOCIALS_KR]",
-                "configs socials:socials_ovvk [SOCIALS_OVVK]",
+                "configs socials:tg_main [SOCIALS_MAIN]",
+                "configs socials:tg_news [SOCIALS_NEWS]",
+                "configs socials:tg_discuss [SOCIALS_DISCUSS]",
+                "configs socials:tg_2d [SOCIALS_2D]",
+                "configs socials:tg_bim [SOCIALS_BIM]",
+                "configs socials:tg_ar [SOCIALS_AR]",
+                "configs socials:tg_kr [SOCIALS_KR]",
+                "configs socials:tg_ovvk [SOCIALS_OVVK]",
+                "configs socials:page_link [SOCIALS_PAGE]",
+                "configs socials:downloads_link [SOCIALS_DOWNLOADS]",
             };
 
             args.ForEach(item =>

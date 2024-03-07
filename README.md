@@ -45,6 +45,8 @@ dotnet build -c Release
 * `SOCIALS_AR` - `link` ссылка на чат вкладки АР (`https://t.me/bim4everyone_group/8`)
 * `SOCIALS_KR` - `link` ссылка на чат вкладки КР (`https://t.me/bim4everyone_group/7`)
 * `SOCIALS_OVVK` - `link` ссылка на чат вкладки ОВиВК (`https://t.me/bim4everyone_group/6`)
+* `SOCIALS_PAGE` - `link` ссылка на страницу (`https://github.com/Bim4Everyone`)
+* `SOCIALS_DOWNLOADS` - `link` ссылка на закачку (`https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest`)
 
 ### Пример использовании свойств
 ```
