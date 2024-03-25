@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 
 using WixSharp;
 
@@ -31,7 +32,7 @@ namespace BIM4EveryoneSetup {
 
         public static readonly string MsiVersionFile = Path.Combine(BinPath, "msi_version.txt");
         public static readonly string CurrentDate = DateTime.Now.ToString("yy.MM.dd");
-        public static readonly string CurrentVersionTag = $"v{CurrentDate}";
+        public static readonly string CurrentTag = $"v{CurrentDate}";
         public static readonly Version CurrentVersion = new Version(CurrentDate);
 
         public static readonly string
@@ -89,5 +90,8 @@ namespace BIM4EveryoneSetup {
         public static readonly Condition RepairCondition = new Condition(" (REINSTALL) ");
         public static readonly Condition RemoveCondition = new Condition(" (REMOVE=\"ALL\") ");
         public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
+        
+        
+        public static readonly string LastTag = Process2.StartProcess("git", "tag").Last();
     }
 }

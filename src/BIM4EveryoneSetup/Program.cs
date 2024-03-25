@@ -19,7 +19,7 @@ namespace BIM4EveryoneSetup {
             
             // Создаем файл с версией
             Console.WriteLine("Creating msi version file");
-            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersionTag);
+            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentTag);
             
             // Выкачиваем установщик pyRevit
             Console.WriteLine("Downloading pyRevit installer");
@@ -43,17 +43,25 @@ namespace BIM4EveryoneSetup {
         }
 
         private static void BuildChangelog() {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine($"{Constants.CurrentTag} -- {DateTime.Now.ToString("yy-MM-dd")}");
+            
             // Обновляем расширения (чтобы возможно было пушить)
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                 Console.WriteLine($"Update remote platform extension: {featureExtension.Name}");
                 featureExtension.UpdateRemote("");
                 
                 Console.WriteLine($"Create tag platform extension: {featureExtension.Name}");
-                featureExtension.CreateTag(Constants.CurrentVersionTag);
+                featureExtension.CreateTag(Constants.CurrentTag);
                 
                 Console.WriteLine($"Push tag platform extension: {featureExtension.Name}");
-                featureExtension.PushTag(Constants.CurrentVersionTag);
+                featureExtension.PushTag(Constants.CurrentTag);
+                
+                Console.WriteLine($"Get changes platform extensions: {featureExtension.Name}");
+                featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
             }
+
+            Extensions.InsertText("CHANGELOG.md", builder.ToString());
         }
 
         private static string BuildMsi() {
@@ -75,7 +83,7 @@ namespace BIM4EveryoneSetup {
             // };
 
             project.OutDir = Constants.BinPath;
-            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersionTag;
+            project.OutFileName = "Bim4Everyone_" + Constants.CurrentTag;
 
             project.SetBinaries();
             project.SetProductUI();

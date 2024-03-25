@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 
 using Newtonsoft.Json.Linq;
 
@@ -47,6 +49,12 @@ namespace BIM4EveryoneSetup {
             Process2.StartProcess("git",
                 arguments: $"push origin {tag}",
                 workingDirectory: SourceDirFullPath);
+        }
+
+        public void GetChanges(string tag, string lastTag, StringBuilder stringBuilder) {
+            stringBuilder.AppendLine($"### [{Name}]({RepositoryUrl}compare/{lastTag}...{tag})");
+            stringBuilder.AppendLine(Extensions.GetChanges(RepositoryUrl, SourceDirFullPath));
+            stringBuilder.AppendLine();
         }
 
         public Dir CreateDir() {
