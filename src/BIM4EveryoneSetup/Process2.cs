@@ -49,6 +49,7 @@ namespace BIM4EveryoneSetup {
             process.BeginOutputReadLine();
             process.BeginErrorReadLine();
 
+            process.WaitForExit();
             return output;
         }
     }
