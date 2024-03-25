@@ -37,7 +37,7 @@ namespace BIM4EveryoneSetup {
                     "git",
                     $"log --pretty=format:%s {Constants.LastTag}..HEAD",
                     workingDirectory: workingDir)
-                .Select(item => Regex.Replace(item, @"#\d+", $@"[\1]({repoUrl}/pull/\1)"));
+                .Select(item => Regex.Replace(item, @"#\d+", $@"[$0]({repoUrl}/pull/$0)"));
 
             return Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list);
         }

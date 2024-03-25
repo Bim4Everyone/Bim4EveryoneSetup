@@ -27,7 +27,6 @@ namespace BIM4EveryoneSetup {
         public string TargetPath => Path.Combine(Constants.pyRevitExtensionsPath, Name);
         
         public string SourceFullPath => Path.GetFullPath(SourcePath);
-        public string SourceDirFullPath => Path.GetDirectoryName(SourceFullPath);
 
         public void GitClone() {
             Process2.StartProcess("git", arguments: $"clone {RepositoryUrl} {SourceFullPath}");
@@ -36,24 +35,24 @@ namespace BIM4EveryoneSetup {
         public void UpdateRemote(string token) {
             Process2.StartProcess("git",
                 arguments: $"remote set-url origin ${CreateRepoUrlWithToken(token)}",
-                workingDirectory: SourceDirFullPath);
+                workingDirectory: SourceFullPath);
         }
 
         public void CreateTag(string tag) {
             Process2.StartProcess("git",
                 arguments: $"tag {tag}",
-                workingDirectory: SourceDirFullPath);
+                workingDirectory: SourceFullPath);
         }
 
         public void PushTag(string tag) {
             Process2.StartProcess("git",
                 arguments: $"push origin {tag}",
-                workingDirectory: SourceDirFullPath);
+                workingDirectory: SourceFullPath);
         }
 
         public void GetChanges(string tag, string lastTag, StringBuilder stringBuilder) {
             stringBuilder.AppendLine($"### [{Name}]({RepositoryUrl}compare/{lastTag}...{tag})");
-            stringBuilder.AppendLine(Extensions.GetChanges(RepositoryUrl, SourceDirFullPath));
+            stringBuilder.AppendLine(Extensions.GetChanges(RepositoryUrl, SourceFullPath));
             stringBuilder.AppendLine();
         }
 
