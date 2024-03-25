@@ -37,12 +37,14 @@ namespace BIM4EveryoneSetup {
                     "git",
                     $"log --pretty=format:%s {Constants.LastTag}..HEAD",
                     workingDirectory: workingDir)
+                .Where(item => !string.IsNullOrEmpty(item))
                 .Select(item => Regex.Replace(item, @"#\d+", $@"[$0]({repoUrl}/pull/$0)"))
+                .Select(item => item.Replace("/pull/#", "/pull/"))
                 .ToArray();
 
             return list.Length == 0
                 ? default
-                : Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list);
+                : Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list).Trim();
         }
 
         public static void InsertText(string filename, string text) {
