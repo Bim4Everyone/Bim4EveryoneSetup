@@ -30,7 +30,9 @@ namespace BIM4EveryoneSetup {
             Path.Combine(BinPath, $"pyRevit_{pyRevitVersion}_signed.exe");
 
         public static readonly string MsiVersionFile = Path.Combine(BinPath, "msi_version.txt");
-        public static readonly Version CurrentVersion = new Version(DateTime.Now.ToString("yy.MM.dd"));
+        public static readonly string CurrentDate = DateTime.Now.ToString("yy.MM.dd");
+        public static readonly string CurrentVersionTag = $"v{CurrentDate}";
+        public static readonly Version CurrentVersion = new Version(CurrentDate);
 
         public static readonly string
             MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);

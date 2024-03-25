@@ -66,8 +66,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.current-date.outputs.content }}
-          name: Bim4Everyone v${{ steps.current-date.outputs.content }}
+          tag_name: ${{ steps.current-date.outputs.content }}
+          name: Bim4Everyone ${{ steps.current-date.outputs.content }}
           draft: true
           prerelease: false
           files: |

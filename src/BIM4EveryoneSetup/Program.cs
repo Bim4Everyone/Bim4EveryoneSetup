@@ -19,7 +19,7 @@ namespace BIM4EveryoneSetup {
             
             // Создаем файл с версией
             Console.WriteLine("Creating msi version file");
-            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersion.ToString());
+            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersionTag);
             
             // Выкачиваем установщик pyRevit
             Console.WriteLine("Downloading pyRevit installer");
@@ -58,7 +58,7 @@ namespace BIM4EveryoneSetup {
             // };
 
             project.OutDir = Constants.BinPath;
-            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
+            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersionTag;
 
             project.SetBinaries();
             project.SetProductUI();
