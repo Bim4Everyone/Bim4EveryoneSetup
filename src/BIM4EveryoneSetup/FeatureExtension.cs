@@ -51,8 +51,13 @@ namespace BIM4EveryoneSetup {
         }
 
         public void GetChanges(string tag, string lastTag, StringBuilder stringBuilder) {
-            stringBuilder.AppendLine($"### [{Name}]({RepositoryUrl}compare/{lastTag}...{tag})");
-            stringBuilder.AppendLine(Extensions.GetChanges(RepositoryUrl, SourceFullPath));
+            string changes = Extensions.GetChanges(RepositoryUrl, SourceFullPath);
+            if(string.IsNullOrEmpty(changes)) {
+                return;
+            }
+            
+            stringBuilder.AppendLine($"### [{Name}]({RepositoryUrl}/compare/{lastTag}...{tag})");
+            stringBuilder.AppendLine(changes);
             stringBuilder.AppendLine();
         }
 

@@ -33,13 +33,16 @@ namespace BIM4EveryoneSetup {
         }
 
         public static string GetChanges(string repoUrl, string workingDir) {
-            IEnumerable<string> list = Process2.StartProcess(
+            string[] list = Process2.StartProcess(
                     "git",
                     $"log --pretty=format:%s {Constants.LastTag}..HEAD",
                     workingDirectory: workingDir)
-                .Select(item => Regex.Replace(item, @"#\d+", $@"[$0]({repoUrl}/pull/$0)"));
+                .Select(item => Regex.Replace(item, @"#\d+", $@"[$0]({repoUrl}/pull/$0)"))
+                .ToArray();
 
-            return Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list);
+            return list.Length == 0
+                ? default
+                : Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list);
         }
 
         public static void InsertText(string filename, string text) {

@@ -44,7 +44,7 @@ namespace BIM4EveryoneSetup {
 
         private static void BuildChangelog() {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"## {Constants.CurrentTag} - {DateTime.Now.ToString("yy-MM-dd")}");
+            builder.AppendLine($"## {Constants.CurrentTag}");
             
             // Обновляем расширения (чтобы возможно было пушить)
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
@@ -60,10 +60,13 @@ namespace BIM4EveryoneSetup {
                 Console.WriteLine($"Get changes platform extensions: {featureExtension.Name}");
                 featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
             }
-            
-            builder.AppendLine($"### [Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/{Constants.LastTag}...{Constants.CurrentTag})");
-            builder.AppendLine(Extensions.GetChanges("https://github.com/Bim4Everyone/Bim4EveryoneSetup", default));
-            builder.AppendLine();
+
+            string value = Extensions.GetChanges("https://github.com/Bim4Everyone/Bim4EveryoneSetup", default);
+            if(!string.IsNullOrEmpty(value)) {
+                builder.AppendLine($"### [Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/{Constants.LastTag}...{Constants.CurrentTag})");
+                builder.AppendLine(value);
+                builder.AppendLine();
+            }
 
             Extensions.InsertText("../../CHANGELOG.md", builder.ToString());
         }

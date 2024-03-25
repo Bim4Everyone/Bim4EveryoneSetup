@@ -92,6 +92,6 @@ namespace BIM4EveryoneSetup {
         public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
         
         
-        public static readonly string LastTag = Process2.StartProcess("git", "tag").Last();
+        public static readonly string LastTag = Process2.StartProcess("git", "tag --sort=-creatordate").First();
     }
 }
