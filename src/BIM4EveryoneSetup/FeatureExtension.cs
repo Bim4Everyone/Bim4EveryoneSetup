@@ -80,13 +80,13 @@ namespace BIM4EveryoneSetup {
                 ?.ToObject<JToken[]>()
                 .Select(item => new FeatureExtension() {
                     Name = item.Value<string>("name") + "." + item.Value<string>("type"),
-                    RepositoryUrl = item.Value<string>("url"),
+                    RepositoryUrl = item.Value<string>("url").Replace(".git", string.Empty),
                     Description = item.Value<string>("description"),
                     Enabled = item.Value<bool>("builtin"),
                     AllowChange = !item.Value<bool>("builtin")
                 }) ?? Enumerable.Empty<FeatureExtension>();
         }
-        
+
         private string CreateRepoUrlWithToken(string token) {
             return new Uri(new UriBuilder(RepositoryUrl) {UserName = token}.ToString()).ToString();
         }
