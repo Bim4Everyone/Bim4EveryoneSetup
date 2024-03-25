@@ -28,34 +28,25 @@ namespace BIM4EveryoneSetup {
         public string SourceDirFullPath => Path.GetDirectoryName(SourceFullPath);
 
         public void GitClone() {
-            var processStartInfo = new ProcessStartInfo() {
-                FileName = "git",
-                Arguments = $"clone {RepositoryUrl} {SourceFullPath}",
-                CreateNoWindow = true,
-                UseShellExecute = false
-            };
-
-            using(Process process = Process.Start(processStartInfo)) {
-                process.WaitForExit();
-            }
+            Process2.StartProcess("git", arguments: $"clone {RepositoryUrl} {SourceFullPath}");
         }
 
         public void UpdateRemote(string token) {
-            var processStartInfo = new ProcessStartInfo() {
-                FileName = "git",
-                Arguments = $"remote set-url origin ${CreateRepoUrlWithToken(token)}",
-                CreateNoWindow = true,
-                UseShellExecute = false,
-                WorkingDirectory = SourceDirFullPath
-            };
-
-            using(Process process = Process.Start(processStartInfo)) {
-                process.WaitForExit();
-            }
+            Process2.StartProcess("git",
+                arguments: $"remote set-url origin ${CreateRepoUrlWithToken(token)}",
+                workingDirectory: SourceDirFullPath);
         }
 
-        private string CreateRepoUrlWithToken(string token) {
-            return new Uri(new UriBuilder(RepositoryUrl) {UserName = token}.ToString()).ToString();
+        public void CreateTag(string tag) {
+            Process2.StartProcess("git",
+                arguments: $"tag {tag}",
+                workingDirectory: SourceDirFullPath);
+        }
+
+        public void PushTag(string tag) {
+            Process2.StartProcess("git",
+                arguments: $"push origin {tag}",
+                workingDirectory: SourceDirFullPath);
         }
 
         public Dir CreateDir() {
@@ -82,6 +73,10 @@ namespace BIM4EveryoneSetup {
                     Enabled = item.Value<bool>("builtin"),
                     AllowChange = !item.Value<bool>("builtin")
                 }) ?? Enumerable.Empty<FeatureExtension>();
+        }
+        
+        private string CreateRepoUrlWithToken(string token) {
+            return new Uri(new UriBuilder(RepositoryUrl) {UserName = token}.ToString()).ToString();
         }
     }
 }

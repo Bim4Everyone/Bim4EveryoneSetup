@@ -43,7 +43,17 @@ namespace BIM4EveryoneSetup {
         }
 
         private static void BuildChangelog() {
-            throw new NotImplementedException();
+            // Обновляем расширения (чтобы возможно было пушить)
+            foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+                Console.WriteLine($"Update remote platform extension: {featureExtension.Name}");
+                featureExtension.UpdateRemote("");
+                
+                Console.WriteLine($"Create tag platform extension: {featureExtension.Name}");
+                featureExtension.CreateTag(Constants.CurrentVersionTag);
+                
+                Console.WriteLine($"Push tag platform extension: {featureExtension.Name}");
+                featureExtension.PushTag(Constants.CurrentVersionTag);
+            }
         }
 
         private static string BuildMsi() {
