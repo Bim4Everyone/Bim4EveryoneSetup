@@ -16,17 +16,21 @@ namespace BIM4EveryoneSetup {
         public string Id => $"_{Name.Replace('-', '_')}_";
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public string RepositoryName { get; private set; }
+        public string RepositoryUrl { get; private set; }
 
         public bool Enabled { get; private set; }
         public bool AllowChange { get; private set; }
+        
         public string SourcePath => Path.Combine(Constants.BinPath, Name);
         public string TargetPath => Path.Combine(Constants.pyRevitExtensionsPath, Name);
+        
+        public string SourceFullPath => Path.GetFullPath(SourcePath);
+        public string SourceDirFullPath => Path.GetDirectoryName(SourceFullPath);
 
         public void GitClone() {
             var processStartInfo = new ProcessStartInfo() {
                 FileName = "git",
-                Arguments = $"clone {RepositoryName} {Path.GetFullPath(SourcePath)}",
+                Arguments = $"clone {RepositoryUrl} {SourceFullPath}",
                 CreateNoWindow = true,
                 UseShellExecute = false
             };
@@ -34,6 +38,24 @@ namespace BIM4EveryoneSetup {
             using(Process process = Process.Start(processStartInfo)) {
                 process.WaitForExit();
             }
+        }
+
+        public void UpdateRemote(string token) {
+            var processStartInfo = new ProcessStartInfo() {
+                FileName = "git",
+                Arguments = $"remote set-url origin ${CreateRepoUrlWithToken(token)}",
+                CreateNoWindow = true,
+                UseShellExecute = false,
+                WorkingDirectory = SourceDirFullPath
+            };
+
+            using(Process process = Process.Start(processStartInfo)) {
+                process.WaitForExit();
+            }
+        }
+
+        private string CreateRepoUrlWithToken(string token) {
+            return new Uri(new UriBuilder(RepositoryUrl) {UserName = token}.ToString()).ToString();
         }
 
         public Dir CreateDir() {
@@ -55,7 +77,7 @@ namespace BIM4EveryoneSetup {
                 ?.ToObject<JToken[]>()
                 .Select(item => new FeatureExtension() {
                     Name = item.Value<string>("name") + "." + item.Value<string>("type"),
-                    RepositoryName = item.Value<string>("url"),
+                    RepositoryUrl = item.Value<string>("url"),
                     Description = item.Value<string>("description"),
                     Enabled = item.Value<bool>("builtin"),
                     AllowChange = !item.Value<bool>("builtin")

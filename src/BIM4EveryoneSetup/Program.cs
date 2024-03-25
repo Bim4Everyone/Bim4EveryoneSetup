@@ -37,6 +37,13 @@ namespace BIM4EveryoneSetup {
             
             Console.WriteLine("Building platform settings msi");
             BuildMsi();
+            
+            Console.WriteLine("Building extensions changelog");
+            BuildChangelog();
+        }
+
+        private static void BuildChangelog() {
+            throw new NotImplementedException();
         }
 
         private static string BuildMsi() {
