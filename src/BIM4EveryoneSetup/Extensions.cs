@@ -35,7 +35,7 @@ namespace BIM4EveryoneSetup {
         public static string GetChanges(string repoUrl, string workingDir) {
             IEnumerable<string> list = Process2.StartProcess(
                     "git",
-                    $"log {Constants.LastTag}..HEAD",
+                    $"log --pretty=format:%s {Constants.LastTag}..HEAD",
                     workingDirectory: workingDir)
                 .Select(item => Regex.Replace(item, @"#\d+", $@"[\1]({repoUrl}/pull/\1)"));
 
