@@ -50,6 +50,13 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: bin/msi_version.txt
+          
+      # Get changelog
+      - name: Get MSI Version
+        id: changelog
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: bin/CHANGELOG.md
       
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload
@@ -73,36 +80,14 @@ jobs:
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
           body: |
-            ## 🆕 Обновлен установщик платформы Bim4Everyone 
-  
-            [![GitHub all releases](https://img.shields.io/github/downloads/Bim4Everyone/Bim4EveryoneSetup/total)](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
-  
-            [![Telegram News](https://img.shields.io/badge/Telegram-News-blue.svg) ](https://t.me/bim4everyone_news)
-            [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/bim4everyone_group)
-            [![Telegram Discuss](https://img.shields.io/badge/Telegram-Discuss-blue.svg)](https://t.me/bim4everyone_discuss)
-            
-            Bim4Everyone - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
-
-  notificate:
-    concurrency: ci-${{ github.ref }}
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      # Telegram Notify: https://github.com/appleboy/telegram-action/
-      - name: Telegram Notify
-        if: github.ref == env.release_branch
-        uses: appleboy/telegram-action@v0.1.1
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            👋 *Обновлен установщик платформы Bim4Everyone*
+            **🚀 Bim4Everyone**
+            ----
             
             ⬇️ [Скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
             📰 [Telegram News](https://t.me/bim4everyone_news)
             👥 [Telegram Group](https://t.me/bim4everyone_group)
             🙊 [Telegram Discuss](https://t.me/bim4everyone_discuss)
             
-            *Bim4Everyone* - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
-          
+            ----
+            
+            ${{ steps.changelog.outputs.content }}

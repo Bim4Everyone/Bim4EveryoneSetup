@@ -1,0 +1,22 @@
+name: notificate
+
+on:
+  # manual
+  workflow_dispatch:
+  
+  # when release published
+  release:
+    types: [ published ]
+
+jobs:
+  notificate:
+    runs-on: ubuntu-latest
+    steps:
+      # Telegram Notify: https://github.com/appleboy/telegram-action/
+      - name: Telegram Notify
+        uses: appleboy/telegram-action@v0.1.1
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: ${{ github.event.release.body }}
