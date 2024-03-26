@@ -48,6 +48,11 @@ namespace BIM4EveryoneSetup {
         }
 
         public static void InsertText(string filename, string text) {
+            if(!File.Exists(filename)) {
+                File.WriteAllText(filename, text);
+                return;
+            }
+
             var tempFile = Path.GetTempFileName();
             using(var writer = new StreamWriter(tempFile))
             using(var reader = new StreamReader(filename)) {
@@ -55,7 +60,7 @@ namespace BIM4EveryoneSetup {
                 while(!reader.EndOfStream)
                     writer.WriteLine(reader.ReadLine());
             }
-
+            
             File.Copy(tempFile, filename, true);
             File.Delete(tempFile);
         }

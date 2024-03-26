@@ -13,11 +13,14 @@ namespace BIM4EveryoneSetup {
         public static readonly string ProductDescription =
             "Платформа разрабатываемая для упрощения разработки проектной документации в Autodesk Revit.";
 
+        public static readonly string ProductUrl = "https://github.com/Bim4Everyone/Bim4EveryoneSetup";
         public static readonly string ProductHelpUrl = "https://github.com/Bim4Everyone";
         public static readonly string ProductAboutUrl = "https://github.com/Bim4Everyone";
         public static readonly string ProductContacts = "https://github.com/Bim4Everyone";
 
         public static readonly string BinPath = "../../bin";
+        public static readonly string ChangelogFile = "../../CHANGELOG.md";
+        public static readonly string TelegramChangelog = "../../bin/CHANGELOG.md";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersion = "4.8.14.24016";

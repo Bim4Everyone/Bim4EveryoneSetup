@@ -61,14 +61,15 @@ namespace BIM4EveryoneSetup {
                 featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
             }
 
-            string value = Extensions.GetChanges("https://github.com/Bim4Everyone/Bim4EveryoneSetup", default);
+            string value = Extensions.GetChanges(Constants.ProductUrl, default);
             if(!string.IsNullOrEmpty(value)) {
-                builder.AppendLine($"### [Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/{Constants.LastTag}...{Constants.CurrentTag})");
+                builder.AppendLine($"### [Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
                 builder.AppendLine(value);
                 builder.AppendLine();
             }
-
-            Extensions.InsertText("../../CHANGELOG.md", builder.ToString());
+            
+            Extensions.InsertText(Constants.ChangelogFile, builder.ToString());
+            Extensions.InsertText(Constants.TelegramChangelog, builder.ToString());
         }
 
         private static string BuildMsi() {
