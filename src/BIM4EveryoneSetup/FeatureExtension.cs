@@ -56,7 +56,7 @@ namespace BIM4EveryoneSetup {
                 return;
             }
             
-            stringBuilder.AppendLine($"### [{Name}]({RepositoryUrl}/compare/{lastTag}...{tag})");
+            stringBuilder.AppendLine($"[{Name}]({RepositoryUrl}/compare/{lastTag}...{tag})");
             stringBuilder.AppendLine(changes);
             stringBuilder.AppendLine();
         }

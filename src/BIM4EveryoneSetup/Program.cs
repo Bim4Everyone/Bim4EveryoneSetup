@@ -44,7 +44,7 @@ namespace BIM4EveryoneSetup {
 
         private static void BuildChangelog() {
             StringBuilder builder = new StringBuilder();
-            builder.AppendLine($"## {Constants.CurrentTag}");
+            builder.AppendLine($"**{Constants.CurrentTag}**  ");
             
             // Обновляем расширения (чтобы возможно было пушить)
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
@@ -63,11 +63,12 @@ namespace BIM4EveryoneSetup {
 
             string value = Extensions.GetChanges(Constants.ProductUrl, default);
             if(!string.IsNullOrEmpty(value)) {
-                builder.AppendLine($"### [Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
+                builder.AppendLine($"[Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
                 builder.AppendLine(value);
                 builder.AppendLine();
             }
             
+            builder.AppendLine("____");
             Extensions.InsertText(Constants.ChangelogFile, builder.ToString());
             Extensions.InsertText(Constants.TelegramChangelog, builder.ToString());
         }
