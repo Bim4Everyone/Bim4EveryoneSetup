@@ -21,11 +21,11 @@
     <PackageReference Include="Caliburn.Micro" Version="4.0.212" />
     <PackageReference Include="Caliburn.Micro.Core" Version="4.0.212" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="WixSharp_wix4" Version="2.0.5" />
-    <PackageReference Include="WixSharp_wix4.bin" Version="2.0.5" />
-    <PackageReference Include="WixSharp-wix4.WPF" Version="2.0.5" />
-    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.3" />
-    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.3" />
+    <PackageReference Include="WixSharp_wix4" Version="2.1.2" />
+    <PackageReference Include="WixSharp_wix4.bin" Version="2.1.2" />
+    <PackageReference Include="WixSharp-wix4.WPF" Version="2.1.2" />
+    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.5" />
+    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,44 +83,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd .\
-set ide=true
-
-set EXTENSIONS_TOKEN=$(EXTENSIONS_TOKEN)
-
-set AUTOUPDATE=$(AUTOUPDATE)
-set ROCKETMODE=$(ROCKETMODE)
-set CHECKUPDATES=$(CHECKUPDATES)
-set USERCANEXTEND=$(USERCANEXTEND)
-set USERCANCONFIG=$(USERCANCONFIG)
-set COREUSERLOCALE=$(COREUSERLOCALE)
-
-set CORP_NAME=$(CORP_NAME)
-set CORP_SETTINGS_PATH=$(CORP_SETTINGS_PATH)
-
-set TELEMETRY_ACTIVE=$(TELEMETRY_ACTIVE)
-set TELEMETRY_USE_UTC=$(TELEMETRY_USE_UTC)
-set TELEMETRY_SERVER_URL=$(TELEMETRY_SERVER_URL)
-
-set APP_TELEMETRY_ACTIVE=$(APP_TELEMETRY_ACTIVE)
-set APP_TELEMETRY_EVENT_FLAGS=$(APP_TELEMETRY_EVENT_FLAGS)
-set APP_TELEMETRY_SERVER_URL=$(APP_TELEMETRY_SERVER_URL)
-
-set LOG_TRACE_ACTIVE=$(LOG_TRACE_ACTIVE)
-set LOG_TRACE_LEVEL=$(LOG_TRACE_LEVEL)
-set LOG_TRACE_SERVER_URL=$(LOG_TRACE_SERVER_URL)
-
-set SOCIALS_MAIN=$(SOCIALS_MAIN)
-set SOCIALS_NEWS=$(SOCIALS_NEWS)
-set SOCIALS_DISCUSS=$(SOCIALS_DISCUSS)
-set SOCIALS_2D=$(SOCIALS_2D)
-set SOCIALS_BIM=$(SOCIALS_BIM)
-set SOCIALS_AR=$(SOCIALS_AR)
-set SOCIALS_KR=$(SOCIALS_KR)
-set SOCIALS_OVVK=$(SOCIALS_OVVK)
-set SOCIALS_PAGE=$(SOCIALS_PAGE)
-set SOCIALS_DOWNLOADS=$(SOCIALS_DOWNLOADS)
-&quot;$(TargetPath)&quot;" />
+    <Exec Command="cd .\&#xD;&#xA;set ide=true&#xD;&#xA;&#xD;&#xA;set EXTENSIONS_TOKEN=$(EXTENSIONS_TOKEN)&#xD;&#xA;&#xD;&#xA;set AUTOUPDATE=$(AUTOUPDATE)&#xD;&#xA;set ROCKETMODE=$(ROCKETMODE)&#xD;&#xA;set CHECKUPDATES=$(CHECKUPDATES)&#xD;&#xA;set USERCANEXTEND=$(USERCANEXTEND)&#xD;&#xA;set USERCANCONFIG=$(USERCANCONFIG)&#xD;&#xA;set COREUSERLOCALE=$(COREUSERLOCALE)&#xD;&#xA;&#xD;&#xA;set CORP_NAME=$(CORP_NAME)&#xD;&#xA;set CORP_SETTINGS_PATH=$(CORP_SETTINGS_PATH)&#xD;&#xA;&#xD;&#xA;set TELEMETRY_ACTIVE=$(TELEMETRY_ACTIVE)&#xD;&#xA;set TELEMETRY_USE_UTC=$(TELEMETRY_USE_UTC)&#xD;&#xA;set TELEMETRY_SERVER_URL=$(TELEMETRY_SERVER_URL)&#xD;&#xA;&#xD;&#xA;set APP_TELEMETRY_ACTIVE=$(APP_TELEMETRY_ACTIVE)&#xD;&#xA;set APP_TELEMETRY_EVENT_FLAGS=$(APP_TELEMETRY_EVENT_FLAGS)&#xD;&#xA;set APP_TELEMETRY_SERVER_URL=$(APP_TELEMETRY_SERVER_URL)&#xD;&#xA;&#xD;&#xA;set LOG_TRACE_ACTIVE=$(LOG_TRACE_ACTIVE)&#xD;&#xA;set LOG_TRACE_LEVEL=$(LOG_TRACE_LEVEL)&#xD;&#xA;set LOG_TRACE_SERVER_URL=$(LOG_TRACE_SERVER_URL)&#xD;&#xA;&#xD;&#xA;set SOCIALS_MAIN=$(SOCIALS_MAIN)&#xD;&#xA;set SOCIALS_NEWS=$(SOCIALS_NEWS)&#xD;&#xA;set SOCIALS_DISCUSS=$(SOCIALS_DISCUSS)&#xD;&#xA;set SOCIALS_2D=$(SOCIALS_2D)&#xD;&#xA;set SOCIALS_BIM=$(SOCIALS_BIM)&#xD;&#xA;set SOCIALS_AR=$(SOCIALS_AR)&#xD;&#xA;set SOCIALS_KR=$(SOCIALS_KR)&#xD;&#xA;set SOCIALS_OVVK=$(SOCIALS_OVVK)&#xD;&#xA;set SOCIALS_PAGE=$(SOCIALS_PAGE)&#xD;&#xA;set SOCIALS_DOWNLOADS=$(SOCIALS_DOWNLOADS)&#xD;&#xA;&quot;$(TargetPath)&quot;" />
   </Target>
 
 </Project>
