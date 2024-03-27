@@ -38,7 +38,8 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine("Building platform settings msi");
             BuildMsi();
 
-            string branchName = Process2.StartProcess("git", "branch --show-current").First();
+            string branchName = Environment.GetEnvironmentVariable("GITHUB_REF")
+                                ?? Process2.StartProcess("git", "branch --show-current").First();
             Console.WriteLine($"Current branch name: {branchName}");
 
             if(branchName.Equals("main")
