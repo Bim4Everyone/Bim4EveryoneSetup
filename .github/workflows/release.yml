@@ -62,6 +62,21 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: bin/CHANGELOG.md
+
+      # Update git user
+      - name: Update git user
+        if: github.ref == env.release_branch
+        run: |
+          git config --global user.name '${{ secrets.GIT_USER_NAME }}'
+          git config --global user.email '${{ secrets.GIT_USER_EMAIL }}'
+      
+      # Commit and push changelog
+      - name: Commit and push changelog
+        if: github.ref == env.release_branch
+        run: |
+          git add CHANGELOG.md
+          git commit -m "Обновлен CHANGELOG.md"
+          git push
           
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
