@@ -16,30 +16,38 @@ namespace BIM4EveryoneSetup {
         public static void Main() {
             // Создаем папку, куда сохраняем билд
             Directory.CreateDirectory(Constants.BinPath);
-            
+
             // Создаем файл с версией
             Console.WriteLine("Creating msi version file");
             File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentTag);
-            
+
             // Выкачиваем установщик pyRevit
             Console.WriteLine("Downloading pyRevit installer");
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
-            
+
             // Выкачиваем файл расширений платформы
             Console.WriteLine("Downloading platform extensions.json");
             Extensions.DownloadFile(Constants.ExtensionsFileUrl, Constants.ExtensionsAssetFile);
-            
+
             // Выкачиваем все расширения
-            foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+            foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                 Console.WriteLine($"Downloading platform extension: {featureExtension.Name}");
                 featureExtension.GitClone();
             }
-            
+
             Console.WriteLine("Building platform settings msi");
             BuildMsi();
+
+            string branchName = Process2.StartProcess("git", "branch --show-current").First();
+            Console.WriteLine($"Current branch name: {branchName}");
             
-            Console.WriteLine("Building extensions changelog");
-            BuildChangelog();
+            if(branchName.Equals("main")
+               || branchName.Equals("master")) {
+                Console.WriteLine("Building extensions changelog");
+                BuildChangelog();
+            } else {
+                Console.WriteLine("Skipping building extensions changelog");
+            }
         }
 
         private static void BuildChangelog() {
