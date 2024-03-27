@@ -20,9 +20,6 @@ jobs:
   build:
     name: build
     runs-on: windows-latest
-    outputs:
-      release_name: ${{ fromJSON(steps.publish-release.outputs.assets)[0].name }}
-      release_download_url: ${{ fromJSON(steps.publish-release.outputs.assets)[0].browser_download_url }}
     steps:
       - uses: actions/checkout@v4
       
@@ -50,13 +47,6 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: bin/msi_version.txt
-          
-      # Get changelog
-      - name: Get MSI Version
-        id: changelog
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: bin/CHANGELOG.md
       
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload
@@ -65,6 +55,14 @@ jobs:
           name: Bim4Everyone
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
       
+      # Get changelog
+      - name: Get changelog
+        id: changelog
+        if: github.ref == env.release_branch
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: bin/CHANGELOG.md
+          
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
         id: publish-release
@@ -81,13 +79,13 @@ jobs:
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
           body: |
             **🚀 Bim4Everyone**
-            ----
+            ____
             
             ⬇️ [Скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
             📰 [Telegram News](https://t.me/bim4everyone_news)
             👥 [Telegram Group](https://t.me/bim4everyone_group)
             🙊 [Telegram Discuss](https://t.me/bim4everyone_discuss)
             
-            ----
+            ____
             
             ${{ steps.changelog.outputs.content }}
