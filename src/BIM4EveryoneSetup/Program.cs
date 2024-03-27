@@ -40,7 +40,7 @@ namespace BIM4EveryoneSetup {
 
             string branchName = Process2.StartProcess("git", "branch --show-current").First();
             Console.WriteLine($"Current branch name: {branchName}");
-            
+
             if(branchName.Equals("main")
                || branchName.Equals("master")) {
                 Console.WriteLine("Building extensions changelog");
@@ -56,16 +56,18 @@ namespace BIM4EveryoneSetup {
             
             // Обновляем расширения (чтобы возможно было пушить)
             foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
-                Console.WriteLine($"Update remote platform extension: {featureExtension.Name}");
-                featureExtension.UpdateRemote("");
+                Console.WriteLine($"{featureExtension.Name}:");
                 
-                Console.WriteLine($"Create tag platform extension: {featureExtension.Name}");
+                Console.WriteLine($"\tUpdate remote");
+                featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("EXTENSIONS_TOKEN"));
+                
+                Console.WriteLine($"\tCreate tag");
                 featureExtension.CreateTag(Constants.CurrentTag);
                 
-                Console.WriteLine($"Push tag platform extension: {featureExtension.Name}");
+                Console.WriteLine($"\tPush tag");
                 featureExtension.PushTag(Constants.CurrentTag);
                 
-                Console.WriteLine($"Get changes platform extensions: {featureExtension.Name}");
+                Console.WriteLine($"\tGet changes");
                 featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
             }
 

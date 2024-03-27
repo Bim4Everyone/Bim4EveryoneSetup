@@ -35,6 +35,10 @@
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
+  
+  <PropertyGroup Label="CI">
+    <EXTENSIONS_TOKEN>""</EXTENSIONS_TOKEN>
+  </PropertyGroup>
 
   <PropertyGroup Label="Settings">
     <AUTOUPDATE>enable</AUTOUPDATE>
@@ -81,6 +85,9 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="cd .\
 set ide=true
+
+set EXTENSIONS_TOKEN=$(EXTENSIONS_TOKEN)
+
 set AUTOUPDATE=$(AUTOUPDATE)
 set ROCKETMODE=$(ROCKETMODE)
 set CHECKUPDATES=$(CHECKUPDATES)

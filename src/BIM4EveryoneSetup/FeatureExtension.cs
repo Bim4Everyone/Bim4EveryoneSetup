@@ -34,7 +34,7 @@ namespace BIM4EveryoneSetup {
 
         public void UpdateRemote(string token) {
             Process2.StartProcess("git",
-                arguments: $"remote set-url origin ${CreateRepoUrlWithToken(token)}",
+                arguments: $"remote set-url origin {CreateRepoUrlWithToken(token)}",
                 workingDirectory: SourceFullPath);
         }
 
