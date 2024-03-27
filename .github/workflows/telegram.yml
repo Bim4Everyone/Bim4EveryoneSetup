@@ -1,4 +1,4 @@
-name: notificate
+name: telegram
 
 on:
   # manual
@@ -9,7 +9,7 @@ on:
     types: [ published ]
 
 jobs:
-  notificate:
+  telegram:
     runs-on: ubuntu-latest
     steps:
       # Telegram Notify: https://github.com/appleboy/telegram-action/
