@@ -41,7 +41,7 @@ jobs:
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
       - name: Build
-        run: dotnet build -c Release
+        run: dotnet build -c Release -p EXTENSIONS_TOKEN=${{ secrets.EXTENSIONS_TOKEN }}
       
       # Get msi version
       - name: Get MSI Version
