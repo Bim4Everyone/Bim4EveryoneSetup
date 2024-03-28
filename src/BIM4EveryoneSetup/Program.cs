@@ -60,7 +60,7 @@ namespace BIM4EveryoneSetup {
                 Console.WriteLine($"{featureExtension.Name}:");
                 
                 Console.WriteLine($"\tUpdate remote");
-                featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("EXTENSIONS_TOKEN"));
+                featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN"));
                 
                 Console.WriteLine($"\tCreate tag");
                 featureExtension.CreateTag(Constants.CurrentTag);
