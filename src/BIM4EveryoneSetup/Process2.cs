@@ -26,6 +26,8 @@ namespace BIM4EveryoneSetup {
                 StandardOutputEncoding = Encoding.UTF8
             };
 
+            Console.WriteLine($"[INF] > {startInfo.FileName} {startInfo.Arguments}");
+
             Process process = Process.Start(startInfo);
             if(process == default) {
                 return Enumerable.Empty<string>();
@@ -38,7 +40,7 @@ namespace BIM4EveryoneSetup {
                     return;
 
                 output.Add(e.Data);
-                Console.WriteLine("INFO: " + e.Data);
+                Console.WriteLine("[INF] " + e.Data);
             };
 
             process.ErrorDataReceived += (_, e) => {
@@ -46,7 +48,7 @@ namespace BIM4EveryoneSetup {
                     return;
 
                 output.Add(e.Data);
-                Console.WriteLine("ERROR: " + e.Data);
+                Console.WriteLine("[ERR] " + e.Data);
             };
 
             process.BeginOutputReadLine();
