@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,13 +38,15 @@ namespace BIM4EveryoneSetup {
                     return;
 
                 output.Add(e.Data);
+                Console.WriteLine("INFO: " + e.Data);
             };
-           
+
             process.ErrorDataReceived += (_, e) => {
                 if(e.Data == null)
                     return;
 
                 output.Add(e.Data);
+                Console.WriteLine("ERROR: " + e.Data);
             };
 
             process.BeginOutputReadLine();
