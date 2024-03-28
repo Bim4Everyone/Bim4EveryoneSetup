@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 
 using Newtonsoft.Json.Linq;
 
@@ -16,24 +18,47 @@ namespace BIM4EveryoneSetup {
         public string Id => $"_{Name.Replace('-', '_')}_";
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public string RepositoryName { get; private set; }
+        public string RepositoryUrl { get; private set; }
 
         public bool Enabled { get; private set; }
         public bool AllowChange { get; private set; }
+        
         public string SourcePath => Path.Combine(Constants.BinPath, Name);
         public string TargetPath => Path.Combine(Constants.pyRevitExtensionsPath, Name);
+        
+        public string SourceFullPath => Path.GetFullPath(SourcePath);
 
         public void GitClone() {
-            var processStartInfo = new ProcessStartInfo() {
-                FileName = "git",
-                Arguments = $"clone {RepositoryName} {Path.GetFullPath(SourcePath)}",
-                CreateNoWindow = true,
-                UseShellExecute = false
-            };
+            Process2.StartProcess("git", arguments: $"clone {RepositoryUrl} {SourceFullPath}");
+        }
 
-            using(Process process = Process.Start(processStartInfo)) {
-                process.WaitForExit();
+        public void UpdateRemote(string token) {
+            Process2.StartProcess("git",
+                arguments: $"remote set-url origin {CreateRepoUrlWithToken(token)}",
+                workingDirectory: SourceFullPath);
+        }
+
+        public void CreateTag(string tag) {
+            Process2.StartProcess("git",
+                arguments: $"tag {tag}",
+                workingDirectory: SourceFullPath);
+        }
+
+        public void PushTag(string tag) {
+            Process2.StartProcess("git",
+                arguments: $"push origin {tag}",
+                workingDirectory: SourceFullPath);
+        }
+
+        public void GetChanges(string tag, string lastTag, StringBuilder stringBuilder) {
+            string changes = Extensions.GetChanges(RepositoryUrl, SourceFullPath);
+            if(string.IsNullOrEmpty(changes)) {
+                return;
             }
+            
+            stringBuilder.AppendLine($"[{Name}]({RepositoryUrl}/compare/{lastTag}...{tag})");
+            stringBuilder.AppendLine(changes);
+            stringBuilder.AppendLine();
         }
 
         public Dir CreateDir() {
@@ -55,11 +80,15 @@ namespace BIM4EveryoneSetup {
                 ?.ToObject<JToken[]>()
                 .Select(item => new FeatureExtension() {
                     Name = item.Value<string>("name") + "." + item.Value<string>("type"),
-                    RepositoryName = item.Value<string>("url"),
+                    RepositoryUrl = item.Value<string>("url").Replace(".git", string.Empty),
                     Description = item.Value<string>("description"),
                     Enabled = item.Value<bool>("builtin"),
                     AllowChange = !item.Value<bool>("builtin")
                 }) ?? Enumerable.Empty<FeatureExtension>();
+        }
+
+        private string CreateRepoUrlWithToken(string token) {
+            return new Uri(new UriBuilder(RepositoryUrl) {UserName = token}.ToString()).ToString();
         }
     }
 }

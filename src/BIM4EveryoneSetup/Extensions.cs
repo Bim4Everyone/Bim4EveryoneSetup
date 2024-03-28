@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
 
 namespace BIM4EveryoneSetup {
     internal static class Extensions {
@@ -22,10 +26,43 @@ namespace BIM4EveryoneSetup {
             if(File.Exists(fileName)) {
                 return;
             }
-            
+
             using(var client = new WebClient()) {
                 client.DownloadFile(address, fileName);
             }
+        }
+
+        public static string GetChanges(string repoUrl, string workingDir) {
+            string[] list = Process2.StartProcess(
+                    "git",
+                    $"log --pretty=format:%s {Constants.LastTag}..HEAD",
+                    workingDirectory: workingDir)
+                .Where(item => !string.IsNullOrEmpty(item))
+                .Select(item => Regex.Replace(item, @"#\d+", $@"[$0]({repoUrl}/pull/$0)"))
+                .Select(item => item.Replace("/pull/#", "/pull/"))
+                .ToArray();
+
+            return list.Length == 0
+                ? default
+                : Environment.NewLine + " - " + string.Join(Environment.NewLine + " - ", list).Trim();
+        }
+
+        public static void InsertText(string filename, string text) {
+            if(!File.Exists(filename)) {
+                File.WriteAllText(filename, text);
+                return;
+            }
+
+            var tempFile = Path.GetTempFileName();
+            using(var writer = new StreamWriter(tempFile))
+            using(var reader = new StreamReader(filename)) {
+                writer.WriteLine(text);
+                while(!reader.EndOfStream)
+                    writer.WriteLine(reader.ReadLine());
+            }
+            
+            File.Copy(tempFile, filename, true);
+            File.Delete(tempFile);
         }
     }
 }

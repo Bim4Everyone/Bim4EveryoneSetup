@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 
 using WixSharp;
 
@@ -12,11 +13,14 @@ namespace BIM4EveryoneSetup {
         public static readonly string ProductDescription =
             "Платформа разрабатываемая для упрощения разработки проектной документации в Autodesk Revit.";
 
+        public static readonly string ProductUrl = "https://github.com/Bim4Everyone/Bim4EveryoneSetup";
         public static readonly string ProductHelpUrl = "https://github.com/Bim4Everyone";
         public static readonly string ProductAboutUrl = "https://github.com/Bim4Everyone";
         public static readonly string ProductContacts = "https://github.com/Bim4Everyone";
 
         public static readonly string BinPath = "../../bin";
+        public static readonly string ChangelogFile = "../../CHANGELOG.md";
+        public static readonly string TelegramChangelog = "../../bin/CHANGELOG.md";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersion = "4.8.14.24016";
@@ -30,7 +34,9 @@ namespace BIM4EveryoneSetup {
             Path.Combine(BinPath, $"pyRevit_{pyRevitVersion}_signed.exe");
 
         public static readonly string MsiVersionFile = Path.Combine(BinPath, "msi_version.txt");
-        public static readonly Version CurrentVersion = new Version(DateTime.Now.ToString("yy.MM.dd"));
+        public static readonly string CurrentDate = DateTime.Now.ToString("yy.MM.dd");
+        public static readonly string CurrentTag = $"v{CurrentDate}";
+        public static readonly Version CurrentVersion = new Version(CurrentDate);
 
         public static readonly string
             MyDocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -87,5 +93,8 @@ namespace BIM4EveryoneSetup {
         public static readonly Condition RepairCondition = new Condition(" (REINSTALL) ");
         public static readonly Condition RemoveCondition = new Condition(" (REMOVE=\"ALL\") ");
         public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
+        
+        
+        public static readonly string LastTag = Process2.StartProcess("git", "tag --sort=-creatordate").First();
     }
 }

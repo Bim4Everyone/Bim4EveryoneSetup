@@ -16,27 +16,72 @@ namespace BIM4EveryoneSetup {
         public static void Main() {
             // Создаем папку, куда сохраняем билд
             Directory.CreateDirectory(Constants.BinPath);
-            
+
             // Создаем файл с версией
             Console.WriteLine("Creating msi version file");
-            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentVersion.ToString());
-            
+            File.WriteAllText(Constants.MsiVersionFile, Constants.CurrentTag);
+
             // Выкачиваем установщик pyRevit
             Console.WriteLine("Downloading pyRevit installer");
             Extensions.DownloadFile(Constants.pyRevitInstallUrl, Constants.pyRevitInstallFile);
-            
+
             // Выкачиваем файл расширений платформы
             Console.WriteLine("Downloading platform extensions.json");
             Extensions.DownloadFile(Constants.ExtensionsFileUrl, Constants.ExtensionsAssetFile);
-            
+
             // Выкачиваем все расширения
-            foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+            foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                 Console.WriteLine($"Downloading platform extension: {featureExtension.Name}");
                 featureExtension.GitClone();
             }
-            
+
             Console.WriteLine("Building platform settings msi");
             BuildMsi();
+
+            string branchName = Environment.GetEnvironmentVariable("GITHUB_REF")
+                                ?? Process2.StartProcess("git", "branch --show-current").First();
+            Console.WriteLine($"Current branch name: {branchName}");
+
+            if(branchName.EndsWith("main")
+               || branchName.EndsWith("master")) {
+                Console.WriteLine("Building extensions changelog");
+                BuildChangelog();
+            } else {
+                Console.WriteLine("Skipping building extensions changelog");
+            }
+        }
+
+        private static void BuildChangelog() {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine($"**{Constants.CurrentTag}**  ");
+            
+            // Обновляем расширения (чтобы возможно было пушить)
+            foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+                Console.WriteLine($"{featureExtension.Name}:");
+                
+                Console.WriteLine($"\tUpdate remote");
+                featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("EXTENSIONS_TOKEN"));
+                
+                Console.WriteLine($"\tCreate tag");
+                featureExtension.CreateTag(Constants.CurrentTag);
+                
+                Console.WriteLine($"\tPush tag");
+                featureExtension.PushTag(Constants.CurrentTag);
+                
+                Console.WriteLine($"\tGet changes");
+                featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
+            }
+
+            string value = Extensions.GetChanges(Constants.ProductUrl, default);
+            if(!string.IsNullOrEmpty(value)) {
+                builder.AppendLine($"[Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
+                builder.AppendLine(value);
+                builder.AppendLine();
+            }
+            
+            builder.AppendLine("____");
+            Extensions.InsertText(Constants.ChangelogFile, builder.ToString());
+            Extensions.InsertText(Constants.TelegramChangelog, builder.ToString());
         }
 
         private static string BuildMsi() {
@@ -58,7 +103,7 @@ namespace BIM4EveryoneSetup {
             // };
 
             project.OutDir = Constants.BinPath;
-            project.OutFileName = "Bim4Everyone_" + Constants.CurrentVersion;
+            project.OutFileName = "Bim4Everyone_" + Constants.CurrentTag;
 
             project.SetBinaries();
             project.SetProductUI();

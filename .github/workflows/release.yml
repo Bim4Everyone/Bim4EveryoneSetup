@@ -20,11 +20,10 @@ jobs:
   build:
     name: build
     runs-on: windows-latest
-    outputs:
-      release_name: ${{ fromJSON(steps.publish-release.outputs.assets)[0].name }}
-      release_download_url: ${{ fromJSON(steps.publish-release.outputs.assets)[0].browser_download_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       # Install the .NET 8.0 workload
       - name: Install .NET 8.0
@@ -39,10 +38,16 @@ jobs:
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
         run: dotnet tool install --global wix
+        
+      # Fix wix extensions: https://github.com/oleg-shilo/wixsharp/issues/1473
+      - name: Install WIX Extensions
+        run: |
+          wix extension add -g WixToolset.UI.wixext/4.0.5
+          wix extension add -g WixToolset.Util.wixext/4.0.5
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
       - name: Build
-        run: dotnet build -c Release
+        run: dotnet build -c Release -p EXTENSIONS_TOKEN=${{ secrets.EXTENSIONS_TOKEN }}
       
       # Get msi version
       - name: Get MSI Version
@@ -58,6 +63,29 @@ jobs:
           name: Bim4Everyone
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
       
+      # Get changelog
+      - name: Get changelog
+        id: changelog
+        if: github.ref == env.release_branch
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: bin/CHANGELOG.md
+
+      # Update git user
+      - name: Update git user
+        if: github.ref == env.release_branch
+        run: |
+          git config --global user.name '${{ secrets.GIT_USER_NAME }}'
+          git config --global user.email '${{ secrets.GIT_USER_EMAIL }}'
+      
+      # Commit and push changelog
+      - name: Commit and push changelog
+        if: github.ref == env.release_branch
+        run: |
+          git add CHANGELOG.md
+          git commit -m "Обновлен CHANGELOG.md"
+          git push
+          
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
         id: publish-release
@@ -66,43 +94,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v${{ steps.current-date.outputs.content }}
-          name: Bim4Everyone v${{ steps.current-date.outputs.content }}
+          tag_name: ${{ steps.current-date.outputs.content }}
+          name: Bim4Everyone ${{ steps.current-date.outputs.content }}
           draft: true
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
           body: |
-            ## 🆕 Обновлен установщик платформы Bim4Everyone 
-  
-            [![GitHub all releases](https://img.shields.io/github/downloads/Bim4Everyone/Bim4EveryoneSetup/total)](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
-  
-            [![Telegram News](https://img.shields.io/badge/Telegram-News-blue.svg) ](https://t.me/bim4everyone_news)
-            [![Telegram Group](https://img.shields.io/badge/Telegram-Group-blue.svg)](https://t.me/bim4everyone_group)
-            [![Telegram Discuss](https://img.shields.io/badge/Telegram-Discuss-blue.svg)](https://t.me/bim4everyone_discuss)
-            
-            Bim4Everyone - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
-
-  notificate:
-    concurrency: ci-${{ github.ref }}
-    needs: [build]
-    runs-on: ubuntu-latest
-    steps:
-      # Telegram Notify: https://github.com/appleboy/telegram-action/
-      - name: Telegram Notify
-        if: github.ref == env.release_branch
-        uses: appleboy/telegram-action@v0.1.1
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            👋 *Обновлен установщик платформы Bim4Everyone*
+            **🚀 Bim4Everyone**
+            ____
             
             ⬇️ [Скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
             📰 [Telegram News](https://t.me/bim4everyone_news)
             👥 [Telegram Group](https://t.me/bim4everyone_group)
             🙊 [Telegram Discuss](https://t.me/bim4everyone_discuss)
             
-            *Bim4Everyone* - это платформа созданная для упрощения разработки проектной документации в Autodesk Revit.
-          
+            ____
+            
+            ${{ steps.changelog.outputs.content }}
