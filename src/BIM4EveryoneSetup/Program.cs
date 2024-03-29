@@ -54,20 +54,20 @@ namespace BIM4EveryoneSetup {
         private static void BuildChangelog() {
             StringBuilder builder = new StringBuilder();
             builder.AppendLine($"**{Constants.CurrentTag}**  ");
-            
+
             // Обновляем расширения (чтобы возможно было пушить)
-            foreach (FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+            foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                 Console.WriteLine($"{featureExtension.Name}:");
-                
+
                 Console.WriteLine($"\tUpdate remote");
                 featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN"));
-                
+
                 Console.WriteLine($"\tCreate tag");
                 featureExtension.CreateTag(Constants.CurrentTag);
-                
+
                 Console.WriteLine($"\tPush tag");
                 featureExtension.PushTag(Constants.CurrentTag);
-                
+
                 Console.WriteLine($"\tGet changes");
                 featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
             }
@@ -78,10 +78,9 @@ namespace BIM4EveryoneSetup {
                 builder.AppendLine(value);
                 builder.AppendLine();
             }
-            
-            builder.AppendLine("____");
-            Extensions.InsertText(Constants.ChangelogFile, builder.ToString());
-            Extensions.InsertText(Constants.TelegramChangelog, builder.ToString());
+
+            Extensions.InsertText(Constants.ChangelogFile, builder.AppendLine("____").ToString());
+            File.WriteAllText(Constants.ReleaseChangelogFile, builder.ToString());
         }
 
         private static string BuildMsi() {

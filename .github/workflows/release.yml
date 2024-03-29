@@ -101,15 +101,4 @@ jobs:
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
-          body: |
-            **🚀 Bim4Everyone**
-            ____
-            
-            ⬇️ [Скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
-            📰 [Telegram News](https://t.me/bim4everyone_news)
-            👥 [Telegram Group](https://t.me/bim4everyone_group)
-            🙊 [Telegram Discuss](https://t.me/bim4everyone_discuss)
-            
-            ____
-            
-            ${{ steps.changelog.outputs.content }}
+          body: ${{ steps.changelog.outputs.content }}

@@ -20,7 +20,7 @@ namespace BIM4EveryoneSetup {
 
         public static readonly string BinPath = "../../bin";
         public static readonly string ChangelogFile = "../../CHANGELOG.md";
-        public static readonly string TelegramChangelog = "../../bin/CHANGELOG.md";
+        public static readonly string ReleaseChangelogFile = "../../bin/CHANGELOG.md";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersion = "4.8.14.24016";
