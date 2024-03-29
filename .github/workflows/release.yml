@@ -97,7 +97,7 @@ jobs:
         with:
           tag_name: ${{ steps.current-date.outputs.content }}
           name: Bim4Everyone ${{ steps.current-date.outputs.content }}
-          draft: true
+          draft: false
           prerelease: false
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
