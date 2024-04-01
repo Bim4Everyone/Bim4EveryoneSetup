@@ -1,3 +1,40 @@
+**v24.04.01**  
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.1.15...v24.04.01)
+
+ - RevitPlugins: Тестирование автосборки ([#6](https://github.com/Bim4Everyone/AdminExtensions/pull/6))
+ - RevitPlugins: Тестирование автосборки[#5](https://github.com/Bim4Everyone/AdminExtensions/pull/5)
+ - RevitPlugins: Тестирование автосборки
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.1.15...v24.04.01)
+
+ - Обновить библиотеки плагина RevitClashDetective ([#16](https://github.com/Bim4Everyone/BIMExtensions/pull/16))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.1.15...v24.04.01)
+
+ - Обновил библиотеки плагина "RevitLintelPlacement" ([#11](https://github.com/Bim4Everyone/ARExtensions/pull/11))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.1.15...v24.04.01)
+
+ - Обновление спецификации: Добавлен параметр и изменена обработка фиттингов ([#11](https://github.com/Bim4Everyone/HVACExtension/pull/11))
+ - Убрал преобразование в int диаметра труб ([#10](https://github.com/Bim4Everyone/HVACExtension/pull/10))
+ - Две ошибки в формулах. Было строгое неравенство на сравнении потока ствола и ответвления и обращение к размерам ответвления на определении размера воздуховода ([#9](https://github.com/Bim4Everyone/HVACExtension/pull/9))
+ - Redomine: Добавил округление в большую сторону при расчете шпилек ([#8](https://github.com/Bim4Everyone/HVACExtension/pull/8))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.1.15...v24.04.01)
+
+ - Исправлены учетные данные для git
+ - Обновил публикацию
+ - Добавлено уведомление через VK Teams ([#12](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/12))
+ - Build: Обновлено изменение CHANGELOG.md ([#11](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/11))
+ - Build: Добавил генерацию CHANGELOG.md ([#10](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/10))
+ - Добавлены параметры ([#9](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/9))
+ - Добавлено применение свойств настроек платформы ([#8](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/8))
+ - Добавлено уведомление через Telegram ([#7](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/7))
+ - Обновлен способ конфигурации pyRevit ([#6](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/6))
+ - Обновлены зависимости ([#5](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/5))
+
+____
+
 **v24.2.1**
 
 [01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.1.15...v24.2.1)
