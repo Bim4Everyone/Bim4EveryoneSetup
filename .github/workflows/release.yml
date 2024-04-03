@@ -74,6 +74,14 @@ jobs:
           
           exit $ExitCode
 
+      # Upload the test install result: https://github.com/marketplace/actions/upload-a-build-artifact
+      - name: Upload
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-install-result
+          path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.log
+          
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload
         uses: actions/upload-artifact@v4
