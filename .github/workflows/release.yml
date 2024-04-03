@@ -57,12 +57,13 @@ jobs:
         with:
           path: bin/msi_version.txt
 
-      - name: Tests
+      - name: Test Install MSI
         run: |
+          CopyItem "bin\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi" -Destination "C:\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi"
           $MSI = Start-Process msiexec.exe `
           -Wait `
           -PassThru `
-          -ArgumentList "/i bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi /l*v result.log /q"
+          -ArgumentList "/i C:\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi /l*v result.log /q"
           Get-Content result.log
           $ExitCode = $MSI.ExitCode
           echo "MSI ExitCode: $ExitCode"
