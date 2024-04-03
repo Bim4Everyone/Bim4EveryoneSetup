@@ -3,8 +3,8 @@ name: release
 on:
   # on pull_request to master
   pull_request:
-    branches:
-      - master
+    types: [ synchronize ]
+    branches: [ main, master ]
   
   # manual
   workflow_dispatch:
@@ -15,8 +15,6 @@ on:
 
 env:
   release_branch: "refs/heads/master"
-  bim4everyone_setup: Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
-  bim4everyone_setup_path: bin/${{ env.bim4everyone_setup }}
 
 jobs:
   build:
@@ -64,7 +62,7 @@ jobs:
           $MSI = Start-Process msiexec.exe `
           -Wait `
           -PassThru `
-          -ArgumentList "/i bin/${{ env.bim4everyone_setup }} /l*v result.log /q"
+          -ArgumentList "/i bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi /l*v result.log /q"
           Get-Content result.log
           $ExitCode = $MSI.ExitCode
           echo "MSI ExitCode: $ExitCode"
