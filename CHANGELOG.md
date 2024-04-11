@@ -1,3 +1,13 @@
+**v24.04.11**  
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.04.01...v24.04.11)
+
+ - pyRevit: Обновлён pyRevit до 4.8.15 ([#17](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/17))
+ - Добавил отправку уведомлений в ручном режиме ([#16](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/16))
+ - Build: Исправление ошибки 1603 ([#15](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/15))
+ - Build: Добавлен тест установщика ([#14](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/14))
+
+____
+
 **v24.04.01**  
 [00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.1.15...v24.04.01)
 
