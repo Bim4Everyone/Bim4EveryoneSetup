@@ -38,7 +38,7 @@ jobs:
 
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
-        run: dotnet tool install --global wix
+        run: dotnet tool install --global wix --version 4.0.5
         
       # Fix wix extensions: https://github.com/oleg-shilo/wixsharp/issues/1473
       - name: Install WIX Extensions

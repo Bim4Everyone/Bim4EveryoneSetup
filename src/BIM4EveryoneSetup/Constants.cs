@@ -24,7 +24,7 @@ namespace BIM4EveryoneSetup {
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersion = "4.8.14.24016";
-        
+
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallUrl =
             $@"https://github.com/eirannejad/pyRevit/releases/download/v{pyRevitVersion}+1909/pyRevit_{pyRevitVersion}_signed.exe";
@@ -49,7 +49,7 @@ namespace BIM4EveryoneSetup {
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitPath = Path.Combine(AppDataPath, "pyRevit-Master");
         public static readonly string UninstallerFile = Path.Combine(pyRevitPath, "unins000.exe");
-        
+
         // нужно для костылей
         public static readonly string InvokeDllPath = Path.Combine(pyRevitPath, @"pyrevitlib\pyrevit\runtime");
         public static readonly string CoreExtensionPath = Path.Combine(pyRevitPath, @"extensions\pyRevitCore.extension");
@@ -74,10 +74,10 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyRevit/Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $"%AppDataFolder%/pyRevit-master/bin/pyrevit.exe";
-        
+        public static readonly string pyRevitCliPath = $"%AppData%/pyRevit-master/bin/pyrevit.exe";
+
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsDirPath = $"%AppDataFolder%/pyRevit/Extensions";
+        public static readonly string pyRevitExtensionsDirPath = $"%AppData%/pyRevit/Extensions";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersionProp = "pyRevitVersion";
@@ -93,8 +93,8 @@ namespace BIM4EveryoneSetup {
         public static readonly Condition RepairCondition = new Condition(" (REINSTALL) ");
         public static readonly Condition RemoveCondition = new Condition(" (REMOVE=\"ALL\") ");
         public static readonly Condition ConfigInstallCondition = Constants.RepairCondition + "OR" + Constants.InstallCondition;
-        
-        
-        public static readonly string LastTag = Process2.StartProcess("git", "tag --sort=-creatordate").First();
+
+
+        public static string LastTag => Process2.StartProcess("git", "tag --sort=-creatordate").First();
     }
 }
