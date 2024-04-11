@@ -3,12 +3,15 @@ name: notification
 env:
   body_message: |
     🚀 Bim4Everyone
-    ⬇️ Платформа обновлена: [скачать](${{ github.event.release.html_url }})
+    ⬇️ Платформа обновлена: [скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
 
 on:
   # when release published
   release:
     types: [ published ]
+    
+  # manual
+  workflow_dispatch:
 
 jobs:
   telegram:
