@@ -3,7 +3,7 @@ name: release
 on:
   # on pull_request to master
   pull_request:
-    types: [ synchronize ]
+    types: [ opened, synchronize ]
     branches: [ main, master ]
   
   # manual

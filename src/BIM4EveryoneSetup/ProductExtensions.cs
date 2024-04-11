@@ -410,11 +410,9 @@ namespace BIM4EveryoneSetup {
         private static void CreateAttachRevits<T>(this T self) where T : Project {
             string[] args = new[] {
                 "detach --all",
-                "attach master 277 2020", 
-                "attach master 277 2021",
-                "attach master 277 2022",
-                "attach master 277 2023",
-                "attach master 277 2024",
+                "attach master default 2022",
+                "attach master default 2023",
+                "attach master default 2024",
             };
 
             args.ForEach(item =>
