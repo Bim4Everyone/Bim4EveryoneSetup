@@ -3,8 +3,8 @@ name: release
 on:
   # on pull_request to master
   pull_request:
-    branches:
-      - master
+    types: [ synchronize ]
+    branches: [ main, master ]
   
   # manual
   workflow_dispatch:
@@ -56,9 +56,31 @@ jobs:
         uses: juliangruber/read-file-action@v1
         with:
           path: bin/msi_version.txt
-      
+
+      - name: Test Install MSI
+        run: |
+          Copy-Item "bin\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi" -Destination "C:\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi"
+          
+          $MSI = Start-Process msiexec.exe `
+          -Wait `
+          -PassThru `
+          -ArgumentList "/i C:\Bim4Everyone_${{ steps.current-date.outputs.content }}.msi /l*v bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.log /q"
+          
+          $ExitCode = $MSI.ExitCode
+          echo "MSI ExitCode: $ExitCode"
+          
+          exit $ExitCode
+
+      # Upload the test install result: https://github.com/marketplace/actions/upload-a-build-artifact
+      - name: Upload Test Install Result
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-install-result
+          path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.log
+          
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-      - name: Upload
+      - name: Upload MSIX package
         uses: actions/upload-artifact@v4
         with:
           name: Bim4Everyone

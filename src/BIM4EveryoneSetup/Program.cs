@@ -56,22 +56,25 @@ namespace BIM4EveryoneSetup {
             builder.AppendLine($"**{Constants.CurrentTag}**  ");
 
             // Обновляем расширения (чтобы возможно было пушить)
-            foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
-                Console.WriteLine($"{featureExtension.Name}:");
+            string botAccessToken = Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN");
+            if(!string.IsNullOrEmpty(botAccessToken)) {
+                foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
+                    Console.WriteLine($"{featureExtension.Name}:");
 
-                Console.WriteLine($"\tUpdate remote");
-                featureExtension.UpdateRemote(Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN"));
+                    Console.WriteLine($"\tUpdate remote");
+                    featureExtension.UpdateRemote(botAccessToken);
 
-                Console.WriteLine($"\tCreate tag");
-                featureExtension.CreateTag(Constants.CurrentTag);
+                    Console.WriteLine($"\tCreate tag");
+                    featureExtension.CreateTag(Constants.CurrentTag);
 
-                Console.WriteLine($"\tPush tag");
-                featureExtension.PushTag(Constants.CurrentTag);
+                    Console.WriteLine($"\tPush tag");
+                    featureExtension.PushTag(Constants.CurrentTag);
 
-                Console.WriteLine($"\tGet changes");
-                featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
+                    Console.WriteLine($"\tGet changes");
+                    featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
+                } 
             }
-
+            
             string value = Extensions.GetChanges(Constants.ProductUrl, default);
             if(!string.IsNullOrEmpty(value)) {
                 builder.AppendLine($"[Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
