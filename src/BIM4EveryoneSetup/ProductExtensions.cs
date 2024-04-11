@@ -410,8 +410,6 @@ namespace BIM4EveryoneSetup {
         private static void CreateAttachRevits<T>(this T self) where T : Project {
             string[] args = new[] {
                 "detach --all",
-                "attach master default 2020", 
-                "attach master default 2021",
                 "attach master default 2022",
                 "attach master default 2023",
                 "attach master default 2024",
