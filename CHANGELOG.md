@@ -1,3 +1,33 @@
+**v24.05.01**  
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.04.11...v24.05.01)
+
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#7](https://github.com/Bim4Everyone/AdminExtensions/pull/7))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v24.04.11...v24.05.01)
+
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#5](https://github.com/Bim4Everyone/2DExtensions/pull/5))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.04.11...v24.05.01)
+
+ - Вкладка BIM: Обновлены ссылки на статьи ([#20](https://github.com/Bim4Everyone/BIMExtensions/pull/20))
+ - Отверстия: Обновлены ссылки на статьи ([#19](https://github.com/Bim4Everyone/BIMExtensions/pull/19))
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#18](https://github.com/Bim4Everyone/BIMExtensions/pull/18))
+ - Обновить: Изменение логики обновления вкладок и отключение автообновлений ([#17](https://github.com/Bim4Everyone/BIMExtensions/pull/17))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.04.11...v24.05.01)
+
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#12](https://github.com/Bim4Everyone/ARExtensions/pull/12))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.04.11...v24.05.01)
+
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#3](https://github.com/Bim4Everyone/KRExtensions/pull/3))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.04.11...v24.05.01)
+
+ - Настройки: Сделано обновление сессии без обновления репозиториев ([#12](https://github.com/Bim4Everyone/HVACExtension/pull/12))
+
+____
+
 **v24.04.11**  
 [Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.04.01...v24.04.11)
 
