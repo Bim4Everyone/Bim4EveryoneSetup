@@ -7,8 +7,10 @@ env:
 
 on:
   # when release published
-  release:
-    types: [ published ]
+  workflow_run:
+    workflows: [release]
+    types:
+      - completed
     
   # manual
   workflow_dispatch:
