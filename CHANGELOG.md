@@ -1,3 +1,44 @@
+**v24.06.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.05.01...v24.06.01)
+
+ - Обновлены описания ошибок для скриптов по нумерации листов. ([#2](https://github.com/Bim4Everyone/BIM4Everyone/pull/2))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v24.05.01...v24.06.01)
+
+ - Исправлена ошибка уведомлений ([#9](https://github.com/Bim4Everyone/2DExtensions/pull/9))
+ - Вкладка 2D: Обновлены описания скриптов ([#8](https://github.com/Bim4Everyone/2DExtensions/pull/8))
+ - Обновлена ссылка на папку с подписями ([#7](https://github.com/Bim4Everyone/2DExtensions/pull/7))
+ - Вкладка 2D: Обновлены ссылки на справку Confluence ([#6](https://github.com/Bim4Everyone/2DExtensions/pull/6))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.05.01...v24.06.01)
+
+ - RevitPlugins: Обновлены устаревшие ссылки на диск ([#25](https://github.com/Bim4Everyone/BIMExtensions/pull/25))
+ - RevitPlugins: Обновлены устаревшие ссылки на диск ([#24](https://github.com/Bim4Everyone/BIMExtensions/pull/24))
+ - RevitPlugins: Обновлены устаревшие ссылки на диск ([#23](https://github.com/Bim4Everyone/BIMExtensions/pull/23))
+ - Отверстия: Скорректирована обработка ошибки, если не найдена точка вставки ([#21](https://github.com/Bim4Everyone/BIMExtensions/pull/21))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.05.01...v24.06.01)
+
+ - Вкладка АР: Обновлены ссылки на справку в Confluence ([#13](https://github.com/Bim4Everyone/ARExtensions/pull/13))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.05.01...v24.06.01)
+
+ - fatal: ambiguous argument 'v24.05.01..HEAD': unknown revision or path not in the working tree.
+ - Use '--' to separate paths from revisions, like this:
+ - 'git <command> [<revision>...] -- [<file>...]'
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.05.01...v24.06.01)
+
+ - Перенос значений, Смена уровней: Обновлён вызов SelectFromList ([#15](https://github.com/Bim4Everyone/HVACExtension/pull/15))
+ - Обновление функции: Обновлён поиск семейства по имени ([#14](https://github.com/Bim4Everyone/HVACExtension/pull/14))
+ - Обновление спецификации: Исправлена ошибка получения параметра, если параметр отсутствует ([#13](https://github.com/Bim4Everyone/HVACExtension/pull/13))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.05.01...v24.06.01)
+
+ - Исправлен автоматический запуск уведомлений
+
+____
+
 **v24.05.01**  
 [00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.04.11...v24.05.01)
 
