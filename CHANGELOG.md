@@ -1,3 +1,39 @@
+**v24.07.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.06.01...v24.07.01)
+
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.06.01...v24.07.01)
+
+ - RevitOpeningPlacement: Добавлена команда для расстановки заданий по выбранным элементам ВИС ([#32](https://github.com/Bim4Everyone/BIMExtensions/pull/32))
+ - RevitOpeningPlacement: Добавлена команда для расстановки заданий по выбранным элементам ВИС ([#31](https://github.com/Bim4Everyone/BIMExtensions/pull/31))
+ - Отверстия: Добавлена кнопка для расстановки заданий по выбранным элементам ВИС ([#28](https://github.com/Bim4Everyone/BIMExtensions/pull/28))
+ - RevitClashDetective: Добавлена возможность изолировать элементы выбранной коллизии ([#30](https://github.com/Bim4Everyone/BIMExtensions/pull/30))
+ - RevitClashDetective: Добавлена возможность изолировать элементы выбранной коллизии ([#29](https://github.com/Bim4Everyone/BIMExtensions/pull/29))
+ - Конструктор секций: Добавлена кнопка плагина ([#22](https://github.com/Bim4Everyone/BIMExtensions/pull/22))
+ - RevitSectionsConstructor: Добавлен плагин "Конструктор секций" ([#27](https://github.com/Bim4Everyone/BIMExtensions/pull/27))
+ - Отверстия: Исправлена ошибка определения солида стены - витража ([#26](https://github.com/Bim4Everyone/BIMExtensions/pull/26))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.06.01...v24.07.01)
+
+ - RevitArchitecturalDocumentation: удаление лишней директории ([#19](https://github.com/Bim4Everyone/ARExtensions/pull/19))
+ - RevitOpeningPlacement: Добавлена команда для расстановки заданий по выбранным элементам ВИС ([#18](https://github.com/Bim4Everyone/ARExtensions/pull/18))
+ - RevitClashDetective: Добавлена возможность изолировать элементы выбранной коллизии ([#17](https://github.com/Bim4Everyone/ARExtensions/pull/17))
+ - RevitArchitecturalDocumentation: Перераспределен функционал ([#16](https://github.com/Bim4Everyone/ARExtensions/pull/16))
+ - Отделка стен: Добавлена кнопка плагина по отделке стен ([#15](https://github.com/Bim4Everyone/ARExtensions/pull/15))
+ - RevitWallsFinishing: Добавлен плагин по отделке стен ([#14](https://github.com/Bim4Everyone/ARExtensions/pull/14))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.06.01...v24.07.01)
+
+ - RevitReinforcementCoefficient: Повторная публикация плагина ([#7](https://github.com/Bim4Everyone/KRExtensions/pull/7))
+ -  RevitReinforcementCoefficient: Добавлен плагин по подсчету коэф армирования ([#5](https://github.com/Bim4Everyone/KRExtensions/pull/5))
+ - Удален плагин Сгенерировать документацию ([#6](https://github.com/Bim4Everyone/KRExtensions/pull/6))
+
+____
+
 **v24.06.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.05.01...v24.06.01)
 
