@@ -23,11 +23,11 @@ namespace BIM4EveryoneSetup {
         public static readonly string ReleaseChangelogFile = "../../bin/CHANGELOG.md";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitVersion = "4.8.15.24089";
+        public static readonly string pyRevitVersion = "4.8.16.24121";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallUrl =
-            $@"https://github.com/eirannejad/pyRevit/releases/download/v{pyRevitVersion}+0912/pyRevit_{pyRevitVersion}_signed.exe";
+            $@"https://github.com/pyrevitlabs/pyRevit/releases/download/v{pyRevitVersion}+2117/pyRevit_{pyRevitVersion}_signed.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFile =
