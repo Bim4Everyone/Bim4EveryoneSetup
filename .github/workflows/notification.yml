@@ -6,11 +6,11 @@ env:
     ⬇️ Платформа обновлена: [скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
 
 on:
-  # when release published
-  workflow_run:
-    workflows: [release]
-    types:
-      - completed
+  # when release released (only release)
+  # not work on release: types: [ published ]
+  # not work on workflow_run: types: [ completed ]
+  release:
+    types: [ released ]
     
   # manual
   workflow_dispatch:

@@ -23,11 +23,11 @@ namespace BIM4EveryoneSetup {
         public static readonly string ReleaseChangelogFile = "../../bin/CHANGELOG.md";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitVersion = "4.8.15.24089";
+        public static readonly string pyRevitVersion = "4.8.16.24121";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallUrl =
-            $@"https://github.com/eirannejad/pyRevit/releases/download/v{pyRevitVersion}+0912/pyRevit_{pyRevitVersion}_signed.exe";
+            $@"https://github.com/pyrevitlabs/pyRevit/releases/download/v{pyRevitVersion}+2117/pyRevit_{pyRevitVersion}_signed.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitInstallFile =
@@ -71,13 +71,13 @@ namespace BIM4EveryoneSetup {
             @"https://raw.githubusercontent.com/Bim4Everyone/BIMExtensions/master/extensions.json";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyRevit/Extensions");
+        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, @"pyRevit\Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $"%AppData%/pyRevit-master/bin/pyrevit.exe";
+        public static readonly string pyRevitCliPath = $@"%AppData%\pyRevit-master\bin\pyrevit.exe";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsDirPath = $"%AppData%/pyRevit/Extensions";
+        public static readonly string pyRevitExtensionsDirPath = $@"%AppData%\pyRevit\Extensions";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersionProp = "pyRevitVersion";
