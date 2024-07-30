@@ -71,13 +71,13 @@ namespace BIM4EveryoneSetup {
             @"https://raw.githubusercontent.com/Bim4Everyone/BIMExtensions/master/extensions.json";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, "pyRevit/Extensions");
+        public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, @"pyRevit\Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $"%AppData%/pyRevit-master/bin/pyrevit.exe";
+        public static readonly string pyRevitCliPath = $@"%AppData%\pyRevit-master\bin\pyrevit.exe";
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitExtensionsDirPath = $"%AppData%/pyRevit/Extensions";
+        public static readonly string pyRevitExtensionsDirPath = $@"%AppData%\pyRevit\Extensions";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitVersionProp = "pyRevitVersion";
