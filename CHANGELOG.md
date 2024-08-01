@@ -1,3 +1,72 @@
+**v24.08.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.07.01...v24.08.01)
+
+ - Обновлены библиотеки фреймворка
+ - Плаформа: Обновление шаблонов проектов Revit ([#3](https://github.com/Bim4Everyone/BIM4Everyone/pull/3))
+ - Обновил библиотеки фреймворка
+ - Обновил библиотеки фреймворка
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.07.01...v24.08.01)
+
+ - RevitPlatformSettings: Добавлена локализация на английский язык ([#8](https://github.com/Bim4Everyone/AdminExtensions/pull/8))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v24.07.01...v24.08.01)
+
+ - Вкладка: Обновлены ссылки на справку ([#10](https://github.com/Bim4Everyone/2DExtensions/pull/10))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.07.01...v24.08.01)
+
+ - Добавлен пример расширения pyRevit
+ - RevitClashDetective: В навигатор коллизий добавлен вывод % пересечения и объема коллизии ([#40](https://github.com/Bim4Everyone/BIMExtensions/pull/40))
+ - RevitClashDetective: В навигатор коллизий добавлен вывод % пересечения и объема коллизии ([#39](https://github.com/Bim4Everyone/BIMExtensions/pull/39))
+ - RevitClashDetective: Исправление ошибки изоляции коллизии ([#38](https://github.com/Bim4Everyone/BIMExtensions/pull/38))
+ - RevitClashDetective: Исправление ошибки изоляции коллизии ([#37](https://github.com/Bim4Everyone/BIMExtensions/pull/37))
+ - RevitOpeningPlacement: Скорректировано создание настроек расстановки заданий от ВИС по умолчанию ([#36](https://github.com/Bim4Everyone/BIMExtensions/pull/36))
+ - Вкладка: Обновлены ссылки на справку для вкладки "BIM"
+ - RevitPlatformSettings: Добавлена локализация на английский язык ([#34](https://github.com/Bim4Everyone/BIMExtensions/pull/34))
+ - RevitOpeningPlacement: Категория "Воздухораспределители" полностью убрана из обработки плагином ([#33](https://github.com/Bim4Everyone/BIMExtensions/pull/33))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.07.01...v24.08.01)
+
+ - Откосы: Добавлена кнопка ([#29](https://github.com/Bim4Everyone/ARExtensions/pull/29))
+ - RevitClashDetective: В навигатор коллизий добавлен вывод % пересечения и объема коллизии ([#28](https://github.com/Bim4Everyone/ARExtensions/pull/28))
+ - RevitOpeningSlopes: Добавлен плагин откосы ([#27](https://github.com/Bim4Everyone/ARExtensions/pull/27))
+ - RevitFinishingWalls: Добавлена возможность указывать смещение отделки внутрь помещения ([#26](https://github.com/Bim4Everyone/ARExtensions/pull/26))
+ - Декларации: Добавлена кнопка плагина ([#25](https://github.com/Bim4Everyone/ARExtensions/pull/25))
+ - RevitClashDetective: Исправление ошибки изоляции коллизии ([#24](https://github.com/Bim4Everyone/ARExtensions/pull/24))
+ - RevitDeclarations: Добавлен плагин "Декларации" ([#23](https://github.com/Bim4Everyone/ARExtensions/pull/23))
+ - RevitApartmentPlans: Добавлен плагин "Планы квартир" ([#22](https://github.com/Bim4Everyone/ARExtensions/pull/22))
+ - Планы квартир: Добавлена кнопка плагина ([#20](https://github.com/Bim4Everyone/ARExtensions/pull/20))
+ - Вкладка: Обновлены ссылки на справку ([#21](https://github.com/Bim4Everyone/ARExtensions/pull/21))
+ - Отделка пола: Добавление функционала по заведению контура в дверные проемы ([#10](https://github.com/Bim4Everyone/ARExtensions/pull/10))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.07.01...v24.08.01)
+
+ - Вкладка: Обновлены ссылки на справку ([#12](https://github.com/Bim4Everyone/KRExtensions/pull/12))
+ - RevitReinforcementCoefficient: Исправлено граничное значение параметра для арматуры ([#11](https://github.com/Bim4Everyone/KRExtensions/pull/11))
+ - Таблицы УПК: Изменены значения фильтрации арматуры в соответствии с технологией ([#10](https://github.com/Bim4Everyone/KRExtensions/pull/10))
+ - Отредактирован плагин Таблицы УПК. Таблица по стенам разделена на Стены наружые и Стены внутренние. Добавлена фильтрация опалубки через обр_ФОП_Группа КР ([#8](https://github.com/Bim4Everyone/KRExtensions/pull/8))
+ - RevitReinforcementCoefficient: Исправления по результатам тестов ([#9](https://github.com/Bim4Everyone/KRExtensions/pull/9))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.07.01...v24.08.01)
+
+ - Обновление функции: Сантехоборудование ([#19](https://github.com/Bim4Everyone/HVACExtension/pull/19))
+ - Обновление имени системы: Принудительное имя ([#18](https://github.com/Bim4Everyone/HVACExtension/pull/18))
+ - Обновление функции: Элементы групп  ([#17](https://github.com/Bim4Everyone/HVACExtension/pull/17))
+ - Вкладка: Обновлены ссылки на справку для вкладки "ОВиВК" ([#16](https://github.com/Bim4Everyone/HVACExtension/pull/16))
+
+[99.Example.extension](https://github.com/Bim4Everyone/ExampleExtension/compare/v24.07.01...v24.08.01)
+
+ - fatal: ambiguous argument 'v24.07.01..HEAD': unknown revision or path not in the working tree.
+ - Use '--' to separate paths from revisions, like this:
+ - 'git <command> [<revision>...] -- [<file>...]'
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.07.01...v24.08.01)
+
+ - pyRevit: Обновлён pyRevit до 4.8.16 ([#18](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/18))
+
+____
+
 **v24.07.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.06.01...v24.07.01)
 
