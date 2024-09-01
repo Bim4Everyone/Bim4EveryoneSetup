@@ -1,3 +1,24 @@
+**v24.09.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.08.01...v24.09.01)
+
+ - Обновлены библиотеки фреймворка
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.08.01...v24.09.01)
+
+ - BIM: Добавлена автозагрузка библиотеки DevExpress.Dialogs.v21.2.Core.dll ([#46](https://github.com/Bim4Everyone/BIMExtensions/pull/46))
+ - RevitServerFolders: Добавил указание об удалении файлов из папок ([#45](https://github.com/Bim4Everyone/BIMExtensions/pull/45))
+ - RevitPlatformSettings: Добавлены пользовательские настройки платформы ([#44](https://github.com/Bim4Everyone/BIMExtensions/pull/44))
+ - RevitServerFolders: Обновление плагина ([#43](https://github.com/Bim4Everyone/BIMExtensions/pull/43))
+ - RVT из RS, NWC из RVT: Обновление описания кнопок ([#42](https://github.com/Bim4Everyone/BIMExtensions/pull/42))
+ - Отверстия: Обновление настроек расстановки заданий от ВИС ([#41](https://github.com/Bim4Everyone/BIMExtensions/pull/41))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.08.01...v24.09.01)
+
+ - RevitRoomTagPlacement: Исправление ошибки со связями ([#31](https://github.com/Bim4Everyone/ARExtensions/pull/31))
+ - Откосы: Добавлена видимость скриптов "Откосы" ([#30](https://github.com/Bim4Everyone/ARExtensions/pull/30))
+
+____
+
 **v24.08.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.07.01...v24.08.01)
 
