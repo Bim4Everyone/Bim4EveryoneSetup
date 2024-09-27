@@ -28,16 +28,15 @@ jobs:
           format: markdown
           message: ${{ env.body_message }}
 
-  vk-teams:
-    runs-on: ubuntu-latest
-    steps:
-      # VK Teams Notify: https://github.com/dosymep/vk-teams-action/
-      - name: VK Teams Notify
-        uses: dosymep/vk-teams-action@v1.0.0
-        with:
-          to: ${{ secrets.VK_TEAMS_TO }}
-          token: ${{ secrets.VK_TEAMS_TOKEN }}
-          api_url: ${{ secrets.VK_TEAMS_API_URL }}
-          format: MarkdownV2
-          message: ${{ env.body_message }}
-          
+#  vk-teams:
+#    runs-on: ubuntu-latest
+#    steps:
+#      # VK Teams Notify: https://github.com/dosymep/vk-teams-action/
+#      - name: VK Teams Notify
+#        uses: dosymep/vk-teams-action@v1.0.0
+#        with:
+#          to: ${{ secrets.VK_TEAMS_TO }}
+#          token: ${{ secrets.VK_TEAMS_TOKEN }}
+#          api_url: ${{ secrets.VK_TEAMS_API_URL }}
+#          format: MarkdownV2
+#          message: ${{ env.body_message }}
