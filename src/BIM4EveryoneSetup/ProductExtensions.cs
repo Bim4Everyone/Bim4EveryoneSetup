@@ -12,7 +12,7 @@ namespace BIM4EveryoneSetup {
         public static T SetProductInfo<T>(this T self) where T : Project {
             self.GUID = Constants.ProductId;
             self.UpgradeCode = Constants.ProductId;
-            self.Name = Constants.ProductName;
+            self.Name = $"{Constants.ProductName} {Constants.CurrentTag}";
             self.Description = Constants.ProductDescription;
             self.Version = Constants.CurrentVersion;
             self.LicenceFile = Constants.ProductLicenceAssetFile;

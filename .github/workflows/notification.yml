@@ -8,9 +8,10 @@ env:
 on:
   # when release released (only release)
   # not work on release: types: [ published ]
+  # not work on release: types: [ released ]
   # not work on workflow_run: types: [ completed ]
   release:
-    types: [ released ]
+    types: [ created ]
     
   # manual
   workflow_dispatch:
@@ -28,16 +29,15 @@ jobs:
           format: markdown
           message: ${{ env.body_message }}
 
-  vk-teams:
-    runs-on: ubuntu-latest
-    steps:
-      # VK Teams Notify: https://github.com/dosymep/vk-teams-action/
-      - name: VK Teams Notify
-        uses: dosymep/vk-teams-action@v1.0.0
-        with:
-          to: ${{ secrets.VK_TEAMS_TO }}
-          token: ${{ secrets.VK_TEAMS_TOKEN }}
-          api_url: ${{ secrets.VK_TEAMS_API_URL }}
-          format: MarkdownV2
-          message: ${{ env.body_message }}
-          
+#  vk-teams:
+#    runs-on: ubuntu-latest
+#    steps:
+#      # VK Teams Notify: https://github.com/dosymep/vk-teams-action/
+#      - name: VK Teams Notify
+#        uses: dosymep/vk-teams-action@v1.0.0
+#        with:
+#          to: ${{ secrets.VK_TEAMS_TO }}
+#          token: ${{ secrets.VK_TEAMS_TOKEN }}
+#          api_url: ${{ secrets.VK_TEAMS_API_URL }}
+#          format: MarkdownV2
+#          message: ${{ env.body_message }}
