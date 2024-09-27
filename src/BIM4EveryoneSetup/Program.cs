@@ -44,8 +44,8 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"Current branch name: {branchName}");
 
 
-            if(branchName.EndsWith("main")
-               || branchName.EndsWith("master")) {
+            if(branchName.Equals("main")
+               || branchName.Equals("master")) {
                 Console.WriteLine("Building extensions changelog");
                 BuildChangelog();
             } else {
