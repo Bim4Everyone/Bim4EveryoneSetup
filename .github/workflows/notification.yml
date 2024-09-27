@@ -8,9 +8,10 @@ env:
 on:
   # when release released (only release)
   # not work on release: types: [ published ]
+  # not work on release: types: [ released ]
   # not work on workflow_run: types: [ completed ]
   release:
-    types: [ released ]
+    types: [ created ]
     
   # manual
   workflow_dispatch:
