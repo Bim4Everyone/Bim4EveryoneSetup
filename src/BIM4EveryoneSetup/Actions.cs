@@ -1,6 +1,8 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 using WixSharp;
 
@@ -56,13 +58,13 @@ namespace BIM4EveryoneSetup {
                 new DirectoryInfo(pyRevitBundlesPath).RemoveDirectory();
                 session.Log($"Removed pyRevit bundles directory: \"{pyRevitBundlesPath}\"");
             }
-            
+
             string pluginSettings = Constants.PluginSettingsPath;
             if(Directory.Exists(pluginSettings)) {
                 new DirectoryInfo(pluginSettings).RemoveDirectory();
                 session.Log($"Removed plugin settings directory: \"{pyRevitBundlesPath}\"");
             }
-            
+
             session.Log("Finished uninstall bundles");
             return ActionResult.Success;
         }
@@ -73,7 +75,7 @@ namespace BIM4EveryoneSetup {
                 session.Log("Skipped remove is not modify");
                 return ActionResult.NotExecuted;
             }
-            
+
             if(string.IsNullOrEmpty(session["REMOVE"])) {
                 session.Log("Skipped \"REMOVE\" is empty");
                 return ActionResult.NotExecuted;
@@ -130,7 +132,7 @@ namespace BIM4EveryoneSetup {
             try {
                 var reinstallFeatures = session["REINSTALL"];
                 session.Log($"Reinstall features: \"{reinstallFeatures}\"");
-                
+
                 session.SaveBinary(Constants.ExtensionsFileProp, extensionsFile);
                 session.Log($"Saved {Constants.ExtensionsFileProp}: \"{extensionsFile}\"");
 
@@ -154,6 +156,40 @@ namespace BIM4EveryoneSetup {
 
             session.Log($"Finished repair extensions");
             return ActionResult.Success;
+        }
+
+        [CustomAction]
+        public static ActionResult UpdateOwner(Session session) {
+            session.Log("Started update owner");
+
+            if(!Directory.Exists(Constants.pyRevitExtensionsPath)) {
+                session.Log("pyRevit extensions directory doesn't exist");
+                return ActionResult.NotExecuted;
+            }
+            
+            // Update owner to extension path "pyrevit/Extension" 
+            UpdateOwner(session, Constants.pyRevitExtensionsPath);
+            foreach(var directory in Directory.GetDirectories(
+                        Constants.pyRevitExtensionsPath, "*", SearchOption.AllDirectories)) {
+                
+                // Update owner all subdirectories
+                UpdateOwner(session, directory);
+            }
+
+            session.Log("Finished update owner");
+            return ActionResult.Success;
+        }
+
+        private static void UpdateOwner(Session session, string directoryPath) {
+            DirectoryInfo directoryInfo = new DirectoryInfo(directoryPath);
+            DirectorySecurity directorySecurity = directoryInfo.GetAccessControl();
+            directorySecurity.SetOwner(new NTAccount(Environment.UserDomainName, Environment.UserName));
+            directoryInfo.SetAccessControl(directorySecurity);
+
+#if DEBUG
+            string userInfo = string.Concat(Environment.UserDomainName, "\\", Environment.UserName);
+            session.Log($"Updated owner \"{userInfo}\" directory: \"{directoryPath}\"");
+#endif
         }
     }
 }

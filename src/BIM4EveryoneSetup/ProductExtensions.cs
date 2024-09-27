@@ -157,6 +157,24 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={nameof(Actions.RepairExtensions)};Message=Восстановление расширений платформы");
 
+            
+            // Устанавливает владельца папок на текущего пользователя
+            // при установке через SCCM по какой-то причине
+            // указывается владельцем всех папок расширений пользователь SYSTEM
+            self.AddAction(
+                new ManagedAction(
+                    Actions.UpdateOwner,
+                    Return.check,
+                    When.After,
+                    Step.InstallFinalize,
+                    Condition.Always)
+            );
+
+            self.AddXmlElement(
+                "Wix/Package/UI",
+                "ProgressText",
+                $"Action={nameof(Actions.UpdateOwner)};Message=Исправление владельца папок расширений");
+           
             return self;
         }
 
