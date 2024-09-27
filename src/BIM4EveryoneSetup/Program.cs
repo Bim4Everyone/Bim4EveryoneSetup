@@ -38,9 +38,11 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine("Building platform settings msi");
             BuildMsi();
 
+#if RELEASE
             string branchName = Environment.GetEnvironmentVariable("GITHUB_REF")
                                 ?? Process2.StartProcess("git", "branch --show-current").First();
             Console.WriteLine($"Current branch name: {branchName}");
+
 
             if(branchName.EndsWith("main")
                || branchName.EndsWith("master")) {
@@ -49,6 +51,7 @@ namespace BIM4EveryoneSetup {
             } else {
                 Console.WriteLine("Skipping building extensions changelog");
             }
+#endif
         }
 
         private static void BuildChangelog() {
