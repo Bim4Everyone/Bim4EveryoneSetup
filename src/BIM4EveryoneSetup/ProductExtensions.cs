@@ -321,14 +321,14 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateConfigureDefaultParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs core:user_locale [COREUSERLOCALE]",
-                "configs rocketmode [ROCKETMODE]",
-                "configs autoupdate [AUTOUPDATE]",
-                "configs checkupdates [CHECKUPDATES]", 
-                "configs usercanextend [USERCANEXTEND]", 
-                "configs usercanconfig [USERCANCONFIG]",
-                "configs corp:name [CORP_NAME]",
-                "configs corp:settings_path [CORP_SETTINGS_PATH]",
+                "configs core:user_locale \"[COREUSERLOCALE]\"",
+                "configs rocketmode \"[ROCKETMODE]\"",
+                "configs autoupdate \"[AUTOUPDATE]\"",
+                "configs checkupdates \"[CHECKUPDATES]\"", 
+                "configs usercanextend \"[USERCANEXTEND]\"", 
+                "configs usercanconfig \"[USERCANCONFIG]\"",
+                "configs corp:name \"[CORP_NAME]\"",
+                "configs corp:settings_path \"[CORP_SETTINGS_PATH]\"",
             };
 
             args.ForEach(item =>
@@ -337,16 +337,16 @@ namespace BIM4EveryoneSetup {
         
         private static void CreateConfigureSocialsParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs socials:tg_main [SOCIALS_MAIN]",
-                "configs socials:tg_news [SOCIALS_NEWS]",
-                "configs socials:tg_discuss [SOCIALS_DISCUSS]",
-                "configs socials:tg_2d [SOCIALS_2D]",
-                "configs socials:tg_bim [SOCIALS_BIM]",
-                "configs socials:tg_ar [SOCIALS_AR]",
-                "configs socials:tg_kr [SOCIALS_KR]",
-                "configs socials:tg_ovvk [SOCIALS_OVVK]",
-                "configs socials:page_link [SOCIALS_PAGE]",
-                "configs socials:downloads_link [SOCIALS_DOWNLOADS]",
+                "configs socials:tg_main \"[SOCIALS_MAIN]\"",
+                "configs socials:tg_news \"[SOCIALS_NEWS]\"",
+                "configs socials:tg_discuss \"[SOCIALS_DISCUSS]\"",
+                "configs socials:tg_2d \"[SOCIALS_2D]\"",
+                "configs socials:tg_bim \"[SOCIALS_BIM]\"",
+                "configs socials:tg_ar \"[SOCIALS_AR]\"",
+                "configs socials:tg_kr \"[SOCIALS_KR]\"",
+                "configs socials:tg_ovvk \"[SOCIALS_OVVK]\"",
+                "configs socials:page_link \"[SOCIALS_PAGE]\"",
+                "configs socials:downloads_link \"[SOCIALS_DOWNLOADS]\"",
             };
 
             args.ForEach(item =>
@@ -355,9 +355,9 @@ namespace BIM4EveryoneSetup {
         
         private static void CreateConfigureTelemetryParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs telemetry [TELEMETRY_ACTIVE]", 
-                "configs telemetry utc [TELEMETRY_USE_UTC]",
-                "configs telemetry server [TELEMETRY_SERVER_URL]",
+                "configs telemetry \"[TELEMETRY_ACTIVE]\"", 
+                "configs telemetry utc \"[TELEMETRY_USE_UTC]\"",
+                "configs telemetry server \"[TELEMETRY_SERVER_URL]\"",
             };
             
             args.ForEach(item =>
@@ -365,9 +365,9 @@ namespace BIM4EveryoneSetup {
                     "Настройка параметров телеметрии", "(TELEMETRY_ACTIVE=\"enable\")"));
             
             args = new[] {
-                "configs apptelemetry [APP_TELEMETRY_ACTIVE]", 
-                "configs apptelemetry flags [APP_TELEMETRY_EVENT_FLAGS]",
-                "configs apptelemetry server [APP_TELEMETRY_SERVER_URL]",
+                "configs apptelemetry \"[APP_TELEMETRY_ACTIVE]\"", 
+                "configs apptelemetry flags \"[APP_TELEMETRY_EVENT_FLAGS]\"",
+                "configs apptelemetry server \"[APP_TELEMETRY_SERVER_URL]\"",
             };
             
             args.ForEach(item =>
@@ -375,9 +375,9 @@ namespace BIM4EveryoneSetup {
                     "Настройка параметров телеметрии", "(APP_TELEMETRY_ACTIVE=\"enable\")"));
             
             args = new[] {
-                "configs log_trace:active [LOG_TRACE_ACTIVE]",
-                "configs log_trace:level [LOG_TRACE_LEVEL]",
-                "configs log_trace:server_name [LOG_TRACE_SERVER_URL]",
+                "configs log_trace:active \"[LOG_TRACE_ACTIVE]\"",
+                "configs log_trace:level \"[LOG_TRACE_LEVEL]\"",
+                "configs log_trace:server_name \"[LOG_TRACE_SERVER_URL]\"",
             };
 
             args.ForEach(item =>
