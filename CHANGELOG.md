@@ -1,3 +1,48 @@
+**v24.10.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.09.01...v24.10.01)
+
+ - Обновлены библиотеки фреймворка
+ - Платформа: В шаблоны добавлены общие параметры ВИС (66 параметров) ([#4](https://github.com/Bim4Everyone/BIM4Everyone/pull/4))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.09.01...v24.10.01)
+
+ - RevitServerFolders: Исправление ошибки с поиском элементов на виде ([#52](https://github.com/Bim4Everyone/BIMExtensions/pull/52))
+ - RevitServerFolders: Корректировка сообщений логов ([#51](https://github.com/Bim4Everyone/BIMExtensions/pull/51))
+ - BIM вкладка: Добавлен перевод на английский ([#50](https://github.com/Bim4Everyone/BIMExtensions/pull/50))
+ - BIM вкладка: изменено расположение кнопок ([#47](https://github.com/Bim4Everyone/BIMExtensions/pull/47))
+ - Обновлены ссылки на расширение HVACExtension
+ - RevitServerFolders: Добавлена возможность отключать очистку целевой папки ([#49](https://github.com/Bim4Everyone/BIMExtensions/pull/49))
+ - RevitServerFolders: Исправлена проблема с отсутствием скрытия РН при экспорте в NWC ([#48](https://github.com/Bim4Everyone/BIMExtensions/pull/48))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.09.01...v24.10.01)
+
+ - АР вкладка: Добавлен перевод на английский ([#34](https://github.com/Bim4Everyone/ARExtensions/pull/34))
+ - RevitDeclarations: Исправлена ошибка выгрузки при неактивированном Excel ([#33](https://github.com/Bim4Everyone/ARExtensions/pull/33))
+ - AR вкладка: изменено расположение кнопок ([#32](https://github.com/Bim4Everyone/ARExtensions/pull/32))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.09.01...v24.10.01)
+
+ - КР вкладка: Добавлен перевод на английский, исправлена максимальная версия Revit ([#18](https://github.com/Bim4Everyone/KRExtensions/pull/18))
+ - RevitClassifierParameters: Добавлен плагин ([#13](https://github.com/Bim4Everyone/KRExtensions/pull/13))
+ - RevitPileRanges: Добавлен плагин ([#16](https://github.com/Bim4Everyone/KRExtensions/pull/16))
+ - RevitConcreteParameters: Добавлен плагин ([#14](https://github.com/Bim4Everyone/KRExtensions/pull/14))
+ - RevitPylonDocumentation: Проведен рефакторинг ([#17](https://github.com/Bim4Everyone/KRExtensions/pull/17))
+ - KR вкладка: изменено расположение кнопок ([#15](https://github.com/Bim4Everyone/KRExtensions/pull/15))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.09.01...v24.10.01)
+
+ - Обновление имени системы: ReadOnly параметр ФОП_ВИС_Имя системы ([#23](https://github.com/Bim4Everyone/HVACExtension/pull/23))
+ - Создать схемы: Создан плагин ([#22](https://github.com/Bim4Everyone/HVACExtension/pull/22))
+ - RevitAxonometryViews: Создан плагин ([#21](https://github.com/Bim4Everyone/HVACExtension/pull/21))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.09.01...v24.10.01)
+
+ - Исправил определение ветки для генерации CHANGELOG.md
+ - Обновлена сборка установщика ([#20](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/20))
+ - Исправлена ошибка "Репозиторий не принадлежит текущему пользователю" ([#19](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/19))
+
+____
+
 **v24.09.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.08.01...v24.09.01)
 
