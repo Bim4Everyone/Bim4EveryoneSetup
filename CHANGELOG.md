@@ -1,3 +1,65 @@
+**v24.11.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.10.01...v24.11.01)
+
+ - Обновлены библиотеки фреймворка
+ - Шаблон: Добавлены два новых параметра ВИС ([#9](https://github.com/Bim4Everyone/BIM4Everyone/pull/9))
+ - В шаблоны для параметра ВИС добавлены категории ([#8](https://github.com/Bim4Everyone/BIM4Everyone/pull/8))
+ - Добавление библиотек для работы с Excel - ClosedXML ([#7](https://github.com/Bim4Everyone/BIM4Everyone/pull/7))
+ - В шаблоны параметров добавлена категория  "Кабельные лотки" ([#6](https://github.com/Bim4Everyone/BIM4Everyone/pull/6))
+ - В шаблоны добавлены параметры АР ([#5](https://github.com/Bim4Everyone/BIM4Everyone/pull/5))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v24.10.01...v24.11.01)
+
+ - Выровнять виды на листах: обновлен скрипт ([#12](https://github.com/Bim4Everyone/2DExtensions/pull/12))
+ - Пакетная печать: Исправление выбора формата при печати ([#11](https://github.com/Bim4Everyone/2DExtensions/pull/11))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.10.01...v24.11.01)
+
+ - RevitOpeningPlacement: Обновлено заполнение параметров отметок заданий от ВИС ([#66](https://github.com/Bim4Everyone/BIMExtensions/pull/66))
+ - RevitOpeningPlacement: Обновление статусов заданий для Навигатора ВИС ([#65](https://github.com/Bim4Everyone/BIMExtensions/pull/65))
+ - Расставить на элемент: Создан плагин ([#59](https://github.com/Bim4Everyone/BIMExtensions/pull/59))
+ - RevitServerFolders: Скорректирована проверка на наличие элементов для экспорта ([#64](https://github.com/Bim4Everyone/BIMExtensions/pull/64))
+ - RevitOpeningPlacement: Исправлено правописание в навигаторе АР-КР ([#63](https://github.com/Bim4Everyone/BIMExtensions/pull/63))
+ - Параметры классификатора: Перенесен на вкладку BIM ([#61](https://github.com/Bim4Everyone/BIMExtensions/pull/61))
+ - Перенос параметров: Добавлена кнопка на вкладку ([#62](https://github.com/Bim4Everyone/BIMExtensions/pull/62))
+ - RevitOpeningPlacement: Рефакторинг структуры команды "Навигатор" ([#60](https://github.com/Bim4Everyone/BIMExtensions/pull/60))
+ - RevitOpeningPlacement: Скорректировано отображение названия параметра для диаметра труб в GUI ([#58](https://github.com/Bim4Everyone/BIMExtensions/pull/58))
+ - RevitClashDetective: Устранён бага с потерей значений при скролле окна ([#57](https://github.com/Bim4Everyone/BIMExtensions/pull/57))
+ - Импорт Excel: Добавлена кнопка плагина ([#55](https://github.com/Bim4Everyone/BIMExtensions/pull/55))
+ - RevitSheduleImport: Создан плагин "Импорт Excel" ([#56](https://github.com/Bim4Everyone/BIMExtensions/pull/56))
+ - RevitValueModifier: Добавлен плагин "Изменить значение" ([#53](https://github.com/Bim4Everyone/BIMExtensions/pull/53))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.10.01...v24.11.01)
+
+ - Параметры классификатора: Перенесен на вкладку BIM ([#21](https://github.com/Bim4Everyone/KRExtensions/pull/21))
+ - Параметры бетона: обновлено имя кнопки ([#20](https://github.com/Bim4Everyone/KRExtensions/pull/20))
+ - RevitPileRanges: Обновлена группировка свай ([#19](https://github.com/Bim4Everyone/KRExtensions/pull/19))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.10.01...v24.11.01)
+
+ - Вкладка спецификаций: Поэкземплярная работа групп ([#39](https://github.com/Bim4Everyone/HVACExtension/pull/39))
+ - Полное обновление: Преобразование в выпадающий список ([#37](https://github.com/Bim4Everyone/HVACExtension/pull/37))
+ - Полное обновление: Преобразование в выпадающий список ([#38](https://github.com/Bim4Everyone/HVACExtension/pull/38))
+ - Обновление имени системы: Блокированный параметр ([#36](https://github.com/Bim4Everyone/HVACExtension/pull/36))
+ - Расчет краски и креплений: Получение параметров ([#35](https://github.com/Bim4Everyone/HVACExtension/pull/35))
+ - Расчет краски и креплений: Рефакторинг кода ([#31](https://github.com/Bim4Everyone/HVACExtension/pull/31))
+ - Смена уровней: Правка логики ([#28](https://github.com/Bim4Everyone/HVACExtension/pull/28))
+ - Обновление спецификации: Правка Группирования ([#34](https://github.com/Bim4Everyone/HVACExtension/pull/34))
+ - Обновление имени системы: Принудительное имя, проблемы с генериками ([#33](https://github.com/Bim4Everyone/HVACExtension/pull/33))
+ - Обновление имени системы: ADSK_Имя системы ([#32](https://github.com/Bim4Everyone/HVACExtension/pull/32))
+ - Обновление спецификации: Определение имен фитингов ([#30](https://github.com/Bim4Everyone/HVACExtension/pull/30))
+ - Полное обновление: NRE на трубной изоляции без хоста ([#29](https://github.com/Bim4Everyone/HVACExtension/pull/29))
+ - Расчет краски и креплений: Пересогласование данных ([#24](https://github.com/Bim4Everyone/HVACExtension/pull/24))
+ - Обновление спецификации: Правка определения диаметра гибких элементов ([#27](https://github.com/Bim4Everyone/HVACExtension/pull/27))
+ - Обновление спецификации: Переделка всех кнопок ([#25](https://github.com/Bim4Everyone/HVACExtension/pull/25))
+ - RevitMechanicalSpecification: Создан плагин ([#26](https://github.com/Bim4Everyone/HVACExtension/pull/26))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v24.10.01...v24.11.01)
+
+ - Обновлены значения свойств ([#21](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/21))
+
+____
+
 **v24.10.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.09.01...v24.10.01)
 
