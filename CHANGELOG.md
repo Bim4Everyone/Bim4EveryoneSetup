@@ -1,3 +1,52 @@
+**v24.12.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.11.01...v24.12.01)
+
+ - Обновлены библиотеки платформы
+ - Templates: Добавлены параметры для КР ([#11](https://github.com/Bim4Everyone/BIM4Everyone/pull/11))
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Templates: Добавлены параметры (ФОП_Зеркальность и ФОП_Класс ММ) ([#10](https://github.com/Bim4Everyone/BIM4Everyone/pull/10))
+ - Обновлены библиотеки фреймворка
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v24.11.01...v24.12.01)
+
+ - RevitPluginTemplate: Скорректирован стиль шаблонов плагинов ([#9](https://github.com/Bim4Everyone/AdminExtensions/pull/9))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.11.01...v24.12.01)
+
+ - Проверка на зеркальность: Создан плагин ([#75](https://github.com/Bim4Everyone/BIMExtensions/pull/75))
+ - RevitMirroredElements: Создание плагина ([#79](https://github.com/Bim4Everyone/BIMExtensions/pull/79))
+ - Расставить на элемент: Обработка конфигураций и настройка расчета ([#78](https://github.com/Bim4Everyone/BIMExtensions/pull/78))
+ - RevitClashDetective: Исправлена кодировка в RevitParamConverter.cs ([#77](https://github.com/Bim4Everyone/BIMExtensions/pull/77))
+ - RevitClashDetective: Исправлена кодировка в RevitParamConverter.cs ([#76](https://github.com/Bim4Everyone/BIMExtensions/pull/76))
+ - Вкладка BIM: Добавлены ссылки на статьи ([#73](https://github.com/Bim4Everyone/BIMExtensions/pull/73))
+ - RevitOpeningPlacement: Добавлена возможность редактировать настройки ВИС из заданного файла ([#74](https://github.com/Bim4Everyone/BIMExtensions/pull/74))
+ - RevitOpeningPlacement: Исправление ошибки с определением статуса "Ошибка геометрии" ([#72](https://github.com/Bim4Everyone/BIMExtensions/pull/72))
+ - RevitOpeningPlacement: Обновлён навигатор ([#71](https://github.com/Bim4Everyone/BIMExtensions/pull/71))
+ - RevitValueModifier: скорректировано получение параметров и значений ([#70](https://github.com/Bim4Everyone/BIMExtensions/pull/70))
+ - RevitServerFolders: Исправлен алгоритм проверки наличия геометрии у элемента ([#69](https://github.com/Bim4Everyone/BIMExtensions/pull/69))
+ - RevitOpeningPlacement: Скорректирована точка вставки объединенных отверстий в перекрытиях ([#68](https://github.com/Bim4Everyone/BIMExtensions/pull/68))
+ - RevitScheduleImport: Исправлена высота текста в спецификации ([#67](https://github.com/Bim4Everyone/BIMExtensions/pull/67))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.11.01...v24.12.01)
+
+ - RevitLintelPlacement: Обновление библиотек плагина ([#40](https://github.com/Bim4Everyone/ARExtensions/pull/40))
+ - Декларации: исправлены ошибки ([#39](https://github.com/Bim4Everyone/ARExtensions/pull/39))
+ - RevitClashDetective: Исправлена кодировка в RevitParamConverter.cs ([#38](https://github.com/Bim4Everyone/ARExtensions/pull/38))
+ - Вкладка АР: Добавлены ссылки на статьи ([#35](https://github.com/Bim4Everyone/ARExtensions/pull/35))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v24.11.01...v24.12.01)
+
+ - Маркировка пилонов: Добавлен плагин ([#22](https://github.com/Bim4Everyone/KRExtensions/pull/22))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.11.01...v24.12.01)
+
+ - RevitMechanicalSpecification: Правка имен фитингов труб ([#42](https://github.com/Bim4Everyone/HVACExtension/pull/42))
+ - RevitMechanicalSpecification: Правка поиска наименований фитингов труб ([#41](https://github.com/Bim4Everyone/HVACExtension/pull/41))
+ - Полное обновление: Правка ошибок ([#40](https://github.com/Bim4Everyone/HVACExtension/pull/40))
+
+____
+
 **v24.11.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.10.01...v24.11.01)
 
