@@ -1,3 +1,49 @@
+**v25.01.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.12.01...v25.01.01)
+
+ - Обновлены библиотеки платформы
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v24.12.01...v25.01.01)
+
+ - Цветовые области: Обновлены скрипты по их вырезанию и объединению ([#15](https://github.com/Bim4Everyone/2DExtensions/pull/15))
+ - Редактирование штриховок: Созданы скрипты для вырезания и объединения штриховок ([#13](https://github.com/Bim4Everyone/2DExtensions/pull/13))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v24.12.01...v25.01.01)
+
+ - Расставить на элемент: Убрана избыточная проверка ([#92](https://github.com/Bim4Everyone/BIMExtensions/pull/92))
+ - Импорт Excel: Дополнено описание требований к запуску скрипта ([#91](https://github.com/Bim4Everyone/BIMExtensions/pull/91))
+ - RevitOpeningPlacement: В окне выбора связей добавлена возможность включать-выключать сразу несколько чекбоксов ([#90](https://github.com/Bim4Everyone/BIMExtensions/pull/90))
+ - RevitMirroredElements: Исправлена ошибка при первом запуске плагина и добавлена возможность изменение размера окна  ([#89](https://github.com/Bim4Everyone/BIMExtensions/pull/89))
+ - RevitOpeningPlacement: При ошибке чтения существующего конфига добавлено создание нового по умолчанию ([#88](https://github.com/Bim4Everyone/BIMExtensions/pull/88))
+ - RevitOpeningPlacement: Отключен выбор параметра фильтра, которого нет в активном документе ([#86](https://github.com/Bim4Everyone/BIMExtensions/pull/86))
+ - RevitClashDetective: Отключен выбор параметра фильтра, которого нет в активном документе ([#85](https://github.com/Bim4Everyone/BIMExtensions/pull/85))
+ - RevitClashDetective: Отключен выбор параметра фильтра, которого нет в активном документе ([#84](https://github.com/Bim4Everyone/BIMExtensions/pull/84))
+ - RevitServerFolders: Добавлена проверка установки плагина Navisworks NWC Export Utility ([#83](https://github.com/Bim4Everyone/BIMExtensions/pull/83))
+ - Параметры классификатора: Внесены изменения в работу с Excel ([#82](https://github.com/Bim4Everyone/BIMExtensions/pull/82))
+ - Проверка на зеркальность: Изменил название ([#81](https://github.com/Bim4Everyone/BIMExtensions/pull/81))
+ - Параметры классификатора: Добавлено заполнение Описания ([#80](https://github.com/Bim4Everyone/BIMExtensions/pull/80))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v24.12.01...v25.01.01)
+
+ - RevitDeclarations: Скорректированы значения параметров декларации ([#47](https://github.com/Bim4Everyone/ARExtensions/pull/47))
+ - RevitDeclarations: Исправлены ошибки форматирования Excel ([#46](https://github.com/Bim4Everyone/ARExtensions/pull/46))
+ - RevitDeclarations: Исправлена ошибка конвертации дат и вывода класса ММ ([#44](https://github.com/Bim4Everyone/ARExtensions/pull/44))
+ - Отделка пола: Добавлен функционал смещения контура, исправлены ошибки ([#43](https://github.com/Bim4Everyone/ARExtensions/pull/43))
+ - RevitClashDetective: Отключен выбор параметра фильтра, которого нет в активном документе ([#42](https://github.com/Bim4Everyone/ARExtensions/pull/42))
+ - Декларации: Добавлены скрипты для нежилых помещений и МОП ([#36](https://github.com/Bim4Everyone/ARExtensions/pull/36))
+ - RevitDeclarations: Добавлены декларации нежилых помещений и МОП  ([#41](https://github.com/Bim4Everyone/ARExtensions/pull/41))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v24.12.01...v25.01.01)
+
+ - Нумерация и примечания: Исправлены правила роста индекса ([#49](https://github.com/Bim4Everyone/HVACExtension/pull/49))
+ - Расчет расходников: Исправлены баги, скорректированы расчеты ([#47](https://github.com/Bim4Everyone/HVACExtension/pull/47))
+ - RevitMechanicalSpecification: Исправлена ошибка с подсчетом изоляции фитингов ([#48](https://github.com/Bim4Everyone/HVACExtension/pull/48))
+ - Примечание и номера: Приведение к единым стандартам ([#46](https://github.com/Bim4Everyone/HVACExtension/pull/46))
+ - Немоделируемые: Приведение к единым стандартам ([#43](https://github.com/Bim4Everyone/HVACExtension/pull/43))
+ - RevitMechanicalSpecification: Исправление сортировки узлов ([#44](https://github.com/Bim4Everyone/HVACExtension/pull/44))
+
+____
+
 **v24.12.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.11.01...v24.12.01)
 
