@@ -1,3 +1,51 @@
+**v25.02.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.01.01...v25.02.01)
+
+ - Обновил библиотеки фреймворка
+ - Templates: Добавлены новые параметры ВИС для передачи заданий СС ([#13](https://github.com/Bim4Everyone/BIM4Everyone/pull/13))
+ - Обновил библиотеки фреймворка
+ - Bim4Everyone.lib: Добавлена функция по обновлению вкладки ([#12](https://github.com/Bim4Everyone/BIM4Everyone/pull/12))
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v25.01.01...v25.02.01)
+
+ - Templates: Обновлен шаблон проекта плагина ([#11](https://github.com/Bim4Everyone/AdminExtensions/pull/11))
+ - Admin: Вынести обновление вкладки в dosymep_libs ([#10](https://github.com/Bim4Everyone/AdminExtensions/pull/10))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v25.01.01...v25.02.01)
+
+ - 2D: Вынести обновление вкладки в dosymep_libs ([#14](https://github.com/Bim4Everyone/2DExtensions/pull/14))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.01.01...v25.02.01)
+
+ - RevitOpeningPlacement: Исправлена ошибка определения точки вставки, прерывающая выполнение команды ([#97](https://github.com/Bim4Everyone/BIMExtensions/pull/97))
+ - RevitOpeningPlacement: Исправлено определение высотных отметок у заданий от ВИС ([#96](https://github.com/Bim4Everyone/BIMExtensions/pull/96))
+ - RevitOpeningPlacement: Исправлено отображение названия основы задания в навигаторе АР ([#95](https://github.com/Bim4Everyone/BIMExtensions/pull/95))
+ - RevitOpeningPlacement: Добавлены столбцы в окно навигатора КР для входящих заданий ([#94](https://github.com/Bim4Everyone/BIMExtensions/pull/94))
+ - RevitOpeningPlacement: Обновлен алгоритм определения солида отверстий АР и КР ([#93](https://github.com/Bim4Everyone/BIMExtensions/pull/93))
+ - Вкладка BIM: Скорректировано автообновление на старте платформы ([#87](https://github.com/Bim4Everyone/BIMExtensions/pull/87))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.01.01...v25.02.01)
+
+ - RevitDeclarations: Обновлены правила расчета УТП "Мастер-спальня" ([#52](https://github.com/Bim4Everyone/ARExtensions/pull/52))
+ - Выдавить помещения: Добавлен плагин ([#50](https://github.com/Bim4Everyone/ARExtensions/pull/50))
+ - RevitRoomExtrusion: Добавлен плагин "Выдавить помещения" ([#51](https://github.com/Bim4Everyone/ARExtensions/pull/51))
+ - Копирование спецификаций АИ: Добавлен плагин ([#49](https://github.com/Bim4Everyone/ARExtensions/pull/49))
+ - RevitCopyInteriorSpecs: Добавлен плагин "Копирование спецификаций АИ" ([#48](https://github.com/Bim4Everyone/ARExtensions/pull/48))
+ - AR: Вынести обновление вкладки в dosymep_libs ([#45](https://github.com/Bim4Everyone/ARExtensions/pull/45))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.01.01...v25.02.01)
+
+ - KR: Вынести обновление вкладки в dosymep_libs ([#23](https://github.com/Bim4Everyone/KRExtensions/pull/23))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.01.01...v25.02.01)
+
+ - Расчет расходников: Добавление удаления расходников без назначения ([#51](https://github.com/Bim4Everyone/HVACExtension/pull/51))
+ - ОВиВК: Повторная очистка от неиспользуемых/неактуальных ([#52](https://github.com/Bim4Everyone/HVACExtension/pull/52))
+ - ОВиВК: Очистка от неиспользуемых/неактуальных ([#50](https://github.com/Bim4Everyone/HVACExtension/pull/50))
+ - OVVK: Вынести обновление вкладки в dosymep_libs ([#45](https://github.com/Bim4Everyone/HVACExtension/pull/45))
+
+____
+
 **v25.01.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v24.12.01...v25.01.01)
 
