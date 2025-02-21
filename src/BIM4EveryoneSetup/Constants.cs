@@ -96,14 +96,16 @@ namespace BIM4EveryoneSetup {
             new Condition($"{pyRevitInstalledProp}", true);
 
         // ReSharper disable once InconsistentNaming
+        public static readonly Condition pyRevitOlderInstalledCondition =
+            new Condition($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
+
+        // ReSharper disable once InconsistentNaming
         public static readonly Condition pyRevitInstallCondition =
-            Condition.NOT(pyRevitInstalledCondition)
-            & Condition.Create($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
+            Condition.NOT(pyRevitInstalledCondition) | pyRevitOlderInstalledCondition;
 
         // ReSharper disable once InconsistentNaming
         public static readonly Condition pyRevitUninstallCondition =
-            pyRevitInstalledCondition
-            & new Condition($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
+            pyRevitInstalledCondition & pyRevitOlderInstalledCondition;
 
 
         public static string LastTag => Process2.StartProcess("git", "tag --sort=-creatordate").First();
