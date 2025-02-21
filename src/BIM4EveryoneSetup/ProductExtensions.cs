@@ -163,7 +163,7 @@ namespace BIM4EveryoneSetup {
                     Return.check,
                     When.After,
                     Step.InstallFinalize,
-                    Condition.Always)
+                    Constants.ConfigInstallCondition)
             );
 
             self.AddXmlElement(
