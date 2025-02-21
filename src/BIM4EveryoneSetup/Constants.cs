@@ -70,7 +70,7 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, @"pyRevit\Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $@"%AppData%\pyRevit-Master\bin\pyrevit.exe";
+        public static readonly string pyRevitCliPath = $@"%AppData%pyRevit-Master\bin\pyrevit.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $@"%AppData%\pyRevit\Extensions";
