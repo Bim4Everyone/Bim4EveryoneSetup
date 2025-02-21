@@ -50,10 +50,6 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitPath = Path.Combine(AppDataPath, "pyRevit-Master");
         public static readonly string UninstallerFile = Path.Combine(pyRevitPath, "unins000.exe");
 
-        // нужно для костылей
-        public static readonly string InvokeDllPath = Path.Combine(pyRevitPath, @"pyrevitlib\pyrevit\runtime");
-        public static readonly string CoreExtensionPath = Path.Combine(pyRevitPath, @"extensions\pyRevitCore.extension");
-
         public static readonly string AssetsPath = @"..\..\assets";
         public static readonly string BundlesPath = Path.Combine(AppDataPath, "pyRevit");
 
@@ -74,7 +70,7 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, @"pyRevit\Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $@"%AppData%\pyRevit-master\bin\pyrevit.exe";
+        public static readonly string pyRevitCliPath = $@"%AppData%\pyRevit-Master\bin\pyrevit.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $@"%AppData%\pyRevit\Extensions";
