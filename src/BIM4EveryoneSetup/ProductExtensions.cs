@@ -82,9 +82,7 @@ namespace BIM4EveryoneSetup {
                     When.Before,
                     Step.InstallExecute,
                     Constants.RemoveCondition
-                    + "OR"
-                    + "(" + Constants.InstallCondition
-                    + $"AND {Constants.pyRevitVersionProp} < \"{Constants.pyRevitVersion}\")")
+                    | (Constants.InstallCondition & Constants.pyRevitInstallCondition))
             );
 
             self.AddXmlElement(
@@ -100,9 +98,7 @@ namespace BIM4EveryoneSetup {
                     Return.check,
                     When.Before,
                     Step.InstallExecute,
-                    Constants.InstallCondition
-                    + " OR "
-                    + Constants.RemoveCondition)
+                    Constants.InstallCondition | Constants.RemoveCondition)
             );
 
             self.AddXmlElement(
@@ -117,8 +113,8 @@ namespace BIM4EveryoneSetup {
                 Return.check,
                 When.Before,
                 Step.InstallExecute,
-                Constants.InstallCondition +
-                $"AND {Constants.pyRevitVersionProp} < \"{Constants.pyRevitVersion}\""));
+                Constants.InstallCondition & Constants.pyRevitInstallCondition)
+            );
 
             self.AddXmlElement(
                 "Wix/Package/UI",
@@ -428,9 +424,9 @@ namespace BIM4EveryoneSetup {
         private static void CreateAttachRevits<T>(this T self) where T : Project {
             string[] args = new[] {
                 "detach --all",
-                "attach master default 2022",
-                "attach master default 2023",
-                "attach master default 2024",
+                "attach master default 2022 --debug",
+                "attach master default 2023 --debug",
+                "attach master default 2024 --debug",
             };
 
             args.ForEach(item =>
@@ -439,8 +435,12 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateConfigureAction<T>(this T self,
             string args, string message, Condition condition = null) where T : Project {
-            condition = condition ?? Constants.ConfigInstallCondition;
-
+            if(condition == null) {
+                condition = Constants.ConfigInstallCondition;
+            } else {
+                condition = condition & Constants.ConfigInstallCondition;
+            }
+            
             WixQuietExecAction action = new WixQuietExecAction(
                 Constants.pyRevitCliPath, args,
                 Return.check, When.After, Step.InstallFinalize, condition) {Id = GenerateActionId("_ConfigureAction_")};
