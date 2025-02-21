@@ -176,7 +176,7 @@ namespace BIM4EveryoneSetup {
 
         public static T SetProductProperties<T>(this T self) where T : Project {
             self.AddProperties(
-                new Property(Constants.pyRevitVersionProp, "0.0.0"),
+                new Property(Constants.pyRevitVersionProp, "99.99.99"),
                 new Property(Constants.pyRevitInstalledProp, "False")
             );
             
