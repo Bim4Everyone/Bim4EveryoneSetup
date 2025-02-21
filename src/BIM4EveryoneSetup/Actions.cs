@@ -23,7 +23,7 @@ namespace BIM4EveryoneSetup {
             }
 
             var isInstalled = Directory.Exists(Constants.pyRevitPath);
-            session[Constants.pyRevitInstalledProp] = isInstalled.ToString();
+            session[Constants.pyRevitInstalledProp] = isInstalled ? "yes" : "no";
 
             session.Log("Finished update properties");
             return ActionResult.Success;

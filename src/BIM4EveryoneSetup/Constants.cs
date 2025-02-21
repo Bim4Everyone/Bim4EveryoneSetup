@@ -70,7 +70,7 @@ namespace BIM4EveryoneSetup {
         public static readonly string pyRevitExtensionsPath = Path.Combine(AppDataPath, @"pyRevit\Extensions");
 
         // ReSharper disable once InconsistentNaming
-        public static readonly string pyRevitCliPath = $@"%AppData%pyRevit-master\bin\pyrevit.exe";
+        public static readonly string pyRevitCliPath = $@"%AppData%pyRevit-Master\bin\pyrevit.exe";
 
         // ReSharper disable once InconsistentNaming
         public static readonly string pyRevitExtensionsDirPath = $@"%AppData%\pyRevit\Extensions";
@@ -88,10 +88,22 @@ namespace BIM4EveryoneSetup {
         public static readonly Condition ChangeCondition = Condition.Create(" (REMOVE) ");
         public static readonly Condition RepairCondition = Condition.Create(" (REINSTALL) ");
         public static readonly Condition RemoveCondition = Condition.BeingUninstalled;
-        public static readonly Condition ConfigInstallCondition = Constants.RepairCondition | Constants.InstallCondition;
-       
+
+        public static readonly Condition ConfigInstallCondition = RepairCondition | InstallCondition;
+
         // ReSharper disable once InconsistentNaming
-        public static readonly Condition pyRevitInstallCondition = Condition.Create($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
+        public static readonly Condition pyRevitInstalledCondition =
+            new Condition($"{pyRevitInstalledProp}", true);
+
+        // ReSharper disable once InconsistentNaming
+        public static readonly Condition pyRevitInstallCondition =
+            Condition.NOT(pyRevitInstalledCondition)
+            & Condition.Create($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
+
+        // ReSharper disable once InconsistentNaming
+        public static readonly Condition pyRevitUninstallCondition =
+            pyRevitInstalledCondition
+            & new Condition($"{pyRevitVersionProp} < \"{pyRevitVersion}\"");
 
 
         public static string LastTag => Process2.StartProcess("git", "tag --sort=-creatordate").First();

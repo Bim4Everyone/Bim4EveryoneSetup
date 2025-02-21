@@ -82,7 +82,7 @@ namespace BIM4EveryoneSetup {
                     When.Before,
                     Step.InstallExecute,
                     Constants.RemoveCondition
-                    | (Constants.InstallCondition & Constants.pyRevitInstallCondition))
+                    | (Constants.InstallCondition & Constants.pyRevitUninstallCondition))
             );
 
             self.AddXmlElement(
