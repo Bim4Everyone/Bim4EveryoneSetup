@@ -38,13 +38,13 @@ jobs:
 
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
-        run: dotnet tool install --global wix --version 4.0.5
+        run: dotnet tool install --global wix --version 4.0.6
         
       # Fix wix extensions: https://github.com/oleg-shilo/wixsharp/issues/1473
       - name: Install WIX Extensions
         run: |
-          wix extension add -g WixToolset.UI.wixext/4.0.5
-          wix extension add -g WixToolset.Util.wixext/4.0.5
+          wix extension add -g WixToolset.UI.wixext/4.0.6
+          wix extension add -g WixToolset.Util.wixext/4.0.6
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
       - name: Build
@@ -115,7 +115,7 @@ jobs:
       - name: Publish Release
         id: publish-release
         if: github.ref == env.release_branch
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
