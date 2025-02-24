@@ -61,6 +61,7 @@ namespace BIM4EveryoneSetup {
             // (определяет стандартные свойства)
             self.AddAction(
                 new ManagedAction(
+                    new Id(nameof(Actions.UpdateProperties)),
                     Actions.UpdateProperties,
                     Return.check,
                     When.Before,
@@ -77,10 +78,11 @@ namespace BIM4EveryoneSetup {
             // Удаляет обязательно до установки
             self.AddAction(
                 new ManagedAction(
+                    new Id(nameof(Actions.Uninstall)),
                     Actions.Uninstall,
                     Return.check,
-                    When.Before,
-                    Step.InstallExecute,
+                    When.After,
+                    new Step(nameof(Actions.UpdateProperties)),
                     Constants.RemoveCondition
                     | (Constants.InstallCondition & Constants.pyRevitUninstallCondition))
             );
@@ -94,10 +96,11 @@ namespace BIM4EveryoneSetup {
             // Удаляет обязательно до установки
             self.AddAction(
                 new ManagedAction(
+                    new Id(nameof(Actions.UninstallBundles)),
                     Actions.UninstallBundles,
                     Return.check,
-                    When.Before,
-                    Step.InstallExecute,
+                    When.After,
+                    new Step(nameof(Actions.Uninstall)),
                     Constants.InstallCondition | Constants.RemoveCondition)
             );
 
@@ -108,11 +111,12 @@ namespace BIM4EveryoneSetup {
 
             // Устанавливает pyRevit
             self.AddAction(new BinaryFileAction(
+                new Id(nameof(Constants.pyRevitInstallFileProp)),
                 Constants.pyRevitInstallFileProp,
                 "/VERYSILENT /CURRENTUSER",
                 Return.check,
-                When.Before,
-                Step.InstallExecute,
+                When.After,
+                new Step(nameof(Actions.UninstallBundles)),
                 Constants.InstallCondition & Constants.pyRevitInstallCondition)
             );
 
@@ -440,10 +444,19 @@ namespace BIM4EveryoneSetup {
             } else {
                 condition = condition & Constants.ConfigInstallCondition;
             }
-            
+
+            Step step = Step.InstallFinalize;
+            if(_configActionNameId > 0) {
+                step = new Step(GeneratePreviousActionId("_ConfigureAction_"));
+            }
+
             WixQuietExecAction action = new WixQuietExecAction(
-                Constants.pyRevitCliPath, args,
-                Return.check, When.After, Step.InstallFinalize, condition) {Id = GenerateActionId("_ConfigureAction_")};
+                Constants.pyRevitCliPath,
+                args,
+                Return.check,
+                When.After,
+                step,
+                condition) {Id = GenerateActionId("_ConfigureAction_")};
 
             self.AddAction(action);
             self.AddXmlElement(
@@ -454,6 +467,10 @@ namespace BIM4EveryoneSetup {
 
         private static string GenerateActionId(string name) {
             return $"{name}.{_configActionNameId++}";
+        }
+        
+        private static string GeneratePreviousActionId(string name) {
+            return $"{name}.{_configActionNameId - 1}";
         }
     }
 }
