@@ -1,3 +1,53 @@
+**v25.03.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.02.01...v25.03.01)
+
+ - Templates: Добавлен параметр АР для квартирографии ([#14](https://github.com/Bim4Everyone/BIM4Everyone/pull/14))
+ - Обновил библиотеки фреймворка
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.02.01...v25.03.01)
+
+ - RevitOpeningPlacement: Обновлен алгоритм проверки касающихся заданий на отверстия ([#99](https://github.com/Bim4Everyone/BIMExtensions/pull/99))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.02.01...v25.03.01)
+
+ - ReviRoomExtrusion :  Изменения подсчёта точки вставки семейства ([#58](https://github.com/Bim4Everyone/ARExtensions/pull/58))
+ - RevitDeclarations: Добавлен столбец "Применимость" для декларации 15.3 ([#57](https://github.com/Bim4Everyone/ARExtensions/pull/57))
+ - RevitRoomExtrusion: Обновлен способ получения ошибочных помещений ([#56](https://github.com/Bim4Everyone/ARExtensions/pull/56))
+ - RevitDeclarations: Обновлены правила сортировки для декларации 16.1  ([#55](https://github.com/Bim4Everyone/ARExtensions/pull/55))
+ - RevitApartmentPlans: Добавлена обработка связей и копирование детализации ([#54](https://github.com/Bim4Everyone/ARExtensions/pull/54))
+ - RevitDeclarations: Исправлена ошибка "временных" семейств ([#53](https://github.com/Bim4Everyone/ARExtensions/pull/53))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.02.01...v25.03.01)
+
+ - Проверить модель: Добавлен плагин ([#25](https://github.com/Bim4Everyone/KRExtensions/pull/25))
+ - RevitKrChecker: Добавлен плагин "Проверить модель" ([#30](https://github.com/Bim4Everyone/KRExtensions/pull/30))
+ - Маркировка: Исправлен файл bundle ([#29](https://github.com/Bim4Everyone/KRExtensions/pull/29))
+ - Нумерация элементов: Создан плагин ([#24](https://github.com/Bim4Everyone/KRExtensions/pull/24))
+ - RevitMarkingElements: Создание плагина ([#28](https://github.com/Bim4Everyone/KRExtensions/pull/28))
+ - RevitReinforcementCoefficient: Изменен расчет арматуры ([#27](https://github.com/Bim4Everyone/KRExtensions/pull/27))
+ - RevitReinforcementCoefficient: Добавлена фильтрация по секции ([#26](https://github.com/Bim4Everyone/KRExtensions/pull/26))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.02.01...v25.03.01)
+
+ - Импорт расчетов: Создание скрипта ([#63](https://github.com/Bim4Everyone/HVACExtension/pull/63))
+ - Нумерация и примечания: Смешанные модели АИ ([#62](https://github.com/Bim4Everyone/HVACExtension/pull/62))
+ - Задание СС(СППЗ): Максимальные числа ([#61](https://github.com/Bim4Everyone/HVACExtension/pull/61))
+ - Немоделируемые: Обновление по замечаниям проектировщиков ([#60](https://github.com/Bim4Everyone/HVACExtension/pull/60))
+ - Задание СС(СППЗ): Инструкции, сетевые папки ([#58](https://github.com/Bim4Everyone/HVACExtension/pull/58))
+ - RevitMechanicalSpecification: Единицы измерения ([#59](https://github.com/Bim4Everyone/HVACExtension/pull/59))
+ - Немоделируемые: Обновление проверки занятости ([#57](https://github.com/Bim4Everyone/HVACExtension/pull/57))
+ - Задание СС(СППЗ): Создан плагин ([#54](https://github.com/Bim4Everyone/HVACExtension/pull/54))
+ - Немоделируемые: Элементы АИ ([#53](https://github.com/Bim4Everyone/HVACExtension/pull/53))
+ - Импорт немоделируемых: Удален импорт старых библиотек ([#56](https://github.com/Bim4Everyone/HVACExtension/pull/56))
+ - RevitMechanicalSpecification: Лишний пробел в наименовании ([#55](https://github.com/Bim4Everyone/HVACExtension/pull/55))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.02.01...v25.03.01)
+
+ - Обновлены зависимости ([#23](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/23))
+ - Обновлены условия выполнения экшенов ([#22](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/22))
+
+____
+
 **v25.02.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.01.01...v25.02.01)
 
