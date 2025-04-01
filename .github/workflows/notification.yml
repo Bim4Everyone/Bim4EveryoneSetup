@@ -10,8 +10,8 @@ on:
   # not work on release: types: [ published ]
   # not work on release: types: [ released ]
   # not work on workflow_run: types: [ completed ]
-  release:
-    types: [ created ]
+  # release:
+  #   types: [ created ]
     
   # manual
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
     steps:
       # Telegram Notify: https://github.com/appleboy/telegram-action/
       - name: Telegram Notify
-        uses: appleboy/telegram-action@v0.1.1
+        uses: appleboy/telegram-action@v1.0.1
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}

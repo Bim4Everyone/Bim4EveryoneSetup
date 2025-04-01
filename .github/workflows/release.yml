@@ -14,7 +14,9 @@ on:
     - cron: '0 0 1 * *'
 
 env:
-  release_branch: "refs/heads/master"
+  body_message: |
+    🚀 Bim4Everyone
+    ⬇️ Платформа обновлена: [скачать](https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest)
 
 jobs:
   build:
@@ -90,14 +92,14 @@ jobs:
       # Get changelog
       - name: Get changelog
         id: changelog
-        if: github.ref == env.release_branch
+        if: github.ref_name == github.event.repository.default_branch
         uses: juliangruber/read-file-action@v1
         with:
           path: bin/CHANGELOG.md
 
       # Update git settings
       - name: Update git settings
-        if: github.ref == env.release_branch
+        if: github.ref_name == github.event.repository.default_branch
         run: |
           git config --global user.name '${{ secrets.GIT_USER_NAME }}'
           git config --global user.email '${{ secrets.GIT_USER_EMAIL }}'
@@ -105,7 +107,7 @@ jobs:
       
       # Commit and push changelog
       - name: Commit and push changelog
-        if: github.ref == env.release_branch
+        if: github.ref_name == github.event.repository.default_branch
         run: |
           git add CHANGELOG.md
           git commit -m "Обновлен CHANGELOG.md"
@@ -114,7 +116,7 @@ jobs:
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
         id: publish-release
-        if: github.ref == env.release_branch
+        if: github.ref_name == github.event.repository.default_branch
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -126,3 +128,17 @@ jobs:
           files: |
             bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
           body: ${{ steps.changelog.outputs.content }}
+  
+  telegram:
+    if: github.ref_name == github.event.repository.default_branch
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      # Telegram Notify: https://github.com/appleboy/telegram-action/
+      - name: Telegram Notify
+        uses: appleboy/telegram-action@v1.0.1
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
+          message: ${{ env.body_message }}
