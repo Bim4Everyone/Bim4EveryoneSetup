@@ -1,3 +1,52 @@
+**v25.04.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.03.01...v25.04.01)
+
+ - Templates: Добавлен параметр проекта КВГ_ПМЩ_Фиксация этажа ([#18](https://github.com/Bim4Everyone/BIM4Everyone/pull/18))
+ - Обновлены библиотеки фреймворка
+ - Templates: Изменен тип данных для параметра ФОП_Количество комнат ([#17](https://github.com/Bim4Everyone/BIM4Everyone/pull/17))
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Templates: Добавлены параметры для изменений листов ([#16](https://github.com/Bim4Everyone/BIM4Everyone/pull/16))
+ - Templates: Обновлены спецификации Квартирографии ([#15](https://github.com/Bim4Everyone/BIM4Everyone/pull/15))
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v25.03.01...v25.04.01)
+
+ - Добавлена поддержка WPF-UI ([#12](https://github.com/Bim4Everyone/AdminExtensions/pull/12))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.03.01...v25.04.01)
+
+ - RevitMarkingElements: Изменения расположения и имени ([#108](https://github.com/Bim4Everyone/BIMExtensions/pull/108))
+ - Обновил загрузку фреймворка
+ - Коллизии: Обновлено расположение кнопок ([#107](https://github.com/Bim4Everyone/BIMExtensions/pull/107))
+ - Связи rvt: Скорректировать расположение кнопок ([#106](https://github.com/Bim4Everyone/BIMExtensions/pull/106))
+ - RevitOpeningPlacement: Обновлены окна навигаторов всех разделов ([#105](https://github.com/Bim4Everyone/BIMExtensions/pull/105))
+ - RevitClashDetective: Добавлена загрузка xml файла отчета из Navisworks ([#104](https://github.com/Bim4Everyone/BIMExtensions/pull/104))
+ - RevitClashDetective: Добавлена загрузка xml файла отчета из Navisworks ([#103](https://github.com/Bim4Everyone/BIMExtensions/pull/103))
+ - RevitScheduleImport: Добавлена поддержка WPF-UI ([#102](https://github.com/Bim4Everyone/BIMExtensions/pull/102))
+ - RevitOpeningPlacement: Скорректировано округление Z координаты точки вставки отверстий АР и КР ([#101](https://github.com/Bim4Everyone/BIMExtensions/pull/101))
+ - Панель Связи: Обновление команд по добавлению и обновлению связей ([#98](https://github.com/Bim4Everyone/BIMExtensions/pull/98))
+ - RevitRefreshLinks: Создан плагин по добавлению и обновлению связей ([#100](https://github.com/Bim4Everyone/BIMExtensions/pull/100))
+ - Добавлена поддержка WPF-UI
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.03.01...v25.04.01)
+
+ - RevitClashDetective: Добавлена загрузка xml файла отчета из Navisworks ([#62](https://github.com/Bim4Everyone/ARExtensions/pull/62))
+ - RevitRooms: Обновление расчета количества комнат ([#61](https://github.com/Bim4Everyone/ARExtensions/pull/61))
+ - RevitRoomTagPlacement: Исправлена ошибка маркировки связей ([#60](https://github.com/Bim4Everyone/ARExtensions/pull/60))
+ - RevitRooms: Добавлены новые спецификации ([#59](https://github.com/Bim4Everyone/ARExtensions/pull/59))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.03.01...v25.04.01)
+
+ - RevitMarkingElements: Изменения расположения ([#31](https://github.com/Bim4Everyone/KRExtensions/pull/31))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.03.01...v25.04.01)
+
+ - Немоделируемые: Ошибка с документом ([#66](https://github.com/Bim4Everyone/HVACExtension/pull/66))
+ - Аудитор: Удаление панели ([#65](https://github.com/Bim4Everyone/HVACExtension/pull/65))
+ - Элементы АИ: Ошибка при обработке коротких элементов ([#64](https://github.com/Bim4Everyone/HVACExtension/pull/64))
+
+____
+
 **v25.03.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.02.01...v25.03.01)
 
