@@ -1,3 +1,62 @@
+**v25.05.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.04.01...v25.05.01)
+
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v25.04.01...v25.05.01)
+
+ - RevitPlugins: Откатил изменения и убрал тестовый код ([#14](https://github.com/Bim4Everyone/AdminExtensions/pull/14))
+ - RevitCreateViewSheet: Обновлён плагин ([#13](https://github.com/Bim4Everyone/AdminExtensions/pull/13))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v25.04.01...v25.05.01)
+
+ - RevitListOfSchedules : Исправление ошибок работы плагина ([#19](https://github.com/Bim4Everyone/2DExtensions/pull/19))
+ - RevitCreateViewSheet: Обновлён плагин ([#18](https://github.com/Bim4Everyone/2DExtensions/pull/18))
+ - Ведомость спецификаций: Добавлен плагин ([#17](https://github.com/Bim4Everyone/2DExtensions/pull/17))
+ - RevitListOfSchedules: Добавлен плагин "Ведомость спецификаций" ([#16](https://github.com/Bim4Everyone/2DExtensions/pull/16))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.04.01...v25.05.01)
+
+ - RevitClashDetective: Добавлена автосортировка по названию проверки ([#120](https://github.com/Bim4Everyone/BIMExtensions/pull/120))
+ - Отверстия: Добавлена кнопка для настроек АР ([#118](https://github.com/Bim4Everyone/BIMExtensions/pull/118))
+ - RevitOpeningPlacement: Обновлён плагин ([#119](https://github.com/Bim4Everyone/BIMExtensions/pull/119))
+ - RevitClashDetective: Обновлен навигатор по коллизиям ([#117](https://github.com/Bim4Everyone/BIMExtensions/pull/117))
+ - RevitClashDetective: Обновлен навигатор по коллизиям ([#116](https://github.com/Bim4Everyone/BIMExtensions/pull/116))
+ - RevitCreatingFiltersByValues: Изменен способ получения элементов ([#114](https://github.com/Bim4Everyone/BIMExtensions/pull/114))
+ - Коллизии: Обновлены ссылки на справку ([#113](https://github.com/Bim4Everyone/BIMExtensions/pull/113))
+ - Проверка РН связей: Создание плагина ([#109](https://github.com/Bim4Everyone/BIMExtensions/pull/109))
+ - RevitCorrectNamingCheck: Создание плагина ([#112](https://github.com/Bim4Everyone/BIMExtensions/pull/112))
+ - RevitMirroredElements: Добавлена поддержка WPF-UI ([#111](https://github.com/Bim4Everyone/BIMExtensions/pull/111))
+ - RevitPluginSettings: Добавлена поддержка "WPF-UI" ([#110](https://github.com/Bim4Everyone/BIMExtensions/pull/110))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.04.01...v25.05.01)
+
+ - RevitClashDetective: Обновлен навигатор по коллизиям ([#65](https://github.com/Bim4Everyone/ARExtensions/pull/65))
+ - ReviRoomExtrusion : Исправлен метод проверки контуров помещений ([#64](https://github.com/Bim4Everyone/ARExtensions/pull/64))
+ - RevitRooms: Добавлен параметр фиксации этажа помещения ([#63](https://github.com/Bim4Everyone/ARExtensions/pull/63))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.04.01...v25.05.01)
+
+ - Таблицы УПК: Исправления формирования таблицы по колоннам ([#36](https://github.com/Bim4Everyone/KRExtensions/pull/36))
+ - Скрыть колонки ВРС: Добавлен плагин ([#35](https://github.com/Bim4Everyone/KRExtensions/pull/35))
+ - Маркировка пилонов: обновление в соответствии с технологией проектирования ([#34](https://github.com/Bim4Everyone/KRExtensions/pull/34))
+ - Таблицы УПК: Отредактирован в соответствии с новым подходом проектирования ([#33](https://github.com/Bim4Everyone/KRExtensions/pull/33))
+ - Таблицы УПК: Отредактирован в соответствии с обновленной технологией ([#32](https://github.com/Bim4Everyone/KRExtensions/pull/32))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.04.01...v25.05.01)
+
+ - RevitMechanicalSpecification: Расширение технологии ([#69](https://github.com/Bim4Everyone/HVACExtension/pull/69))
+ - Немоделируемые: Расчет расходников ([#67](https://github.com/Bim4Everyone/HVACExtension/pull/67))
+ - RevitAxonometryViews: Исправление ошибки телеметрии ([#68](https://github.com/Bim4Everyone/HVACExtension/pull/68))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.04.01...v25.05.01)
+
+ - Обновлены скрипты CI\CD
+
+____
+
 **v25.04.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.03.01...v25.04.01)
 
