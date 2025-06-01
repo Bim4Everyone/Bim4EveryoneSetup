@@ -1,3 +1,51 @@
+**v25.06.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.05.01...v25.06.01)
+
+ - Templates: Добавлены параметры отделки ([#20](https://github.com/Bim4Everyone/BIM4Everyone/pull/20))
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+ - Templates: Добавлен параметр ФОП_ВИС_Потери давления ([#19](https://github.com/Bim4Everyone/BIM4Everyone/pull/19))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.05.01...v25.06.01)
+
+ - RSN менеджер: Изменения расположения кнопок и доступности плагина ([#132](https://github.com/Bim4Everyone/BIMExtensions/pull/132))
+ - Отверстия ВИС: Расставить на элемент ([#128](https://github.com/Bim4Everyone/BIMExtensions/pull/128))
+ - RevitClashDetective: Сохранение файлов отчетов перенесено в документы пользователя ([#131](https://github.com/Bim4Everyone/BIMExtensions/pull/131))
+ - RevitClashDetective: Сохранение файлов отчетов перенесено в документы пользователя ([#130](https://github.com/Bim4Everyone/BIMExtensions/pull/130))
+ - RevitOpeningPlacement: Скорректирован угол поворота для заданий от ВИС под фитинги в перекрытиях ([#129](https://github.com/Bim4Everyone/BIMExtensions/pull/129))
+ - Проверка РН связей: Создание плагина ([#115](https://github.com/Bim4Everyone/BIMExtensions/pull/115))
+ - RevitRsnManager: Cоздание плагина ([#127](https://github.com/Bim4Everyone/BIMExtensions/pull/127))
+ - RevitClashDetective: Исправлено получения названия файла импортируемых коллизий ([#126](https://github.com/Bim4Everyone/BIMExtensions/pull/126))
+ - RevitClashDetective: Исправлено получения названия файла импортируемых коллизий ([#125](https://github.com/Bim4Everyone/BIMExtensions/pull/125))
+ - Коллизии: Убрана лишняя проверка названия импортируемого проекта ([#124](https://github.com/Bim4Everyone/BIMExtensions/pull/124))
+ - Коллизии: Убрана лишняя проверка названия импортируемого проекта ([#123](https://github.com/Bim4Everyone/BIMExtensions/pull/123))
+ - RevitClashDetective: Исправлена ошибка получения объема солидов ([#122](https://github.com/Bim4Everyone/BIMExtensions/pull/122))
+ - RevitClashDetective: Исправлена ошибка получения объема солидов ([#121](https://github.com/Bim4Everyone/BIMExtensions/pull/121))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.05.01...v25.06.01)
+
+ - RevitDeclarations: Исправлена ошибка алгоритма проверки контуров ([#70](https://github.com/Bim4Everyone/ARExtensions/pull/70))
+ - RevitDeclarations: Обновлен список выводимых параметров для количества комнат  ([#69](https://github.com/Bim4Everyone/ARExtensions/pull/69))
+ - RevitFinishingWalls: Добавлен выбор способа привязки верха стен ([#68](https://github.com/Bim4Everyone/ARExtensions/pull/68))
+ - RevitFinishingWalls: Плагин портирован на WPF-UI ([#67](https://github.com/Bim4Everyone/ARExtensions/pull/67))
+ - RevitClashDetective: Исправлена ошибка получения объема солидов ([#66](https://github.com/Bim4Everyone/ARExtensions/pull/66))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.05.01...v25.06.01)
+
+ - RevitReinforcementCoefficient: Добавлена фильтрация опалубки ([#37](https://github.com/Bim4Everyone/KRExtensions/pull/37))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.05.01...v25.06.01)
+
+ - Немоделируемые: Смена алгоритма расчета диаметра хомутов, хомута рапид ([#75](https://github.com/Bim4Everyone/HVACExtension/pull/75))
+ - Немоделируемые: Подготовка к работе с координатами СМР ([#74](https://github.com/Bim4Everyone/HVACExtension/pull/74))
+ - RevitMechanicalSpecification: Добавление ReInsertToGroup ([#73](https://github.com/Bim4Everyone/HVACExtension/pull/73))
+ - HVACExtension: Правка бандлов ([#72](https://github.com/Bim4Everyone/HVACExtension/pull/72))
+ - Расчет аэродинамики: Возвращение на платформу ранее удаленного скрипта ([#70](https://github.com/Bim4Everyone/HVACExtension/pull/70))
+ - Очистка изоляции: Добавлен скрипт ([#71](https://github.com/Bim4Everyone/HVACExtension/pull/71))
+
+____
+
 **v25.05.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.04.01...v25.05.01)
 
