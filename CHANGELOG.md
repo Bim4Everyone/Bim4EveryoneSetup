@@ -1,3 +1,51 @@
+**v25.07.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.06.01...v25.07.01)
+
+ - Templates: Добавлена категория для отделки ([#21](https://github.com/Bim4Everyone/BIM4Everyone/pull/21))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.06.01...v25.07.01)
+
+ - RevitRsnManager: Исправлено автоформатирование ([#144](https://github.com/Bim4Everyone/BIMExtensions/pull/144))
+ - RevitMarkingElements: переход на WPF.UI ([#143](https://github.com/Bim4Everyone/BIMExtensions/pull/143))
+ - RevitRsnManager: Исправлен путь к локализации ([#142](https://github.com/Bim4Everyone/BIMExtensions/pull/142))
+ - RevitRsnManager: Изменения UI, Исправления Ошибок, Исправлено Форматирование ([#141](https://github.com/Bim4Everyone/BIMExtensions/pull/141))
+ - Скрытие РН связей: Изменения размер иконок ([#140](https://github.com/Bim4Everyone/BIMExtensions/pull/140))
+ - RevitCreatingFiltersByValues: Обновление кода на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#139](https://github.com/Bim4Everyone/BIMExtensions/pull/139))
+ - Скрытие РН связей: Создание плагина ([#133](https://github.com/Bim4Everyone/BIMExtensions/pull/133))
+ - RevitHideWorkset: Cоздание плагина ([#138](https://github.com/Bim4Everyone/BIMExtensions/pull/138))
+ - RevitMarkingElements: Обновление кода на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#137](https://github.com/Bim4Everyone/BIMExtensions/pull/137))
+ - RevitValueModifier: Обновление кода на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#136](https://github.com/Bim4Everyone/BIMExtensions/pull/136))
+ - RevitOverridingGraphicsInViews: Обновление кода на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#135](https://github.com/Bim4Everyone/BIMExtensions/pull/135))
+ - RevitOpeningPlacement: Добавлен статус "Недопустимые конструкции" ([#134](https://github.com/Bim4Everyone/BIMExtensions/pull/134))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.06.01...v25.07.01)
+
+ - RevitDeclarations: Исправлена ошибка проверки контуров ([#74](https://github.com/Bim4Everyone/ARExtensions/pull/74))
+ - RevitRemoveRoomTags: Обновление кода на C[#12](https://github.com/Bim4Everyone/ARExtensions/pull/12) ([#73](https://github.com/Bim4Everyone/ARExtensions/pull/73))
+ - RevitArchitecturalDocumentation: Обновление кода на C[#12](https://github.com/Bim4Everyone/ARExtensions/pull/12) ([#72](https://github.com/Bim4Everyone/ARExtensions/pull/72))
+ - RevitCopyInteriorSpecs: Обновление кода на C[#12](https://github.com/Bim4Everyone/ARExtensions/pull/12) ([#71](https://github.com/Bim4Everyone/ARExtensions/pull/71))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.06.01...v25.07.01)
+
+ - RevitShakeSpecs: Обновление кода на C[#12](https://github.com/Bim4Everyone/KRExtensions/pull/12) ([#45](https://github.com/Bim4Everyone/KRExtensions/pull/45))
+ - RevitPylonDocumentation: Обновление кода на C[#12](https://github.com/Bim4Everyone/KRExtensions/pull/12) ([#44](https://github.com/Bim4Everyone/KRExtensions/pull/44))
+ - RevitFamilyParameterAdder: Обновление кода на C[#12](https://github.com/Bim4Everyone/KRExtensions/pull/12) ([#43](https://github.com/Bim4Everyone/KRExtensions/pull/43))
+ - RevitKrChecker: Обновление кода на C[#12](https://github.com/Bim4Everyone/KRExtensions/pull/12) ([#42](https://github.com/Bim4Everyone/KRExtensions/pull/42))
+ - RevitReinforcementCoefficient: Обновление кода на C[#12](https://github.com/Bim4Everyone/KRExtensions/pull/12) ([#41](https://github.com/Bim4Everyone/KRExtensions/pull/41))
+ - RevitPylonDocumentation: Изменение фильтрации каркаса ([#40](https://github.com/Bim4Everyone/KRExtensions/pull/40))
+ - RevitPylonDocumentation: Добавлена работа с каркасами  ([#39](https://github.com/Bim4Everyone/KRExtensions/pull/39))
+ - Маркировка пилонов: Изменение положения кнопки ([#38](https://github.com/Bim4Everyone/KRExtensions/pull/38))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.06.01...v25.07.01)
+
+ - Выравнивание приборов: Создание плагина ([#82](https://github.com/Bim4Everyone/HVACExtension/pull/82))
+ - Импорт расчета: Создан плагин импорта расчета из аудитора ([#79](https://github.com/Bim4Everyone/HVACExtension/pull/79))
+ - Расчет расходников: Ускорение работы ([#78](https://github.com/Bim4Everyone/HVACExtension/pull/78))
+ - Очистка изоляции: Счетчик элементов  ([#77](https://github.com/Bim4Everyone/HVACExtension/pull/77))
+ - Расчет аэродинамики: Фикс ошибок по отзывам ([#76](https://github.com/Bim4Everyone/HVACExtension/pull/76))
+
+____
+
 **v25.06.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.05.01...v25.06.01)
 
