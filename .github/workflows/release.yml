@@ -69,6 +69,8 @@ jobs:
           "LOG_TRACE_ACTIVE":"${{ vars.LOG_TRACE_ACTIVE }}"
           "LOG_TRACE_LEVEL":"${{ vars.LOG_TRACE_LEVEL }}"
           "LOG_TRACE_SERVER_URL":"${{ vars.LOG_TRACE_SERVER_URL }}"
+          "ENABLE_OPEN_DOC_TIME":"${{ vars.ENABLE_OPEN_DOC_TIME }}"
+          "ENABLE_SYNC_DOC_TIME":"${{ vars.ENABLE_SYNC_DOC_TIME }}"
           "SOCIALS_MAIN":"${{ vars.SOCIALS_MAIN }}"
           "SOCIALS_NEWS":"${{ vars.SOCIALS_NEWS }}"
           "SOCIALS_DISCUSS":"${{ vars.SOCIALS_DISCUSS }}"

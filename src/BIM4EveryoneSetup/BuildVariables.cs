@@ -25,6 +25,8 @@ namespace BIM4EveryoneSetup {
         public static string LogTraceActive => Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE") ?? "disable";
         public static string LogTraceLevel => Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL") ?? "Information";
         public static string LogTraceServerUrl => Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL") ?? "localhost";
+        public static string EnableOpenDocTime => Environment.GetEnvironmentVariable("ENABLE_OPEN_DOC_TIME") ?? "true";
+        public static string EnableSyncDocTime => Environment.GetEnvironmentVariable("ENABLE_SYNC_DOC_TIME") ?? "true";
         
         public static string SocialsMain => Environment.GetEnvironmentVariable("SOCIALS_MAIN") ?? "https://t.me/bim4everyone_group";
         public static string SocialsNews => Environment.GetEnvironmentVariable("SOCIALS_NEWS") ?? "https://t.me/bim4everyone_news";

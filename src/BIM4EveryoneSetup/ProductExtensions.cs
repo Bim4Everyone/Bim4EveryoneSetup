@@ -276,11 +276,15 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"\tLOG_TRACE_ACTIVE: {BuildVariables.LogTraceActive}");
             Console.WriteLine($"\tLOG_TRACE_LEVEL: {BuildVariables.LogTraceLevel}");
             Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {BuildVariables.LogTraceServerUrl}");
+            Console.WriteLine($"\tENABLE_OPEN_DOC_TIME: {BuildVariables.EnableOpenDocTime}");
+            Console.WriteLine($"\tENABLE_SYNC_DOC_TIME: {BuildVariables.EnableSyncDocTime}");
             
             self.AddProperties(
                 new Property("LOG_TRACE_ACTIVE", BuildVariables.LogTraceActive),
                 new Property("LOG_TRACE_LEVEL", BuildVariables.LogTraceLevel),
-                new Property("LOG_TRACE_SERVER_URL", BuildVariables.LogTraceServerUrl)
+                new Property("LOG_TRACE_SERVER_URL", BuildVariables.LogTraceServerUrl),
+                new Property("ENABLE_OPEN_DOC_TIME", BuildVariables.EnableOpenDocTime),
+                new Property("ENABLE_SYNC_DOC_TIME", BuildVariables.EnableSyncDocTime)
             );
             
             return self;
@@ -378,6 +382,8 @@ namespace BIM4EveryoneSetup {
                 "configs log_trace:active \"[LOG_TRACE_ACTIVE]\"",
                 "configs log_trace:level \"[LOG_TRACE_LEVEL]\"",
                 "configs log_trace:server_name \"[LOG_TRACE_SERVER_URL]\"",
+                "configs log_trace:enable_open_doc_time \"[ENABLE_OPEN_DOC_TIME]\"",
+                "configs log_trace:enable_sync_doc_time \"[ENABLE_SYNC_DOC_TIME]\"",
             };
 
             args.ForEach(item =>
