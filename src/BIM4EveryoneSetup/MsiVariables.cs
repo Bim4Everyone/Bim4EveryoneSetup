@@ -16,7 +16,7 @@ namespace BIM4EveryoneSetup {
         public string CoreUserLocale { get; set; } = "ru";
 
         public string CorpName { get; set; } = "Bim4Everyone";
-        public string CorpSettingsPath { get; set; }
+        public string CorpSettingsPath { get; set; } = "\"\"";
 
         public string TelemetryActive { get; set; } = "disable";
         public string TelemetryUseUTC { get; set; } = "yes";
