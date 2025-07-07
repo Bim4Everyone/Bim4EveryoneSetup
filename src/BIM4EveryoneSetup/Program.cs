@@ -58,7 +58,7 @@ namespace BIM4EveryoneSetup {
             builder.AppendLine($"**{Constants.CurrentTag}**  ");
 
             // Обновляем расширения (чтобы возможно было пушить)
-            string botAccessToken = Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN");
+            string botAccessToken = BuildVariables.BotAccessToken;
             if(!string.IsNullOrEmpty(botAccessToken)) {
                 foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                     Console.WriteLine($"{featureExtension.Name}:");

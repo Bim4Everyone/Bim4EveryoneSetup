@@ -189,28 +189,28 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductSocialsProperties<T>(this T self) where T : Project {
             Console.WriteLine("Socials");
-            Console.WriteLine($"\tSOCIALS_MAIN: {Environment.GetEnvironmentVariable("SOCIALS_MAIN")}");
-            Console.WriteLine($"\tSOCIALS_NEWS: {Environment.GetEnvironmentVariable("SOCIALS_NEWS")}");
-            Console.WriteLine($"\tSOCIALS_DISCUSS: {Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")}");
-            Console.WriteLine($"\tSOCIALS_2D: {Environment.GetEnvironmentVariable("SOCIALS_2D")}");
-            Console.WriteLine($"\tSOCIALS_BIM: {Environment.GetEnvironmentVariable("SOCIALS_BIM")}");
-            Console.WriteLine($"\tSOCIALS_AR: {Environment.GetEnvironmentVariable("SOCIALS_AR")}");
-            Console.WriteLine($"\tSOCIALS_KR: {Environment.GetEnvironmentVariable("SOCIALS_KR")}");
-            Console.WriteLine($"\tSOCIALS_OVVK: {Environment.GetEnvironmentVariable("SOCIALS_OVVK")}");
-            Console.WriteLine($"\tSOCIALS_PAGE: {Environment.GetEnvironmentVariable("SOCIALS_PAGE")}");
-            Console.WriteLine($"\tSOCIALS_DOWNLOADS: {Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS")}");
+            Console.WriteLine($"\tSOCIALS_MAIN: {BuildVariables.SocialsMain}");
+            Console.WriteLine($"\tSOCIALS_NEWS: {BuildVariables.SocialsNews}");
+            Console.WriteLine($"\tSOCIALS_DISCUSS: {BuildVariables.SocialsDiscuss}");
+            Console.WriteLine($"\tSOCIALS_2D: {BuildVariables.Socials2D}");
+            Console.WriteLine($"\tSOCIALS_BIM: {BuildVariables.SocialsBim}");
+            Console.WriteLine($"\tSOCIALS_AR: {BuildVariables.SocialsAR}");
+            Console.WriteLine($"\tSOCIALS_KR: {BuildVariables.SocialsKR}");
+            Console.WriteLine($"\tSOCIALS_OVVK: {BuildVariables.SocialsOVVK}");
+            Console.WriteLine($"\tSOCIALS_PAGE: {BuildVariables.SocialsPage}");
+            Console.WriteLine($"\tSOCIALS_DOWNLOADS: {BuildVariables.SocialsDownloads}");
 
             self.AddProperties(
-                new Property("SOCIALS_MAIN", Environment.GetEnvironmentVariable("SOCIALS_MAIN")),
-                new Property("SOCIALS_NEWS", Environment.GetEnvironmentVariable("SOCIALS_NEWS")),
-                new Property("SOCIALS_DISCUSS", Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")),
-                new Property("SOCIALS_2D", Environment.GetEnvironmentVariable("SOCIALS_2D")),
-                new Property("SOCIALS_BIM", Environment.GetEnvironmentVariable("SOCIALS_BIM")),
-                new Property("SOCIALS_AR", Environment.GetEnvironmentVariable("SOCIALS_AR")),
-                new Property("SOCIALS_KR", Environment.GetEnvironmentVariable("SOCIALS_KR")),
-                new Property("SOCIALS_OVVK", Environment.GetEnvironmentVariable("SOCIALS_OVVK")),
-                new Property("SOCIALS_PAGE", Environment.GetEnvironmentVariable("SOCIALS_PAGE")),
-                new Property("SOCIALS_DOWNLOADS", Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS"))
+                new Property("SOCIALS_MAIN", BuildVariables.SocialsMain),
+                new Property("SOCIALS_NEWS", BuildVariables.SocialsNews),
+                new Property("SOCIALS_DISCUSS", BuildVariables.SocialsDiscuss),
+                new Property("SOCIALS_2D", BuildVariables.Socials2D),
+                new Property("SOCIALS_BIM", BuildVariables.SocialsBim),
+                new Property("SOCIALS_AR", BuildVariables.SocialsAR),
+                new Property("SOCIALS_KR", BuildVariables.SocialsKR),
+                new Property("SOCIALS_OVVK", BuildVariables.SocialsOVVK),
+                new Property("SOCIALS_PAGE", BuildVariables.SocialsPage),
+                new Property("SOCIALS_DOWNLOADS", BuildVariables.SocialsDownloads)
             );
             
             return self;
@@ -218,24 +218,24 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductSettingsProperties<T>(this T self) where T : Project {
             Console.WriteLine("Settings");
-            Console.WriteLine($"\tAUTOUPDATE: {Environment.GetEnvironmentVariable("AUTOUPDATE")}");
-            Console.WriteLine($"\tROCKETMODE: {Environment.GetEnvironmentVariable("ROCKETMODE")}");
-            Console.WriteLine($"\tCHECKUPDATES: {Environment.GetEnvironmentVariable("CHECKUPDATES")}");
-            Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
-            Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
-            Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
-            Console.WriteLine($"\tCORP_NAME: {Environment.GetEnvironmentVariable("CORP_NAME")}");
-            Console.WriteLine($"\tCORP_SETTINGS_PATH: {Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH")}");
+            Console.WriteLine($"\tAUTOUPDATE: {BuildVariables.Autoupdate}");
+            Console.WriteLine($"\tROCKETMODE: {BuildVariables.Rocketmode}");
+            Console.WriteLine($"\tCHECKUPDATES: {BuildVariables.Checkupdates}");
+            Console.WriteLine($"\tUSERCANEXTEND: {BuildVariables.UserCanExtend}");
+            Console.WriteLine($"\tUSERCANCONFIG: {BuildVariables.UserCanConfig}");
+            Console.WriteLine($"\tCOREUSERLOCALE: {BuildVariables.CoreUserLocale}");
+            Console.WriteLine($"\tCORP_NAME: {BuildVariables.CorpName}");
+            Console.WriteLine($"\tCORP_SETTINGS_PATH: {BuildVariables.CorpSettingsPath}");
             
             self.AddProperties(
-                new Property("AUTOUPDATE", Environment.GetEnvironmentVariable("AUTOUPDATE")),
-                new Property("ROCKETMODE", Environment.GetEnvironmentVariable("ROCKETMODE")),
-                new Property("CHECKUPDATES", Environment.GetEnvironmentVariable("CHECKUPDATES")),
-                new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
-                new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
-                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE")),
-                new Property("CORP_NAME", Environment.GetEnvironmentVariable("CORP_NAME")),
-                new Property("CORP_SETTINGS_PATH", Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH"))
+                new Property("AUTOUPDATE", BuildVariables.Autoupdate),
+                new Property("ROCKETMODE", BuildVariables.Rocketmode),
+                new Property("CHECKUPDATES", BuildVariables.Checkupdates),
+                new Property("USERCANEXTEND", BuildVariables.UserCanExtend),
+                new Property("USERCANCONFIG", BuildVariables.UserCanConfig),
+                new Property("COREUSERLOCALE", BuildVariables.CoreUserLocale),
+                new Property("CORP_NAME", BuildVariables.CorpName),
+                new Property("CORP_SETTINGS_PATH", BuildVariables.CorpSettingsPath)
             );
             
             return self;
@@ -243,14 +243,14 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductTelemetryProperties<T>(this T self) where T : Project {
             Console.WriteLine("Telemetry");
-            Console.WriteLine($"\tTELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")}");
-            Console.WriteLine($"\tTELEMETRY_USE_UTC: {Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")}");
-            Console.WriteLine($"\tTELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL")}");
+            Console.WriteLine($"\tTELEMETRY_ACTIVE: {BuildVariables.TelemetryActive}");
+            Console.WriteLine($"\tTELEMETRY_USE_UTC: {BuildVariables.TelemetryUseUTC}");
+            Console.WriteLine($"\tTELEMETRY_SERVER_URL: {BuildVariables.TelemetryServerUrl}");
             
             self.AddProperties(
-                new Property("TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")),
-                new Property("TELEMETRY_USE_UTC", Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")),
-                new Property("TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL"))
+                new Property("TELEMETRY_ACTIVE", BuildVariables.TelemetryActive),
+                new Property("TELEMETRY_USE_UTC", BuildVariables.TelemetryUseUTC),
+                new Property("TELEMETRY_SERVER_URL", BuildVariables.TelemetryServerUrl)
             );
             
             return self;
@@ -258,14 +258,14 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductAppTelemetryProperties<T>(this T self) where T : Project {
             Console.WriteLine("AppTelemetry");
-            Console.WriteLine($"\tAPP_TELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")}");
-            Console.WriteLine($"\tAPP_TELEMETRY_EVENT_FLAGS: {Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")}");
-            Console.WriteLine($"\tAPP_TELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL")}");
+            Console.WriteLine($"\tAPP_TELEMETRY_ACTIVE: {BuildVariables.AppTelemetryActive}");
+            Console.WriteLine($"\tAPP_TELEMETRY_EVENT_FLAGS: {BuildVariables.AppTelemetryEventFlags}");
+            Console.WriteLine($"\tAPP_TELEMETRY_SERVER_URL: {BuildVariables.AppTelemetryServerUrl}");
             
             self.AddProperties(
-                new Property("APP_TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")),
-                new Property("APP_TELEMETRY_EVENT_FLAGS", Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")),
-                new Property("APP_TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL"))
+                new Property("APP_TELEMETRY_ACTIVE", BuildVariables.AppTelemetryActive),
+                new Property("APP_TELEMETRY_EVENT_FLAGS", BuildVariables.AppTelemetryEventFlags),
+                new Property("APP_TELEMETRY_SERVER_URL", BuildVariables.AppTelemetryServerUrl)
             );
             
             return self;
@@ -273,14 +273,14 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductLogTraceProperties<T>(this T self) where T : Project {
             Console.WriteLine("LogTrace");
-            Console.WriteLine($"\tLOG_TRACE_ACTIVE: {Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")}");
-            Console.WriteLine($"\tLOG_TRACE_LEVEL: {Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")}");
-            Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL")}");
+            Console.WriteLine($"\tLOG_TRACE_ACTIVE: {BuildVariables.LogTraceActive}");
+            Console.WriteLine($"\tLOG_TRACE_LEVEL: {BuildVariables.LogTraceLevel}");
+            Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {BuildVariables.LogTraceServerUrl}");
             
             self.AddProperties(
-                new Property("LOG_TRACE_ACTIVE", Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")),
-                new Property("LOG_TRACE_LEVEL", Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")),
-                new Property("LOG_TRACE_SERVER_URL", Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL"))
+                new Property("LOG_TRACE_ACTIVE", BuildVariables.LogTraceActive),
+                new Property("LOG_TRACE_LEVEL", BuildVariables.LogTraceLevel),
+                new Property("LOG_TRACE_SERVER_URL", BuildVariables.LogTraceServerUrl)
             );
             
             return self;
