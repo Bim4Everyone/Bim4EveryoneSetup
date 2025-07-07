@@ -43,9 +43,8 @@ namespace BIM4EveryoneSetup {
                                 ?? Process2.StartProcess("git", "branch --show-current").First();
             Console.WriteLine($"Current branch name: {branchName}");
 
-            // refs/heads/master
-            if(branchName.EndsWith("main")
-               || branchName.EndsWith("master")) {
+            // refs/heads/main
+            if(branchName.EndsWith("main")) {
                 Console.WriteLine("Building extensions changelog");
                 BuildChangelog();
             } else {

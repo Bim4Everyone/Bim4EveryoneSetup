@@ -4,7 +4,7 @@ on:
   # on pull_request to master
   pull_request:
     types: [ opened, synchronize ]
-    branches: [ main, master ]
+    branches: [ main ]
   
   # manual
   workflow_dispatch:
