@@ -236,7 +236,7 @@ namespace BIM4EveryoneSetup {
                 new Property("USERCANCONFIG", msiVariables.UserCanConfig),
                 new Property("COREUSERLOCALE", msiVariables.CoreUserLocale),
                 new Property("CORP_NAME", msiVariables.CorpName),
-                new Property("CORP_SETTINGS_PATH", msiVariables.CorpSettingsPath)
+                new Property("CORP_SETTINGS_PATH", msiVariables.CorpSettingsPath) {Secure = true}
             );
 
             return self;
