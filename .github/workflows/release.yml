@@ -50,8 +50,36 @@ jobs:
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
       - name: Build
-        run: dotnet build -c Release -p BOT_ACCESS_TOKEN=${{ secrets.BOT_ACCESS_TOKEN }}
-      
+        run: dotnet build -c Release
+        env:
+          "BOT_ACCESS_TOKEN":"${{ secrets.BOT_ACCESS_TOKEN }}"
+          "AUTOUPDATE":"${{ vars.AUTOUPDATE }}"
+          "ROCKETMODE":"${{ vars.ROCKETMODE }}"
+          "CHECKUPDATES":"${{ vars.CHECKUPDATES }}"
+          "USERCANEXTEND":"${{ vars.USERCANEXTEND }}"
+          "USERCANCONFIG":"${{ vars.USERCANCONFIG }}"
+          "COREUSERLOCALE":"${{ vars.COREUSERLOCALE }}"
+          "CORP_NAME":"${{ vars.CORP_NAME }}"
+          "CORP_SETTINGS_PATH":"${{ vars.CORP_SETTINGS_PATH }}"
+          "TELEMETRY_ACTIVE":"${{ vars.TELEMETRY_ACTIVE }}"
+          "TELEMETRY_SERVER_URL":"${{ vars.TELEMETRY_SERVER_URL }}"
+          "APP_TELEMETRY_ACTIVE":"${{ vars.APP_TELEMETRY_ACTIVE }}"
+          "APP_TELEMETRY_EVENT_FLAGS":"${{ vars.APP_TELEMETRY_EVENT_FLAGS }}"
+          "APP_TELEMETRY_SERVER_URL":"${{ vars.APP_TELEMETRY_SERVER_URL }}"
+          "LOG_TRACE_ACTIVE":"${{ vars.LOG_TRACE_ACTIVE }}"
+          "LOG_TRACE_LEVEL":"${{ vars.LOG_TRACE_LEVEL }}"
+          "LOG_TRACE_SERVER_URL":"${{ vars.LOG_TRACE_SERVER_URL }}"
+          "SOCIALS_MAIN":"${{ vars.SOCIALS_MAIN }}"
+          "SOCIALS_NEWS":"${{ vars.SOCIALS_NEWS }}"
+          "SOCIALS_DISCUSS":"${{ vars.SOCIALS_DISCUSS }}"
+          "SOCIALS_2D":"${{ vars.SOCIALS_2D }}"
+          "SOCIALS_BIM":"${{ vars.SOCIALS_BIM }}"
+          "SOCIALS_AR":"${{ vars.SOCIALS_AR }}"
+          "SOCIALS_KR":"${{ vars.SOCIALS_KR }}"
+          "SOCIALS_OVVK":"${{ vars.SOCIALS_OVVK }}"
+          "SOCIALS_PAGE":"${{ vars.SOCIALS_PAGE }}"
+          "SOCIALS_DOWNLOADS":"${{ vars.SOCIALS_DOWNLOADS }}"
+          
       # Get msi version
       - name: Get MSI Version
         id: current-date
