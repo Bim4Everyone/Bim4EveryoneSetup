@@ -1,41 +1,52 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <Platforms>x64</Platforms>
-    <TargetFramework>net48</TargetFramework>
-  </PropertyGroup>
-  
-  <ItemGroup>
-    <None Remove="*.msi" />
-    <None Remove="*.exe" />
-    <None Remove="*.wxs" />
-    <None Remove="*.wixpdb" />
-    <None Remove="*.wixobj" />
-    <None Remove="CustomAction.config" />
-    <Content Include="../../assets/*.*" Link="assets/%(FileName)$(FileExt)" />
-    <Content Include="../../.github/workflows/*.yml" Link="ci/%(FileName)$(FileExt)" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="WixSharp_wix4" Version="2.6.0" />
-    <PackageReference Include="WixSharp_wix4.bin" Version="2.6.0" />
-    <PackageReference Include="WixSharp-wix4.WPF" Version="2.6.0" />
-    <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.6" />
-    <PackageReference Include="WixToolset.Mba.Core" Version="4.0.6" />
-  </ItemGroup>
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <Platforms>x64</Platforms>
+        <TargetFramework>net48</TargetFramework>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="*.msi"/>
+        <None Remove="*.exe"/>
+        <None Remove="*.wxs"/>
+        <None Remove="*.wixpdb"/>
+        <None Remove="*.wixobj"/>
+        <None Remove="CustomAction.config"/>
+        <Content Include="../../assets/*.*" Link="assets/%(FileName)$(FileExt)"/>
+        <Content Include="../../.github/workflows/*.yml" Link="ci/%(FileName)$(FileExt)"/>
+    </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cd .\&#xD;&#xA;set ide=true&#xD;&#xA;&#xD;&quot;$(TargetPath)&quot;" />
-  </Target>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="WixSharp_wix4" Version="2.6.0"/>
+        <PackageReference Include="WixSharp_wix4.bin" Version="2.6.0"/>
+        <PackageReference Include="WixSharp-wix4.WPF" Version="2.6.0"/>
+        <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.6"/>
+        <PackageReference Include="WixToolset.Mba.Core" Version="4.0.6"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
+        <Reference Include="System.Windows.Forms"/>
+        <Reference Include="System.Xaml"/>
+        <Reference Include="WindowsBase"/>
+    </ItemGroup>
+
+    <PropertyGroup Label="CI">
+        <B4E_BOT_ACCESS_TOKEN>""</B4E_BOT_ACCESS_TOKEN>
+        <B4E_MSI_VARIABLES_PATH>""</B4E_MSI_VARIABLES_PATH>
+    </PropertyGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+        <Exec Command="
+            cd .\
+            set ide=true
+            set B4E_BOT_ACCESS_TOKEN=$(B4E_BOT_ACCESS_TOKEN)
+            set B4E_MSI_VARIABLES_PATH=$(B4E_MSI_VARIABLES_PATH)
+            &quot;$(TargetPath)&quot;
+        "/>
+    </Target>
 
 </Project>
