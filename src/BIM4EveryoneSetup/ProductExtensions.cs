@@ -218,9 +218,9 @@ namespace BIM4EveryoneSetup {
         
         public static T SetProductSettingsProperties<T>(this T self) where T : Project {
             Console.WriteLine("Settings");
-            Console.WriteLine($"\tAUTOUPDATE: {BuildVariables.Autoupdate}");
-            Console.WriteLine($"\tROCKETMODE: {BuildVariables.Rocketmode}");
-            Console.WriteLine($"\tCHECKUPDATES: {BuildVariables.Checkupdates}");
+            Console.WriteLine($"\tAUTOUPDATE: {BuildVariables.AutoUpdate}");
+            Console.WriteLine($"\tROCKETMODE: {BuildVariables.RocketMode}");
+            Console.WriteLine($"\tCHECKUPDATES: {BuildVariables.CheckUpdates}");
             Console.WriteLine($"\tUSERCANEXTEND: {BuildVariables.UserCanExtend}");
             Console.WriteLine($"\tUSERCANCONFIG: {BuildVariables.UserCanConfig}");
             Console.WriteLine($"\tCOREUSERLOCALE: {BuildVariables.CoreUserLocale}");
@@ -228,9 +228,9 @@ namespace BIM4EveryoneSetup {
             Console.WriteLine($"\tCORP_SETTINGS_PATH: {BuildVariables.CorpSettingsPath}");
             
             self.AddProperties(
-                new Property("AUTOUPDATE", BuildVariables.Autoupdate),
-                new Property("ROCKETMODE", BuildVariables.Rocketmode),
-                new Property("CHECKUPDATES", BuildVariables.Checkupdates),
+                new Property("AUTOUPDATE", BuildVariables.AutoUpdate),
+                new Property("ROCKETMODE", BuildVariables.RocketMode),
+                new Property("CHECKUPDATES", BuildVariables.CheckUpdates),
                 new Property("USERCANEXTEND", BuildVariables.UserCanExtend),
                 new Property("USERCANCONFIG", BuildVariables.UserCanConfig),
                 new Property("COREUSERLOCALE", BuildVariables.CoreUserLocale),

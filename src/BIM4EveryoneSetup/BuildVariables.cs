@@ -4,9 +4,9 @@ namespace BIM4EveryoneSetup {
     internal static class BuildVariables {
         public static string BotAccessToken => Environment.GetEnvironmentVariable("B4E_BOT_ACCESS_TOKEN");
         
-        public static string Autoupdate => Environment.GetEnvironmentVariable("B4E_AUTOUPDATE") ?? "enable";
-        public static string Rocketmode => Environment.GetEnvironmentVariable("B4E_OCKETMODE") ?? "enable";
-        public static string Checkupdates => Environment.GetEnvironmentVariable("B4E_CHECKUPDATES") ?? "enable";
+        public static string AutoUpdate => Environment.GetEnvironmentVariable("B4E_AUTOUPDATE") ?? "enable";
+        public static string RocketMode => Environment.GetEnvironmentVariable("B4E_ROCKETMODE") ?? "enable";
+        public static string CheckUpdates => Environment.GetEnvironmentVariable("B4E_CHECKUPDATES") ?? "enable";
         public static string UserCanExtend => Environment.GetEnvironmentVariable("B4E_USERCANEXTEND") ?? "yes";
         public static string UserCanConfig => Environment.GetEnvironmentVariable("B4E_USERCANCONFIG") ?? "yes";
         public static string CoreUserLocale => Environment.GetEnvironmentVariable("B4E_COREUSERLOCALE") ?? "ru";
