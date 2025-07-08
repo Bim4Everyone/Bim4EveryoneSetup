@@ -59,7 +59,7 @@ namespace BIM4EveryoneSetup {
 
         public static readonly string RevitIconAssetFile = Path.Combine(AssetsPath, "revit.png");
         public static readonly string ProductLicenceAssetFile = Path.Combine(AssetsPath, "license.rtf");
-        public static readonly string ProductIconAssetFile = Path.Combine(AssetsPath, "Bim4Everyone_transparent.ico");
+        public static readonly string ProductIconAssetFile = Path.Combine(AssetsPath, "Bim4Everyone.ico");
         public static readonly string WixUIBannerBmp = Path.Combine(AssetsPath, "WixUIBannerBmp.png");
         public static readonly string WixUIDialogBmp = Path.Combine(AssetsPath, "WixUIDialogBmp.png");
 
