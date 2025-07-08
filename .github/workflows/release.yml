@@ -41,7 +41,7 @@ jobs:
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
         run: dotnet tool install --global wix --version 4.0.6
-        
+      
       # Fix wix extensions: https://github.com/oleg-shilo/wixsharp/issues/1473
       - name: Install WIX Extensions
         run: |
@@ -50,7 +50,7 @@ jobs:
 
       # Build project: https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
       - name: Build
-        run: dotnet build -c Release -p BOT_ACCESS_TOKEN=${{ secrets.BOT_ACCESS_TOKEN }}
+        run: dotnet build -c Release -p B4E_BOT_ACCESS_TOKEN=${{ secrets.B4E_BOT_ACCESS_TOKEN }} -p B4E_MSI_VARIABLES_PATH=${{ secrets.B4E_MSI_VARIABLES_PATH }}
       
       # Get msi version
       - name: Get MSI Version
@@ -80,7 +80,7 @@ jobs:
         with:
           name: test-install-result
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.log
-          
+      
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload MSIX package
         if: always()
@@ -112,7 +112,7 @@ jobs:
           git add CHANGELOG.md
           git commit -m "Обновлен CHANGELOG.md"
           git push
-          
+      
       # Publish release: https://github.com/softprops/action-gh-release
       - name: Publish Release
         id: publish-release

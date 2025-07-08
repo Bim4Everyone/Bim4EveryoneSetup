@@ -57,6 +57,8 @@ namespace BIM4EveryoneSetup {
         public static readonly string ExtensionsFile = Path.Combine(BundlesPath, "extensions.json");
         public static readonly string ExtensionsAssetFile = Path.Combine(BinPath, "extensions.json");
 
+
+        public static readonly string MsiVariablesFile = Path.Combine(AssetsPath, "MsiVariables.json");
         public static readonly string RevitIconAssetFile = Path.Combine(AssetsPath, "revit.png");
         public static readonly string ProductLicenceAssetFile = Path.Combine(AssetsPath, "license.rtf");
         public static readonly string ProductIconAssetFile = Path.Combine(AssetsPath, "Bim4Everyone.ico");

@@ -8,7 +8,7 @@ using WixSharp.CommonTasks;
 namespace BIM4EveryoneSetup {
     internal static class ProductExtensions {
         private static int _configActionNameId = 0;
-        
+
         public static T SetProductInfo<T>(this T self) where T : Project {
             self.GUID = Constants.ProductId;
             self.UpgradeCode = Constants.ProductId;
@@ -157,7 +157,7 @@ namespace BIM4EveryoneSetup {
                 "ProgressText",
                 $"Action={nameof(Actions.RepairExtensions)};Message=Восстановление расширений платформы");
 
-            
+
             // Устанавливает владельца папок на текущего пользователя
             // при установке через SCCM по какой-то причине
             // указывается владельцем всех папок расширений пользователь SYSTEM
@@ -174,7 +174,7 @@ namespace BIM4EveryoneSetup {
                 "Wix/Package/UI",
                 "ProgressText",
                 $"Action={nameof(Actions.UpdateOwner)};Message=Исправление владельца папок расширений");
-           
+
             return self;
         }
 
@@ -183,106 +183,111 @@ namespace BIM4EveryoneSetup {
                 new Property(Constants.pyRevitVersionProp, "99.99.99"),
                 new Property(Constants.pyRevitInstalledProp, "False")
             );
-            
+
             return self;
         }
-        
-        public static T SetProductSocialsProperties<T>(this T self) where T : Project {
+
+        public static T SetProductSocialsProperties<T>(this T self, MsiVariables msiVariables) where T : Project {
             Console.WriteLine("Socials");
-            Console.WriteLine($"\tSOCIALS_MAIN: {Environment.GetEnvironmentVariable("SOCIALS_MAIN")}");
-            Console.WriteLine($"\tSOCIALS_NEWS: {Environment.GetEnvironmentVariable("SOCIALS_NEWS")}");
-            Console.WriteLine($"\tSOCIALS_DISCUSS: {Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")}");
-            Console.WriteLine($"\tSOCIALS_2D: {Environment.GetEnvironmentVariable("SOCIALS_2D")}");
-            Console.WriteLine($"\tSOCIALS_BIM: {Environment.GetEnvironmentVariable("SOCIALS_BIM")}");
-            Console.WriteLine($"\tSOCIALS_AR: {Environment.GetEnvironmentVariable("SOCIALS_AR")}");
-            Console.WriteLine($"\tSOCIALS_KR: {Environment.GetEnvironmentVariable("SOCIALS_KR")}");
-            Console.WriteLine($"\tSOCIALS_OVVK: {Environment.GetEnvironmentVariable("SOCIALS_OVVK")}");
-            Console.WriteLine($"\tSOCIALS_PAGE: {Environment.GetEnvironmentVariable("SOCIALS_PAGE")}");
-            Console.WriteLine($"\tSOCIALS_DOWNLOADS: {Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS")}");
+            Console.WriteLine($"\tSOCIALS_MAIN: {msiVariables.SocialsMain}");
+            Console.WriteLine($"\tSOCIALS_NEWS: {msiVariables.SocialsNews}");
+            Console.WriteLine($"\tSOCIALS_DISCUSS: {msiVariables.SocialsDiscuss}");
+            Console.WriteLine($"\tSOCIALS_2D: {msiVariables.Socials2D}");
+            Console.WriteLine($"\tSOCIALS_BIM: {msiVariables.SocialsBim}");
+            Console.WriteLine($"\tSOCIALS_AR: {msiVariables.SocialsAR}");
+            Console.WriteLine($"\tSOCIALS_KR: {msiVariables.SocialsKR}");
+            Console.WriteLine($"\tSOCIALS_OVVK: {msiVariables.SocialsOVVK}");
+            Console.WriteLine($"\tSOCIALS_PAGE: {msiVariables.SocialsPage}");
+            Console.WriteLine($"\tSOCIALS_DOWNLOADS: {msiVariables.SocialsDownloads}");
 
             self.AddProperties(
-                new Property("SOCIALS_MAIN", Environment.GetEnvironmentVariable("SOCIALS_MAIN")),
-                new Property("SOCIALS_NEWS", Environment.GetEnvironmentVariable("SOCIALS_NEWS")),
-                new Property("SOCIALS_DISCUSS", Environment.GetEnvironmentVariable("SOCIALS_DISCUSS")),
-                new Property("SOCIALS_2D", Environment.GetEnvironmentVariable("SOCIALS_2D")),
-                new Property("SOCIALS_BIM", Environment.GetEnvironmentVariable("SOCIALS_BIM")),
-                new Property("SOCIALS_AR", Environment.GetEnvironmentVariable("SOCIALS_AR")),
-                new Property("SOCIALS_KR", Environment.GetEnvironmentVariable("SOCIALS_KR")),
-                new Property("SOCIALS_OVVK", Environment.GetEnvironmentVariable("SOCIALS_OVVK")),
-                new Property("SOCIALS_PAGE", Environment.GetEnvironmentVariable("SOCIALS_PAGE")),
-                new Property("SOCIALS_DOWNLOADS", Environment.GetEnvironmentVariable("SOCIALS_DOWNLOADS"))
+                new Property("SOCIALS_MAIN", msiVariables.SocialsMain),
+                new Property("SOCIALS_NEWS", msiVariables.SocialsNews),
+                new Property("SOCIALS_DISCUSS", msiVariables.SocialsDiscuss),
+                new Property("SOCIALS_2D", msiVariables.Socials2D),
+                new Property("SOCIALS_BIM", msiVariables.SocialsBim),
+                new Property("SOCIALS_AR", msiVariables.SocialsAR),
+                new Property("SOCIALS_KR", msiVariables.SocialsKR),
+                new Property("SOCIALS_OVVK", msiVariables.SocialsOVVK),
+                new Property("SOCIALS_PAGE", msiVariables.SocialsPage),
+                new Property("SOCIALS_DOWNLOADS", msiVariables.SocialsDownloads)
             );
-            
+
             return self;
         }
-        
-        public static T SetProductSettingsProperties<T>(this T self) where T : Project {
+
+        public static T SetProductSettingsProperties<T>(this T self, MsiVariables msiVariables)
+            where T : Project {
             Console.WriteLine("Settings");
-            Console.WriteLine($"\tAUTOUPDATE: {Environment.GetEnvironmentVariable("AUTOUPDATE")}");
-            Console.WriteLine($"\tROCKETMODE: {Environment.GetEnvironmentVariable("ROCKETMODE")}");
-            Console.WriteLine($"\tCHECKUPDATES: {Environment.GetEnvironmentVariable("CHECKUPDATES")}");
-            Console.WriteLine($"\tUSERCANEXTEND: {Environment.GetEnvironmentVariable("USERCANEXTEND")}");
-            Console.WriteLine($"\tUSERCANCONFIG: {Environment.GetEnvironmentVariable("USERCANCONFIG")}");
-            Console.WriteLine($"\tCOREUSERLOCALE: {Environment.GetEnvironmentVariable("COREUSERLOCALE")}");
-            Console.WriteLine($"\tCORP_NAME: {Environment.GetEnvironmentVariable("CORP_NAME")}");
-            Console.WriteLine($"\tCORP_SETTINGS_PATH: {Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH")}");
-            
+            Console.WriteLine($"\tAUTOUPDATE: {msiVariables.AutoUpdate}");
+            Console.WriteLine($"\tROCKETMODE: {msiVariables.RocketMode}");
+            Console.WriteLine($"\tCHECKUPDATES: {msiVariables.CheckUpdates}");
+            Console.WriteLine($"\tUSERCANEXTEND: {msiVariables.UserCanExtend}");
+            Console.WriteLine($"\tUSERCANCONFIG: {msiVariables.UserCanConfig}");
+            Console.WriteLine($"\tCOREUSERLOCALE: {msiVariables.CoreUserLocale}");
+            Console.WriteLine($"\tCORP_NAME: {msiVariables.CorpName}");
+            Console.WriteLine($"\tCORP_SETTINGS_PATH: {msiVariables.CorpSettingsPath}");
+
             self.AddProperties(
-                new Property("AUTOUPDATE", Environment.GetEnvironmentVariable("AUTOUPDATE")),
-                new Property("ROCKETMODE", Environment.GetEnvironmentVariable("ROCKETMODE")),
-                new Property("CHECKUPDATES", Environment.GetEnvironmentVariable("CHECKUPDATES")),
-                new Property("USERCANEXTEND", Environment.GetEnvironmentVariable("USERCANEXTEND")),
-                new Property("USERCANCONFIG", Environment.GetEnvironmentVariable("USERCANCONFIG")),
-                new Property("COREUSERLOCALE", Environment.GetEnvironmentVariable("COREUSERLOCALE")),
-                new Property("CORP_NAME", Environment.GetEnvironmentVariable("CORP_NAME")),
-                new Property("CORP_SETTINGS_PATH", Environment.GetEnvironmentVariable("CORP_SETTINGS_PATH"))
+                new Property("AUTOUPDATE", msiVariables.AutoUpdate),
+                new Property("ROCKETMODE", msiVariables.RocketMode),
+                new Property("CHECKUPDATES", msiVariables.CheckUpdates),
+                new Property("USERCANEXTEND", msiVariables.UserCanExtend),
+                new Property("USERCANCONFIG", msiVariables.UserCanConfig),
+                new Property("COREUSERLOCALE", msiVariables.CoreUserLocale),
+                new Property("CORP_NAME", msiVariables.CorpName),
+                new Property("CORP_SETTINGS_PATH", msiVariables.CorpSettingsPath)
             );
-            
+
             return self;
         }
-        
-        public static T SetProductTelemetryProperties<T>(this T self) where T : Project {
+
+        public static T SetProductTelemetryProperties<T>(this T self, MsiVariables msiVariables) where T : Project {
             Console.WriteLine("Telemetry");
-            Console.WriteLine($"\tTELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")}");
-            Console.WriteLine($"\tTELEMETRY_USE_UTC: {Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")}");
-            Console.WriteLine($"\tTELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL")}");
-            
+            Console.WriteLine($"\tTELEMETRY_ACTIVE: {msiVariables.TelemetryActive}");
+            Console.WriteLine($"\tTELEMETRY_USE_UTC: {msiVariables.TelemetryUseUTC}");
+            Console.WriteLine($"\tTELEMETRY_SERVER_URL: {msiVariables.TelemetryServerUrl}");
+
             self.AddProperties(
-                new Property("TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("TELEMETRY_ACTIVE")),
-                new Property("TELEMETRY_USE_UTC", Environment.GetEnvironmentVariable("TELEMETRY_USE_UTC")),
-                new Property("TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("TELEMETRY_SERVER_URL"))
+                new Property("TELEMETRY_ACTIVE", msiVariables.TelemetryActive),
+                new Property("TELEMETRY_USE_UTC", msiVariables.TelemetryUseUTC),
+                new Property("TELEMETRY_SERVER_URL", msiVariables.TelemetryServerUrl)
             );
-            
+
             return self;
         }
-        
-        public static T SetProductAppTelemetryProperties<T>(this T self) where T : Project {
+
+        public static T SetProductAppTelemetryProperties<T>(this T self, MsiVariables msiVariables) where T : Project {
             Console.WriteLine("AppTelemetry");
-            Console.WriteLine($"\tAPP_TELEMETRY_ACTIVE: {Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")}");
-            Console.WriteLine($"\tAPP_TELEMETRY_EVENT_FLAGS: {Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")}");
-            Console.WriteLine($"\tAPP_TELEMETRY_SERVER_URL: {Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL")}");
-            
+            Console.WriteLine($"\tAPP_TELEMETRY_ACTIVE: {msiVariables.AppTelemetryActive}");
+            Console.WriteLine($"\tAPP_TELEMETRY_EVENT_FLAGS: {msiVariables.AppTelemetryEventFlags}");
+            Console.WriteLine($"\tAPP_TELEMETRY_SERVER_URL: {msiVariables.AppTelemetryServerUrl}");
+
             self.AddProperties(
-                new Property("APP_TELEMETRY_ACTIVE", Environment.GetEnvironmentVariable("APP_TELEMETRY_ACTIVE")),
-                new Property("APP_TELEMETRY_EVENT_FLAGS", Environment.GetEnvironmentVariable("APP_TELEMETRY_EVENT_FLAGS")),
-                new Property("APP_TELEMETRY_SERVER_URL", Environment.GetEnvironmentVariable("APP_TELEMETRY_SERVER_URL"))
+                new Property("APP_TELEMETRY_ACTIVE", msiVariables.AppTelemetryActive),
+                new Property("APP_TELEMETRY_EVENT_FLAGS", msiVariables.AppTelemetryEventFlags),
+                new Property("APP_TELEMETRY_SERVER_URL", msiVariables.AppTelemetryServerUrl)
             );
-            
+
             return self;
         }
-        
-        public static T SetProductLogTraceProperties<T>(this T self) where T : Project {
+
+        public static T SetProductLogTraceProperties<T>(this T self, MsiVariables msiVariables) where T : Project {
             Console.WriteLine("LogTrace");
-            Console.WriteLine($"\tLOG_TRACE_ACTIVE: {Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")}");
-            Console.WriteLine($"\tLOG_TRACE_LEVEL: {Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")}");
-            Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL")}");
-            
+            Console.WriteLine($"\tLOG_TRACE_ACTIVE: {msiVariables.LogTraceActive}");
+            Console.WriteLine($"\tLOG_TRACE_LEVEL: {msiVariables.LogTraceLevel}");
+            Console.WriteLine($"\tLOG_TRACE_SERVER_URL: {msiVariables.LogTraceServerUrl}");
+            Console.WriteLine($"\tENABLE_OPEN_DOC_TIME: {msiVariables.EnableOpenDocTime}");
+            Console.WriteLine($"\tENABLE_SYNC_DOC_TIME: {msiVariables.EnableSyncDocTime}");
+
             self.AddProperties(
-                new Property("LOG_TRACE_ACTIVE", Environment.GetEnvironmentVariable("LOG_TRACE_ACTIVE")),
-                new Property("LOG_TRACE_LEVEL", Environment.GetEnvironmentVariable("LOG_TRACE_LEVEL")),
-                new Property("LOG_TRACE_SERVER_URL", Environment.GetEnvironmentVariable("LOG_TRACE_SERVER_URL"))
+                new Property("LOG_TRACE_ACTIVE", msiVariables.LogTraceActive),
+                new Property("LOG_TRACE_LEVEL", msiVariables.LogTraceLevel),
+                new Property("LOG_TRACE_SERVER_URL", msiVariables.LogTraceServerUrl),
+                new Property("ENABLE_OPEN_DOC_TIME", msiVariables.EnableOpenDocTime),
+                new Property("ENABLE_SYNC_DOC_TIME", msiVariables.EnableSyncDocTime)
             );
-            
+
             return self;
         }
 
@@ -295,10 +300,10 @@ namespace BIM4EveryoneSetup {
 
             // Настройка дефолтных параметров
             self.CreateConfigureDefaultParams();
-            
+
             // Настройка социальных сетей
             self.CreateConfigureSocialsParams();
-            
+
             // Настройка телеметрии
             self.CreateConfigureTelemetryParams();
 
@@ -310,8 +315,7 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateConfigureUpdateExtensions<T>(this T self) where T : Project {
             string[] args = new[] {
-                "extensions paths forget --all", 
-                "extensions paths add \"%appdata%\\pyRevit\\Extensions\"",
+                "extensions paths forget --all", "extensions paths add \"%appdata%\\pyRevit\\Extensions\"",
                 "extensions update --all",
             };
 
@@ -321,30 +325,22 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateConfigureDefaultParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs core:user_locale \"[COREUSERLOCALE]\"",
-                "configs rocketmode \"[ROCKETMODE]\"",
-                "configs autoupdate \"[AUTOUPDATE]\"",
-                "configs checkupdates \"[CHECKUPDATES]\"", 
-                "configs usercanextend \"[USERCANEXTEND]\"", 
-                "configs usercanconfig \"[USERCANCONFIG]\"",
-                "configs corp:name \"[CORP_NAME]\"",
-                "configs corp:settings_path \"[CORP_SETTINGS_PATH]\"",
+                "configs core:user_locale \"[COREUSERLOCALE]\"", "configs rocketmode \"[ROCKETMODE]\"",
+                "configs autoupdate \"[AUTOUPDATE]\"", "configs checkupdates \"[CHECKUPDATES]\"",
+                "configs usercanextend \"[USERCANEXTEND]\"", "configs usercanconfig \"[USERCANCONFIG]\"",
+                "configs corp:name \"[CORP_NAME]\"", "configs corp:settings_path \"[CORP_SETTINGS_PATH]\"",
             };
 
             args.ForEach(item =>
                 self.CreateConfigureAction(item, "Настройка параметров по умолчанию"));
         }
-        
+
         private static void CreateConfigureSocialsParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs socials:tg_main \"[SOCIALS_MAIN]\"",
-                "configs socials:tg_news \"[SOCIALS_NEWS]\"",
-                "configs socials:tg_discuss \"[SOCIALS_DISCUSS]\"",
-                "configs socials:tg_2d \"[SOCIALS_2D]\"",
-                "configs socials:tg_bim \"[SOCIALS_BIM]\"",
-                "configs socials:tg_ar \"[SOCIALS_AR]\"",
-                "configs socials:tg_kr \"[SOCIALS_KR]\"",
-                "configs socials:tg_ovvk \"[SOCIALS_OVVK]\"",
+                "configs socials:tg_main \"[SOCIALS_MAIN]\"", "configs socials:tg_news \"[SOCIALS_NEWS]\"",
+                "configs socials:tg_discuss \"[SOCIALS_DISCUSS]\"", "configs socials:tg_2d \"[SOCIALS_2D]\"",
+                "configs socials:tg_bim \"[SOCIALS_BIM]\"", "configs socials:tg_ar \"[SOCIALS_AR]\"",
+                "configs socials:tg_kr \"[SOCIALS_KR]\"", "configs socials:tg_ovvk \"[SOCIALS_OVVK]\"",
                 "configs socials:page_link \"[SOCIALS_PAGE]\"",
                 "configs socials:downloads_link \"[SOCIALS_DOWNLOADS]\"",
             };
@@ -352,36 +348,36 @@ namespace BIM4EveryoneSetup {
             args.ForEach(item =>
                 self.CreateConfigureAction(item, "Настройка параметров социальных сетей"));
         }
-        
+
         private static void CreateConfigureTelemetryParams<T>(this T self) where T : Project {
             string[] args = new[] {
-                "configs telemetry \"[TELEMETRY_ACTIVE]\"", 
-                "configs telemetry utc \"[TELEMETRY_USE_UTC]\"",
+                "configs telemetry \"[TELEMETRY_ACTIVE]\"", "configs telemetry utc \"[TELEMETRY_USE_UTC]\"",
                 "configs telemetry server \"[TELEMETRY_SERVER_URL]\"",
-            };
-            
-            args.ForEach(item =>
-                self.CreateConfigureAction(item, 
-                    "Настройка параметров телеметрии", "(TELEMETRY_ACTIVE=\"enable\")"));
-            
-            args = new[] {
-                "configs apptelemetry \"[APP_TELEMETRY_ACTIVE]\"", 
-                "configs apptelemetry flags \"[APP_TELEMETRY_EVENT_FLAGS]\"",
-                "configs apptelemetry server \"[APP_TELEMETRY_SERVER_URL]\"",
-            };
-            
-            args.ForEach(item =>
-                self.CreateConfigureAction(item, 
-                    "Настройка параметров телеметрии", "(APP_TELEMETRY_ACTIVE=\"enable\")"));
-            
-            args = new[] {
-                "configs log_trace:active \"[LOG_TRACE_ACTIVE]\"",
-                "configs log_trace:level \"[LOG_TRACE_LEVEL]\"",
-                "configs log_trace:server_name \"[LOG_TRACE_SERVER_URL]\"",
             };
 
             args.ForEach(item =>
-                self.CreateConfigureAction(item, 
+                self.CreateConfigureAction(item,
+                    "Настройка параметров телеметрии", "(TELEMETRY_ACTIVE=\"enable\")"));
+
+            args = new[] {
+                "configs apptelemetry \"[APP_TELEMETRY_ACTIVE]\"",
+                "configs apptelemetry flags \"[APP_TELEMETRY_EVENT_FLAGS]\"",
+                "configs apptelemetry server \"[APP_TELEMETRY_SERVER_URL]\"",
+            };
+
+            args.ForEach(item =>
+                self.CreateConfigureAction(item,
+                    "Настройка параметров телеметрии", "(APP_TELEMETRY_ACTIVE=\"enable\")"));
+
+            args = new[] {
+                "configs log_trace:active \"[LOG_TRACE_ACTIVE]\"", "configs log_trace:level \"[LOG_TRACE_LEVEL]\"",
+                "configs log_trace:server_name \"[LOG_TRACE_SERVER_URL]\"",
+                "configs log_trace:enable_open_doc_time \"[ENABLE_OPEN_DOC_TIME]\"",
+                "configs log_trace:enable_sync_doc_time \"[ENABLE_SYNC_DOC_TIME]\"",
+            };
+
+            args.ForEach(item =>
+                self.CreateConfigureAction(item,
                     "Настройка параметров телеметрии", "(LOG_TRACE_ACTIVE=\"enable\")"));
         }
 
@@ -391,34 +387,23 @@ namespace BIM4EveryoneSetup {
                 "configs pyRevitBundlesCreatorExtension.extension:private_repo true",
                 "configs pyRevitBundlesCreatorExtension.extension:username \"\"",
                 "configs pyRevitBundlesCreatorExtension.extension:password \"\"",
-                "configs pyRevitCore.extension:disabled true", 
-                "configs pyRevitCore.extension:private_repo true",
-                "configs pyRevitCore.extension:username \"\"",
-                "configs pyRevitCore.extension:password \"\"",
+                "configs pyRevitCore.extension:disabled true", "configs pyRevitCore.extension:private_repo true",
+                "configs pyRevitCore.extension:username \"\"", "configs pyRevitCore.extension:password \"\"",
                 "configs pyRevitDevHooks.extension:disabled true",
                 "configs pyRevitDevHooks.extension:private_repo true",
-                "configs pyRevitDevHooks.extension:username \"\"", 
-                "configs pyRevitDevHooks.extension:password \"\"",
+                "configs pyRevitDevHooks.extension:username \"\"", "configs pyRevitDevHooks.extension:password \"\"",
                 "configs pyRevitDevTools.extension:disabled true",
                 "configs pyRevitDevTools.extension:private_repo true",
-                "configs pyRevitDevTools.extension:username \"\"",
-                "configs pyRevitDevTools.extension:password \"\"",
-                "configs pyRevitTags.extension:disabled true", 
-                "configs pyRevitTags.extension:private_repo true",
-                "configs pyRevitTags.extension:username \"\"", 
-                "configs pyRevitTags.extension:password \"\"",
+                "configs pyRevitDevTools.extension:username \"\"", "configs pyRevitDevTools.extension:password \"\"",
+                "configs pyRevitTags.extension:disabled true", "configs pyRevitTags.extension:private_repo true",
+                "configs pyRevitTags.extension:username \"\"", "configs pyRevitTags.extension:password \"\"",
                 "configs pyRevitTemplates.extension:disabled true",
                 "configs pyRevitTemplates.extension:private_repo true",
-                "configs pyRevitTemplates.extension:username \"\"", 
-                "configs pyRevitTemplates.extension:password \"\"",
-                "configs pyRevitTools.extension:disabled true", 
-                "configs pyRevitTools.extension:private_repo true",
-                "configs pyRevitTools.extension:username \"\"",
-                "configs pyRevitTools.extension:password \"\"",
-                "configs pyRevitTutor.extension:disabled true",
-                "configs pyRevitTutor.extension:private_repo true",
-                "configs pyRevitTutor.extension:username \"\"",
-                "configs pyRevitTutor.extension:password \"\"",
+                "configs pyRevitTemplates.extension:username \"\"", "configs pyRevitTemplates.extension:password \"\"",
+                "configs pyRevitTools.extension:disabled true", "configs pyRevitTools.extension:private_repo true",
+                "configs pyRevitTools.extension:username \"\"", "configs pyRevitTools.extension:password \"\"",
+                "configs pyRevitTutor.extension:disabled true", "configs pyRevitTutor.extension:private_repo true",
+                "configs pyRevitTutor.extension:username \"\"", "configs pyRevitTutor.extension:password \"\"",
             };
 
             args.ForEach(item =>
@@ -427,9 +412,7 @@ namespace BIM4EveryoneSetup {
 
         private static void CreateAttachRevits<T>(this T self) where T : Project {
             string[] args = new[] {
-                "detach --all",
-                "attach master default 2022",
-                "attach master default 2023",
+                "detach --all", "attach master default 2022", "attach master default 2023",
                 "attach master default 2024",
             };
 
@@ -468,7 +451,7 @@ namespace BIM4EveryoneSetup {
         private static string GenerateActionId(string name) {
             return $"{name}.{_configActionNameId++}";
         }
-        
+
         private static string GeneratePreviousActionId(string name) {
             return $"{name}.{_configActionNameId - 1}";
         }

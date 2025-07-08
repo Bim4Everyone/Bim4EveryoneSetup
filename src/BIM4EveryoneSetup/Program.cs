@@ -58,7 +58,7 @@ namespace BIM4EveryoneSetup {
             builder.AppendLine($"**{Constants.CurrentTag}**  ");
 
             // Обновляем расширения (чтобы возможно было пушить)
-            string botAccessToken = Environment.GetEnvironmentVariable("BOT_ACCESS_TOKEN");
+            string botAccessToken = MsiVariables.BotAccessToken;
             if(!string.IsNullOrEmpty(botAccessToken)) {
                 foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
                     Console.WriteLine($"{featureExtension.Name}:");
@@ -74,12 +74,13 @@ namespace BIM4EveryoneSetup {
 
                     Console.WriteLine($"\tGet changes");
                     featureExtension.GetChanges(Constants.CurrentTag, Constants.LastTag, builder);
-                } 
+                }
             }
-            
+
             string value = Extensions.GetChanges(Constants.ProductUrl, default);
             if(!string.IsNullOrEmpty(value)) {
-                builder.AppendLine($"[Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
+                builder.AppendLine(
+                    $"[Bim4EveryoneSetup]({Constants.ProductUrl}/compare/{Constants.LastTag}...{Constants.CurrentTag})");
                 builder.AppendLine(value);
                 builder.AppendLine();
             }
@@ -108,6 +109,13 @@ namespace BIM4EveryoneSetup {
 
             project.OutDir = Constants.BinPath;
             project.OutFileName = "Bim4Everyone_" + Constants.CurrentTag;
+            
+            MsiVariables msiVariables = new MsiVariables();
+            if(File.Exists(MsiVariables.MsiVariablesFile)) {
+                Console.WriteLine("Msi variables file exists");
+                string jsonContent = File.ReadAllText(MsiVariables.MsiVariablesFile);
+                msiVariables = JsonConvert.DeserializeObject<MsiVariables>(jsonContent) ?? new MsiVariables();
+            }
 
             project.SetBinaries();
             project.SetProductUI();
@@ -115,14 +123,14 @@ namespace BIM4EveryoneSetup {
             project.SetProductActions();
             project.SetProductSettings();
             project.SetProductConfiguration();
-            
+
             project.SetProductProperties();
-            project.SetProductSettingsProperties();
-            project.SetProductSocialsProperties();
-            project.SetProductTelemetryProperties();
-            project.SetProductAppTelemetryProperties();
-            project.SetProductLogTraceProperties();
-            
+            project.SetProductSettingsProperties(msiVariables);
+            project.SetProductSocialsProperties(msiVariables);
+            project.SetProductTelemetryProperties(msiVariables);
+            project.SetProductAppTelemetryProperties(msiVariables);
+            project.SetProductLogTraceProperties(msiVariables);
+
             // Устанавливаем стратегию обновлений
             // разрешаем устанавливать более младшие версии
             project.MajorUpgrade = new MajorUpgrade() {
@@ -133,10 +141,9 @@ namespace BIM4EveryoneSetup {
 
             // Добавляем изображения платформы
             project.WixVariables = new Dictionary<string, string>() {
-                {"WixUIBannerBmp", Constants.WixUIBannerBmp},
-                {"WixUIDialogBmp", Constants.WixUIDialogBmp}
+                {"WixUIBannerBmp", Constants.WixUIBannerBmp}, {"WixUIDialogBmp", Constants.WixUIDialogBmp}
             };
-            
+
             // Добавляем зависимости библиотек CustomActions
             project.DefaultRefAssemblies.Add(typeof(JsonConvert).Assembly.Location);
 
