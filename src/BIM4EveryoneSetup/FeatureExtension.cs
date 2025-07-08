@@ -11,12 +11,12 @@ namespace BIM4EveryoneSetup;
 
 internal sealed class FeatureExtension {
     public string Id => $"_{Name?.Replace('-', '_')}_";
-    public string Name { get; private set; }
-    public string Description { get; private set; }
-    public string RepositoryUrl { get; private set; }
+    public required string Name { get; init; }
+    public required string Description { get; init; }
+    public required string RepositoryUrl { get; init; }
 
-    public bool Enabled { get; private set; }
-    public bool AllowChange { get; private set; }
+    public bool Enabled { get; private init; }
+    public bool AllowChange { get; private init; }
 
     public string SourcePath => Path.Combine(Constants.BinPath, Name);
     public string TargetPath => Path.Combine(Constants.pyRevitExtensionsPath, Name);

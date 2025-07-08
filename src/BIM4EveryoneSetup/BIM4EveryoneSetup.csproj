@@ -36,6 +36,13 @@
         <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.6"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <PackageReference Include="PolySharp" Version="1.15.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
     <PropertyGroup Label="CI">
         <B4E_BOT_ACCESS_TOKEN/>
         <B4E_MSI_VARIABLES_PATH/>
