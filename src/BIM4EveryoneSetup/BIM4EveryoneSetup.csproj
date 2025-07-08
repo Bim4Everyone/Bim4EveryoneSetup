@@ -15,6 +15,9 @@
         <None Remove="CustomAction.config"/>
         <Content Include="../../assets/*.*" Link="assets/%(FileName)$(FileExt)"/>
         <Content Include="../../.github/workflows/*.yml" Link="ci/%(FileName)$(FileExt)"/>
+        <Content Update="..\..\assets\MsiVariables.json">
+            <Link>assets\MsiVariables.json</Link>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
@@ -35,8 +38,8 @@
     </ItemGroup>
 
     <PropertyGroup Label="CI">
-        <B4E_BOT_ACCESS_TOKEN>""</B4E_BOT_ACCESS_TOKEN>
-        <B4E_MSI_VARIABLES_PATH>""</B4E_MSI_VARIABLES_PATH>
+        <B4E_BOT_ACCESS_TOKEN/>
+        <B4E_MSI_VARIABLES_PATH/>
     </PropertyGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">

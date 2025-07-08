@@ -109,9 +109,10 @@ namespace BIM4EveryoneSetup {
 
             project.OutDir = Constants.BinPath;
             project.OutFileName = "Bim4Everyone_" + Constants.CurrentTag;
-
+            
             MsiVariables msiVariables = new MsiVariables();
             if(File.Exists(MsiVariables.MsiVariablesFile)) {
+                Console.WriteLine("Msi variables file exists");
                 string jsonContent = File.ReadAllText(MsiVariables.MsiVariablesFile);
                 msiVariables = JsonConvert.DeserializeObject<MsiVariables>(jsonContent) ?? new MsiVariables();
             }

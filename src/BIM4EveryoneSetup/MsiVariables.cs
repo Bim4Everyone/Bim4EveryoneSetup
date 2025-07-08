@@ -4,45 +4,44 @@ namespace BIM4EveryoneSetup {
     internal sealed class MsiVariables {
         public static readonly string BotAccessToken =
             Environment.GetEnvironmentVariable("B4E_BOT_ACCESS_TOKEN");
-        
+
         public static readonly string MsiVariablesFile =
             Environment.GetEnvironmentVariable("B4E_MSI_VARIABLES_PATH") ?? Constants.MsiVariablesFile;
 
-        public string AutoUpdate { get; set; } = "enable";
-        public string RocketMode { get; set; } = "enable";
-        public string CheckUpdates { get; set; } = "enable";
-        public string UserCanExtend { get; set; } = "yes";
-        public string UserCanConfig { get; set; } = "yes";
-        public string CoreUserLocale { get; set; } = "ru";
+        public string AutoUpdate { get; set; }
+        public string RocketMode { get; set; }
+        public string CheckUpdates { get; set; }
+        public string UserCanExtend { get; set; }
+        public string UserCanConfig { get; set; }
+        public string CoreUserLocale { get; set; }
 
-        public string CorpName { get; set; } = "Bim4Everyone";
-        public string CorpSettingsPath { get; set; } = "\"\"";
+        public string CorpName { get; set; }
+        public string CorpSettingsPath { get; set; }
 
-        public string TelemetryActive { get; set; } = "disable";
-        public string TelemetryUseUTC { get; set; } = "yes";
-        public string TelemetryServerUrl { get; set; } = "localhost";
+        public string TelemetryActive { get; set; }
+        public string TelemetryUseUTC { get; set; }
+        public string TelemetryServerUrl { get; set; }
 
-        public string AppTelemetryActive { get; set; } = "disable";
-        public string AppTelemetryEventFlags { get; set; } = "0x4000400004003";
-        public string AppTelemetryServerUrl { get; set; } = "localhost";
+        public string AppTelemetryActive { get; set; }
+        public string AppTelemetryEventFlags { get; set; }
+        public string AppTelemetryServerUrl { get; set; }
 
-        public string LogTraceActive { get; set; } = "disable";
-        public string LogTraceLevel { get; set; } = "Information";
-        public string LogTraceServerUrl { get; set; } = "localhost";
-        public string EnableOpenDocTime { get; set; } = "true";
-        public string EnableSyncDocTime { get; set; } = "true";
+        public string LogTraceActive { get; set; }
+        public string LogTraceLevel { get; set; }
+        public string LogTraceServerUrl { get; set; }
+        public string EnableOpenDocTime { get; set; }
+        public string EnableSyncDocTime { get; set; }
 
-        public string SocialsMain { get; set; } = "https://t.me/bim4everyone_group";
-        public string SocialsNews { get; set; } = "https://t.me/bim4everyone_news";
-        public string SocialsDiscuss { get; set; } = "https://t.me/bim4everyone_discuss";
-        public string Socials2D { get; set; } = "https://t.me/bim4everyone_group/12";
-        public string SocialsBim { get; set; } = "https://t.me/bim4everyone_group/11";
-        public string SocialsAR { get; set; } = "https://t.me/bim4everyone_group/8";
-        public string SocialsKR { get; set; } = "https://t.me/bim4everyone_group/7";
-        public string SocialsOVVK { get; set; } = "https://t.me/bim4everyone_group/6";
-        public string SocialsPage { get; set; } = "https://bim4everyone.com/";
+        public string SocialsMain { get; set; }
+        public string SocialsNews { get; set; }
+        public string SocialsDiscuss { get; set; }
+        public string Socials2D { get; set; }
+        public string SocialsBim { get; set; }
+        public string SocialsAR { get; set; }
+        public string SocialsKR { get; set; }
+        public string SocialsOVVK { get; set; }
+        public string SocialsPage { get; set; }
 
-        public string SocialsDownloads { get; set; } =
-            "https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest";
+        public string SocialsDownloads { get; set; }
     }
 }
