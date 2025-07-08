@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		CHANGELOG.md = CHANGELOG.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIM4EveryoneSetup", "src\BIM4EveryoneSetup\BIM4EveryoneSetup.csproj", "{9CCA2F4D-AA99-4930-997D-A9A95E20209A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bim4EveryoneSetup", "src\Bim4EveryoneSetup\Bim4EveryoneSetup.csproj", "{9CCA2F4D-AA99-4930-997D-A9A95E20209A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
