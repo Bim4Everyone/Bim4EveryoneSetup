@@ -12,7 +12,7 @@
 dotnet build -c Release
 ```
 
-### Cвойства настроек платформы:
+### Свойства настроек платформы:
 
 * `AUTOUPDATE` - `enable/disable` включение автообновления (`enable`)
 * `ROCKETMODE` - `enable/disable` включение рокетмода (`enable`)
@@ -23,7 +23,7 @@ dotnet build -c Release
 * `CORP_NAME` - `any value` имя компании установки (`Bim4Everyone`)
 * `CORP_SETTINGS_PATH` - `path` путь до корпоративных настроек компании (`""`)
 
-### Cвойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
+### Свойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
 
 * `TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии (`disable`)
 * `TELEMETRY_USE_UTC` - `yes/no` включение отправки времени как utc (`yes`)
@@ -31,14 +31,14 @@ dotnet build -c Release
 * `APP_TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии приложения (`disable`)
 * `APP_TELEMETRY_EVENT_FLAGS` - `HEX` флаги телеметрии приложения (`0x4000400004003`)
 * `APP_TELEMETRY_SERVER_URL` - `link` ссылка до точки доступа телеметрии (`localhost`)
-* `LOG_TRACE_ACTIVE` - `enable/disable` включение трасировки логов (`disable`)
-* `LOG_TRACE_LEVEL` - `debug/fatal/information` уровень логгирования (`information`)
+* `LOG_TRACE_ACTIVE` - `enable/disable` включение трассировки логов (`disable`)
+* `LOG_TRACE_LEVEL` - `debug/fatal/information` уровень логирования (`information`)
 * `LOG_TRACE_SERVER_URL` - `link` ссылка до точки доступа трассировки логов (`localhost`)
 
-### Cвойства социальных сетей:
+### Свойства социальных сетей:
 
 * `SOCIALS_MAIN` - `link` ссылка на основной чат (`https://t.me/bim4everyone_group`)
-* `SOCIALS_NEWS` - `link` ссылка на новосной канал (`https://t.me/bim4everyone_news`)
+* `SOCIALS_NEWS` - `link` ссылка на новостной канал (`https://t.me/bim4everyone_news`)
 * `SOCIALS_DISCUSS` - `link` ссылка на обсуждение новостей (`https://t.me/bim4everyone_discuss`)
 * `SOCIALS_2D` - `link` ссылка на чат вкладки 2D (`https://t.me/bim4everyone_group/12`)
 * `SOCIALS_BIM` - `link` ссылка на чат вкладки BIM (`https://t.me/bim4everyone_group/11`)
@@ -48,7 +48,8 @@ dotnet build -c Release
 * `SOCIALS_PAGE` - `link` ссылка на страницу (`https://bim4everyone.com/`)
 * `SOCIALS_DOWNLOADS` - `link` ссылка на закачку (`https://github.com/Bim4Everyone/Bim4EveryoneSetup/releases/latest`)
 
-### Пример использовании свойств
+### Пример использования свойств
+
 ```
 dotnet build -c Release -p AUTOUPDATE=enable -p ROCKETMODE=disable -p COREUSERLOCALE=fr
 ```
@@ -63,7 +64,7 @@ msiexec /i Bim4Everyone_24.1.1.msi
 
 Для настройки развертывания платформы `Bim4Everyone` в сети
 требуется запустить `.msi` файл с передачей параметров `.msi` через командную строку.
-Список **свойств** перечислен в главе "**Cвойства настроек платформы**".
+Список **свойств** перечислен в главе "**Свойства настроек платформы**".
 
 ### Пример
 

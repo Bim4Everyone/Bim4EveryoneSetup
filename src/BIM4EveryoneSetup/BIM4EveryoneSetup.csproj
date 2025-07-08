@@ -3,7 +3,14 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <Platforms>x64</Platforms>
+        <LangVersion>latest</LangVersion>
         <TargetFramework>net48</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <UseWpf>true</UseWpf>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
@@ -22,19 +29,18 @@
 
     <ItemGroup>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
-        <PackageReference Include="WixSharp_wix4" Version="2.6.0"/>
-        <PackageReference Include="WixSharp_wix4.bin" Version="2.6.0"/>
-        <PackageReference Include="WixSharp-wix4.WPF" Version="2.6.0"/>
-        <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.6"/>
+        <PackageReference Include="WixSharp_wix4" Version="2.7.1"/>
+        <PackageReference Include="WixSharp_wix4.bin" Version="2.7.1"/>
+        <PackageReference Include="WixSharp-wix4.WPF" Version="2.7.1"/>
         <PackageReference Include="WixToolset.Mba.Core" Version="4.0.6"/>
+        <PackageReference Include="WixToolset.Dtf.WindowsInstaller" Version="4.0.6"/>
     </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="PresentationCore"/>
-        <Reference Include="PresentationFramework"/>
-        <Reference Include="System.Windows.Forms"/>
-        <Reference Include="System.Xaml"/>
-        <Reference Include="WindowsBase"/>
+        <PackageReference Include="PolySharp" Version="1.15.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 
     <PropertyGroup Label="CI">
