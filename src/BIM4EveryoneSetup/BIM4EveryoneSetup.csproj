@@ -3,7 +3,14 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <Platforms>x64</Platforms>
+        <LangVersion>latest</LangVersion>
         <TargetFramework>net48</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <UseWpf>true</UseWpf>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>

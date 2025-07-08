@@ -12,7 +12,7 @@ on:
   # not work on workflow_run: types: [ completed ]
   # release:
   #   types: [ created ]
-    
+  
   # manual
   workflow_dispatch:
 
