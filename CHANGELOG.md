@@ -1,3 +1,13 @@
+**v25.08.01**  
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.07.01...v25.08.01)
+
+ - Обновлён проект на C[#12](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/12) ([#26](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/26))
+ - MSI: Обновление параметров ([#24](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/24))
+ - Обновленны ассеты установщика ([#25](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/25))
+ - Обновлена главная ветка
+
+____
+
 **v25.07.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.06.01...v25.07.01)
 
