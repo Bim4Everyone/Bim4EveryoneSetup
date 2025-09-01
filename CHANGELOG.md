@@ -1,3 +1,92 @@
+**v25.09.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.07.01...v25.08.01)
+
+- Обновлены библиотеки фреймворка
+- Templates: Добавлены параметры для ведомости спецификаций и обновлена проверка помещений ([#25](https://github.com/Bim4Everyone/BIM4Everyone/pull/25))
+- Templates: Обновлен порядок параметров квартирографии ([#24](https://github.com/Bim4Everyone/BIM4Everyone/pull/24))
+- Templates: Добавлены новые параметры для помещений ([#23](https://github.com/Bim4Everyone/BIM4Everyone/pull/23))
+- Обновлены библиотеки фреймворка
+- Обновлена ключевая спецификация ([#22](https://github.com/Bim4Everyone/BIM4Everyone/pull/22))
+- Обновлены библиотеки фреймворка
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v25.07.01...v25.08.01)
+
+- RevitListOfSchedules: Произведено форматирование кода ([#28](https://github.com/Bim4Everyone/2DExtensions/pull/28))
+- RevitCopyViews: Исправлен возможный NullReferenceException ([#27](https://github.com/Bim4Everyone/2DExtensions/pull/27))
+- RevitCopyViews: Изменен интерфейс на WPF-UI  ([#26](https://github.com/Bim4Everyone/2DExtensions/pull/26))
+- RevitBatchPrint: Улучшение определения "Ширины" и "Высоты" листа ([#25](https://github.com/Bim4Everyone/2DExtensions/pull/25))
+- RevitBatchPrint: Добавлено отображение номера листа ([#24](https://github.com/Bim4Everyone/2DExtensions/pull/24))
+- RevitBatchPrint: Исправить ошибку падения Revit ([#23](https://github.com/Bim4Everyone/2DExtensions/pull/23))
+- RevitBatchPrint: Изменен интерфейс на WPF-UI  ([#22](https://github.com/Bim4Everyone/2DExtensions/pull/22))
+- RevitListOfSchedules: Изменен интерфейс на WPF-UI ([#21](https://github.com/Bim4Everyone/2DExtensions/pull/21))
+- RevitListOfSchedules: Обновление кода на C[#12](https://github.com/Bim4Everyone/2DExtensions/pull/12) ([#20](https://github.com/Bim4Everyone/2DExtensions/pull/20))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.07.01...v25.08.01)
+
+- RevitSectionsConstructor: Плагин портирован на WPF-UI ([#165](https://github.com/Bim4Everyone/BIMExtensions/pull/165))
+- RevitCreatingFiltersByValues: Изменен интерфейс на WPF-UI ([#164](https://github.com/Bim4Everyone/BIMExtensions/pull/164))
+- Конструктор секций: Код плагина обновлен на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#163](https://github.com/Bim4Everyone/BIMExtensions/pull/163))
+- RevitCopyStandarts: Изменен интерфейс на WPF-UI ([#162](https://github.com/Bim4Everyone/BIMExtensions/pull/162))
+- Исправлено название новой вкладки ЭОМиСС
+- Добавлена новая вкладка ЭОМиСС
+- RevitClashDetective: Добавлен общий % пересечения ([#161](https://github.com/Bim4Everyone/BIMExtensions/pull/161))
+- RevitClashDetective: Добавлен общий % пересечения ([#160](https://github.com/Bim4Everyone/BIMExtensions/pull/160))
+- RevitMepTotals: Плагин портирован на WPF-UI ([#159](https://github.com/Bim4Everyone/BIMExtensions/pull/159))
+- Коллизии: Добавлена кнопка настроек ([#152](https://github.com/Bim4Everyone/BIMExtensions/pull/152))
+- RevitClashDetective: Добавлен функционал по настройке графики элементов коллизии ([#158](https://github.com/Bim4Everyone/BIMExtensions/pull/158))
+- RevitClashDetective: Добавлен функционал по настройке графики элементов коллизии ([#157](https://github.com/Bim4Everyone/BIMExtensions/pull/157))
+- Выгрузить объемы: Дополнено описание к кнопке на панели ([#153](https://github.com/Bim4Everyone/BIMExtensions/pull/153))
+- RevitCorrectNamingCheck: Доработка плагина ([#156](https://github.com/Bim4Everyone/BIMExtensions/pull/156))
+- RevitCorrectNamingCheck: CleanUp проекта ([#155](https://github.com/Bim4Everyone/BIMExtensions/pull/155))
+- RevitMepTotals: Обновлён код под версию C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#154](https://github.com/Bim4Everyone/BIMExtensions/pull/154))
+- RevitClashDetective: Добавлены столбцы для % пересечения каждого элемента коллизии ([#151](https://github.com/Bim4Everyone/BIMExtensions/pull/151))
+- RSN менеджер: Изменения кнопок ([#150](https://github.com/Bim4Everyone/BIMExtensions/pull/150))
+- RevitClashes: Переделано получение иконок статусов коллизий ([#149](https://github.com/Bim4Everyone/BIMExtensions/pull/149))
+- RevitClashes: Переделано получение иконок статусов коллизий ([#148](https://github.com/Bim4Everyone/BIMExtensions/pull/148))
+- RevitHideWorkset: Добавлена кнопка "Показать" ([#147](https://github.com/Bim4Everyone/BIMExtensions/pull/147))
+- Отображение РН связей: Изменения название плагина ([#146](https://github.com/Bim4Everyone/BIMExtensions/pull/146))
+- Telemetry: Добавлено логирование открытия и синхронизации документов ([#145](https://github.com/Bim4Everyone/BIMExtensions/pull/145))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.07.01...v25.08.01)
+
+- RevitFinishing: Исправлен плагин ([#81](https://github.com/Bim4Everyone/ARExtensions/pull/81))
+- RevitApartmentPlans: Плагин портирован на WPF-UI ([#80](https://github.com/Bim4Everyone/ARExtensions/pull/80))
+- RevitApartmentPlans: Код плагина обновлен на C[#12](https://github.com/Bim4Everyone/ARExtensions/pull/12) ([#79](https://github.com/Bim4Everyone/ARExtensions/pull/79))
+- RevitDeclarations: Исправлены незначительные ошибки ([#78](https://github.com/Bim4Everyone/ARExtensions/pull/78))
+- Рассчитать отделку: Создан плагин ([#77](https://github.com/Bim4Everyone/ARExtensions/pull/77))
+- RevitFinishing: Создан плагин ([#76](https://github.com/Bim4Everyone/ARExtensions/pull/76))
+- Отделка пола: Скорректирована проверка высоты помещения ([#75](https://github.com/Bim4Everyone/ARExtensions/pull/75))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.07.01...v25.08.01)
+
+- RevitReinforcementCoefficient: Изменен интерфейс на WPF-UI  ([#46](https://github.com/Bim4Everyone/KRExtensions/pull/46))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.07.01...v25.08.01)
+
+- RevitSleeves: Исправлена ошибка объединения гильз ([#92](https://github.com/Bim4Everyone/HVACExtension/pull/92))
+- Гильзы: Добавлены кнопки плагина для работы с гильзами ([#87](https://github.com/Bim4Everyone/HVACExtension/pull/87))
+- RevitSleeves: Создан плагин для работы с гильзами ([#91](https://github.com/Bim4Everyone/HVACExtension/pull/91))
+- Отметки уровней: Создан скрипт ([#80](https://github.com/Bim4Everyone/HVACExtension/pull/80))
+- Выравнивание приборов: Выравнивание приборов без антуража ([#88](https://github.com/Bim4Everyone/HVACExtension/pull/88))
+- Задание СППЗ: Объединение команд в одну ([#85](https://github.com/Bim4Everyone/HVACExtension/pull/85))
+- Нумерация шкафов: Создан скрипт ([#81](https://github.com/Bim4Everyone/HVACExtension/pull/81))
+- RevitMechanicalSpecification: Правка группирований ([#86](https://github.com/Bim4Everyone/HVACExtension/pull/86))
+- Скопировать, обрезать: Новый скрипт ([#84](https://github.com/Bim4Everyone/HVACExtension/pull/84))
+- Выравнивание приборов: Добавлена проверка занятости ([#83](https://github.com/Bim4Everyone/HVACExtension/pull/83))
+
+[05.EOM-SS.extension](https://github.com/Bim4Everyone/EOMSSExtensions/compare/v25.08.01...754a618)
+
+- Создано новое расширение ([#0](https://github.com/Bim4Everyone/EOMSSExtensions))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.07.01...v25.09.01)
+
+- Обновлён проект на C[#12](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/12) ([#26](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/26))
+- MSI: Обновление параметров ([#24](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/24))
+- Обновленны ассеты установщика ([#25](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/25))
+- Обновлена главная ветка
+
+____
+
 **v25.08.01**  
 [Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.07.01...v25.08.01)
 
