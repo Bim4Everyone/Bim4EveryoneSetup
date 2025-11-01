@@ -1,3 +1,111 @@
+**v25.11.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.10.01...v25.11.01)
+
+ - Обновлены библиотеки фреймворка
+ - Templates: Добавлены параметры СМР ([#31](https://github.com/Bim4Everyone/BIM4Everyone/pull/31))
+ - Обновлены библиотеки фреймворка
+ - Templates: Обновлена ключевая спецификация наименований помещений ([#30](https://github.com/Bim4Everyone/BIM4Everyone/pull/30))
+ - Templates: Обновлена ведомость спецификаций ([#29](https://github.com/Bim4Everyone/BIM4Everyone/pull/29))
+ - Templates: Обновлены группы параметров ВИС ([#28](https://github.com/Bim4Everyone/BIM4Everyone/pull/28))
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v25.10.01...v25.11.01)
+
+ - RevitCreateViewSheets: Добавлена фильтрация выпадающих списков в окна выбора видов, аннотаций, спецификаций ([#37](https://github.com/Bim4Everyone/2DExtensions/pull/37))
+ - RevitCreateViewSheet: Добавлен вывод значений ячеек в таблицах в tooltip ([#36](https://github.com/Bim4Everyone/2DExtensions/pull/36))
+ - RevitCreateViewSheet: Сделано сохранение выбранной основной надписи для генерации листов ([#35](https://github.com/Bim4Everyone/2DExtensions/pull/35))
+ - Копировать листы: Обновлён способ сортировки ([#34](https://github.com/Bim4Everyone/2DExtensions/pull/34))
+ - RevitListOfSchedues: Исправление ошибки построения строки изменений ([#33](https://github.com/Bim4Everyone/2DExtensions/pull/33))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.10.01...v25.11.01)
+
+ - RevitClashDetective: Окна выбора и сохранения файлов в навигаторе заменены на wpf ([#210](https://github.com/Bim4Everyone/BIMExtensions/pull/210))
+ - RevitServerFolders: Исправлены Label для папки источника и назначения в списке настроек ([#209](https://github.com/Bim4Everyone/BIMExtensions/pull/209))
+ - RevitClashDetective: Настройки просмотра коллизий вынесены в кнопку настроек ([#208](https://github.com/Bim4Everyone/BIMExtensions/pull/208))
+ - RevitClashDetective: Часть окон портирована на WPF-UI ([#207](https://github.com/Bim4Everyone/BIMExtensions/pull/207))
+ - RevitClashDetective: Часть окон портирована на WPF-UI ([#206](https://github.com/Bim4Everyone/BIMExtensions/pull/206))
+ - RevitClashDetective: Исправлена ошибка, когда вылетает ревит при шелчке мыши в пустом окне навигатора ([#205](https://github.com/Bim4Everyone/BIMExtensions/pull/205))
+ - RevitClashDetective: Скорректирован алгоритм поиска коллизий ([#204](https://github.com/Bim4Everyone/BIMExtensions/pull/204))
+ - RevitClashDetective: Скорректирован алгоритм поиска коллизий ([#203](https://github.com/Bim4Everyone/BIMExtensions/pull/203))
+ - RevitServerFolders: Окна выбора папок и файлов заменены на Wpf ([#202](https://github.com/Bim4Everyone/BIMExtensions/pull/202))
+ - RevitExportSpecToExcel: Исправлена сортировка и выбор спецификаций ([#201](https://github.com/Bim4Everyone/BIMExtensions/pull/201))
+ - RevitMarkingElements: Изменено наименование кнопки ([#200](https://github.com/Bim4Everyone/BIMExtensions/pull/200))
+ - RevitClashDetective: Добавлена кнопка для импорта отчетов с сохранением статусов коллизий ([#199](https://github.com/Bim4Everyone/BIMExtensions/pull/199))
+ - RevitClashDetective: Добавлена кнопка для импорта отчетов с сохранением статусов коллизий ([#198](https://github.com/Bim4Everyone/BIMExtensions/pull/198))
+ - RevitOpeningPlacement: Получение сервисов диалогов сделано через параметры конструкторов вместо GetPlatformServices ([#197](https://github.com/Bim4Everyone/BIMExtensions/pull/197))
+ - RevitClashDetective: Обновлен стиль xaml ([#196](https://github.com/Bim4Everyone/BIMExtensions/pull/196))
+ - RevitClashDetective: Исправлена проблема зависания ревита из-за окон выбора файлов и папок ([#195](https://github.com/Bim4Everyone/BIMExtensions/pull/195))
+ - RevitCheckingLevels: Код обновлен на C# 12 ([#194](https://github.com/Bim4Everyone/BIMExtensions/pull/194))
+ - RevitServerFolders: В RVT из RS добавлена кнопка для обновления списка с моделями из папки источника  ([#193](https://github.com/Bim4Everyone/BIMExtensions/pull/193))
+ - RevitServerFolders: Реализована генерация 3D вида для экспорта в NWC ([#192](https://github.com/Bim4Everyone/BIMExtensions/pull/192))
+ - Параметры классификатора: Отказ от пути по умолчанию до файла ([#191](https://github.com/Bim4Everyone/BIMExtensions/pull/191))
+ - RevitClashes: Код обновлен на C# 12 ([#190](https://github.com/Bim4Everyone/BIMExtensions/pull/190))
+ - RevitClashes: Код обновлен на C# 12 ([#189](https://github.com/Bim4Everyone/BIMExtensions/pull/189))
+ - RevitServerFolders: Исправлен сброс выбранных файлов при переключении между пресетами ([#188](https://github.com/Bim4Everyone/BIMExtensions/pull/188))
+ - RevitOpeningPlacement: Код обновлен на C# 12 ([#187](https://github.com/Bim4Everyone/BIMExtensions/pull/187))
+ - RevitClashDetective: Код обновлен на C[#12](https://github.com/Bim4Everyone/BIMExtensions/pull/12) ([#186](https://github.com/Bim4Everyone/BIMExtensions/pull/186))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.10.01...v25.11.01)
+
+ - Перемычки: Добавлена проверка типа активного вида перед выполнением команд ([#87](https://github.com/Bim4Everyone/ARExtensions/pull/87))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.10.01...v25.11.01)
+
+ - Таблицы УПК: Актуализация заполнения параметров ([#54](https://github.com/Bim4Everyone/KRExtensions/pull/54))
+ - RevitFamilyParameterAdder: Изменен интерфейс на WPF-UI ([#53](https://github.com/Bim4Everyone/KRExtensions/pull/53))
+ - Включить/Отключить 3D арматуру: Изменена структура кнопок ([#50](https://github.com/Bim4Everyone/KRExtensions/pull/50))
+ - RevitPylonDocumentation: Доработано создание аннотаций ([#52](https://github.com/Bim4Everyone/KRExtensions/pull/52))
+ - RevitKrChecker: Изменено наименование кнопки ([#51](https://github.com/Bim4Everyone/KRExtensions/pull/51))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.10.01...v25.11.01)
+
+ - RevitClashDetective: Часть окон портирована на WPF-UI ([#118](https://github.com/Bim4Everyone/HVACExtension/pull/118))
+ - RevitClashDetective: Скорректирован алгоритм поиска коллизий ([#117](https://github.com/Bim4Everyone/HVACExtension/pull/117))
+ - Пустой элемент: Пропущено закрытие формы ([#116](https://github.com/Bim4Everyone/HVACExtension/pull/116))
+ - Абсолютная отметка: Создание скрипта ([#114](https://github.com/Bim4Everyone/HVACExtension/pull/114))
+ - RevitClashDetective: Добавлена кнопка для импорта отчетов с сохранением статусов коллизий ([#115](https://github.com/Bim4Everyone/HVACExtension/pull/115))
+ - Расчет аэродинамики: Правка логики определения выброса-забора ([#113](https://github.com/Bim4Everyone/HVACExtension/pull/113))
+ - Смена уровня: Пропущен return в методе ([#112](https://github.com/Bim4Everyone/HVACExtension/pull/112))
+ - RevitMechanicalSpecification: Некорректная геометрия ([#103](https://github.com/Bim4Everyone/HVACExtension/pull/103))
+ - RevitClashes: Код обновлен на C# 12 ([#111](https://github.com/Bim4Everyone/HVACExtension/pull/111))
+
+[05.EOM-SS.extension](https://github.com/Bim4Everyone/EOMSSExtensions/compare/v25.10.01...v25.11.01)
+
+ - Обновить помещения в ЭОМ: Создание плагина ([#1](https://github.com/Bim4Everyone/EOMSSExtensions/pull/1))
+ - RevitRoomAnnotations: Cоздание плагина  ([#2](https://github.com/Bim4Everyone/EOMSSExtensions/pull/2))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.10.01...v25.11.01)
+
+ - Исправлена переменная токена бота
+ - Обновлен CHANGELOG.md
+
+____
+
+**v25.11.01**  
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.10.01...v25.11.01)
+
+ - Исправлена переменная токена бота
+ - Обновлен CHANGELOG.md
+
+____
+
+**v25.11.01**  
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.10.01...v25.11.01)
+
+ - Исправлена переменная токена бота
+ - Обновлен CHANGELOG.md
+
+____
+
+**v25.11.01**  
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v25.10.01...v25.11.01)
+
+ - Исправлена переменная токена бота
+ - Обновлен CHANGELOG.md
+
+____
+
 **v25.10.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.09.01...v25.10.01)
 
