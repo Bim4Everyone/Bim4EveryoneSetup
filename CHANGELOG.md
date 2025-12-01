@@ -1,3 +1,65 @@
+**v25.12.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.11.01...v25.12.01)
+
+ - Libs: Обновлены настройки ключевых спецификаций квартирографии ([#34](https://github.com/Bim4Everyone/BIM4Everyone/pull/34))
+ - Libs: Исправлен метод GetNotFilledParamsInSchedule ([#33](https://github.com/Bim4Everyone/BIM4Everyone/pull/33))
+ - Исправлена ошибка загрузки пользовательского конфига параметров ([#32](https://github.com/Bim4Everyone/BIM4Everyone/pull/32))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v25.11.01...v25.12.01)
+
+ - RevitListOfSchedules: Исправление ошибки сортировки листов, улучшена доработка поиска заголовков, графика настроек ([#45](https://github.com/Bim4Everyone/2DExtensions/pull/45))
+ - RevitCreateViewSheet: Исправлена проверка на редактирование параметра ([#44](https://github.com/Bim4Everyone/2DExtensions/pull/44))
+ - RevitCreateViewSheet: Добавлена проверка на возможность редактировать параметры штампа ([#43](https://github.com/Bim4Everyone/2DExtensions/pull/43))
+ - RevitCreateViewSheet: Скорректирован стиль UI под существующие wpf ui окна ([#42](https://github.com/Bim4Everyone/2DExtensions/pull/42))
+ - RevitCreateViewSheet: Добавлена выбор сегментов спецификаций в окно добавления спецификаций ([#41](https://github.com/Bim4Everyone/2DExtensions/pull/41))
+ - RevitCreateViewSheet: Добавлен функционал по замене элементов на листах ([#40](https://github.com/Bim4Everyone/2DExtensions/pull/40))
+ - RevitCreateViewSheet: Добавлено сохранение системного номера листа в конфиг экспорта ([#39](https://github.com/Bim4Everyone/2DExtensions/pull/39))
+ - RevitCreateViewSheet: Добавлен функционал по управлению ориентацией и форматом листов ([#38](https://github.com/Bim4Everyone/2DExtensions/pull/38))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.11.01...v25.12.01)
+
+ - RevitSetCoordParams: Создание команды для Headless-режима ([#225](https://github.com/Bim4Everyone/BIMExtensions/pull/225))
+ - RevitCopyStandarts: Добавлена загрузка семейств ([#224](https://github.com/Bim4Everyone/BIMExtensions/pull/224))
+ - RevitClashDetective: Добавлено удаление нескольких проверок ([#223](https://github.com/Bim4Everyone/BIMExtensions/pull/223))
+ - RevitSetCoordParams: Создана кнопка плагина ([#221](https://github.com/Bim4Everyone/BIMExtensions/pull/221))
+ - RevitSetCoordParams: Создан плагин ([#222](https://github.com/Bim4Everyone/BIMExtensions/pull/222))
+ - RevitClashDetective: Исправлена загрузка конфига в окно проверок ([#220](https://github.com/Bim4Everyone/BIMExtensions/pull/220))
+ - RevitClashDetective: Добавлены функции по работе с поисковыми наборами, обновлена валидация в окне проверок ([#219](https://github.com/Bim4Everyone/BIMExtensions/pull/219))
+ - RevitClashDetective: Обновлен UI навигатора и добавлено выделение обоих элементов коллизий ([#218](https://github.com/Bim4Everyone/BIMExtensions/pull/218))
+ - RevitValueModifier: Изменен способ формирования значения ([#217](https://github.com/Bim4Everyone/BIMExtensions/pull/217))
+ - RevitSetCoordParams: Удалены лишние папки неиспользуемых плагинов ([#214](https://github.com/Bim4Everyone/BIMExtensions/pull/214))
+ - RevitClashDetective: Удалено логирование выполнения команд из окна навигатора ([#216](https://github.com/Bim4Everyone/BIMExtensions/pull/216))
+ - RevitOpeningPlacement: Часть окон портирована на WPF-UI ([#215](https://github.com/Bim4Everyone/BIMExtensions/pull/215))
+ - RevitClashDetective: Добавлена обработка значения параметра "Рабочий набор" в навигаторе ([#213](https://github.com/Bim4Everyone/BIMExtensions/pull/213))
+ - RevitClashDetective: Добавлена обработка значения параметра "Рабочий набор" в навигаторе ([#212](https://github.com/Bim4Everyone/BIMExtensions/pull/212))
+ - RevitClashDetective: Перед закрытием навигатора теперь предлагается сохранить отчеты ([#211](https://github.com/Bim4Everyone/BIMExtensions/pull/211))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.11.01...v25.12.01)
+
+ - RevitCopyInteriorSpecs: Изменен интерфейс на WPF-UI ([#90](https://github.com/Bim4Everyone/ARExtensions/pull/90))
+ - RevitCopyInteriorSpecs: Добавлена ссылка на статью ([#89](https://github.com/Bim4Everyone/ARExtensions/pull/89))
+ - RevitArchitecturalDocumentation: Изменен интерфейс на WPF-UI  ([#88](https://github.com/Bim4Everyone/ARExtensions/pull/88))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.11.01...v25.12.01)
+
+ - RevitMarkPlacement: Портирование на WPF-UI ([#57](https://github.com/Bim4Everyone/KRExtensions/pull/57))
+ - Таблицы УПК: Актуализация перечная категорий ([#56](https://github.com/Bim4Everyone/KRExtensions/pull/56))
+ - Маркировка пилонов: Изменения способа проверки материала ([#55](https://github.com/Bim4Everyone/KRExtensions/pull/55))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.11.01...v25.12.01)
+
+ - RevitSleeves: Исправлен алгоритм объединения гильз, добавлена фильтрация в навигатор ([#122](https://github.com/Bim4Everyone/HVACExtension/pull/122))
+ - Элементы АИ: Ошибка в цикле ([#121](https://github.com/Bim4Everyone/HVACExtension/pull/121))
+ - Нумерация шкафов: Обновление алгоритма ([#120](https://github.com/Bim4Everyone/HVACExtension/pull/120))
+ - RevitClashDetective: Добавлена обработка значения параметра "Рабочий набор" в навигаторе ([#119](https://github.com/Bim4Everyone/HVACExtension/pull/119))
+
+[05.EOM-SS.extension](https://github.com/Bim4Everyone/EOMSSExtensions/compare/v25.11.01...v25.12.01)
+
+ - RevitRoomAnnotations: Удалены пробелы Bundle-файла ([#4](https://github.com/Bim4Everyone/EOMSSExtensions/pull/4))
+ - RevitRoomAnnotations: Исправлены пути публикации проекта, наименования папок (удалены пробелы). Удалены лишние папки ([#3](https://github.com/Bim4Everyone/EOMSSExtensions/pull/3))
+
+____
+
 **v25.11.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.10.01...v25.11.01)
 
