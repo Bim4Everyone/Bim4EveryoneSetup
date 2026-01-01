@@ -1,3 +1,35 @@
+**v26.01.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.12.01...v26.01.01)
+
+ - SimpleServices: Добавлена команда для вызова плагина в режиме без интерфейса ([#37](https://github.com/Bim4Everyone/BIM4Everyone/pull/37))
+ - Templates: Обновлены параметры настроек ВИС ([#36](https://github.com/Bim4Everyone/BIM4Everyone/pull/36))
+ - Templates: Добавлены параметры настроек ВИС ([#35](https://github.com/Bim4Everyone/BIM4Everyone/pull/35))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v25.12.01...v26.01.01)
+
+ - Обновление библиотек плагина "RevitOpeningPlacement" ([#228](https://github.com/Bim4Everyone/BIMExtensions/pull/228))
+ - RevitClashDetective: Добавлен функционал по работе с комментариями коллизий ([#227](https://github.com/Bim4Everyone/BIMExtensions/pull/227))
+ - RevitCreatingFiltersByValues: Добавлен окрас линий ([#226](https://github.com/Bim4Everyone/BIMExtensions/pull/226))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v25.12.01...v26.01.01)
+
+ - RevitVolumeOfWork: Портирование на WPF-UI ([#95](https://github.com/Bim4Everyone/ARExtensions/pull/95))
+ - RevitRoomTagPlacement: Код обновлен на C# 12 ([#94](https://github.com/Bim4Everyone/ARExtensions/pull/94))
+ - RevitVolumeOfWork: Код обновлен на C# 12 ([#93](https://github.com/Bim4Everyone/ARExtensions/pull/93))
+ - RevitDeclarations: Код обновлен на C# 12 ([#92](https://github.com/Bim4Everyone/ARExtensions/pull/92))
+ - RevitRooms: Портирование на WPF-UI ([#91](https://github.com/Bim4Everyone/ARExtensions/pull/91))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v25.12.01...v26.01.01)
+
+ - Лечение ВД: Изменен способ получения параметра ([#59](https://github.com/Bim4Everyone/KRExtensions/pull/59))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v25.12.01...v26.01.01)
+
+ - RevitClashDetective: Добавлен функционал по работе с комментариями коллизий ([#124](https://github.com/Bim4Everyone/HVACExtension/pull/124))
+ - Немоделируемые: Окно настроек ([#123](https://github.com/Bim4Everyone/HVACExtension/pull/123))
+
+____
+
 **v25.12.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.11.01...v25.12.01)
 
