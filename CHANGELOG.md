@@ -1,3 +1,37 @@
+**v26.02.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.01.01...v26.02.01)
+
+ - Bim4Everyone.lib: Обновлены библиотеки фреймворка ([#41](https://github.com/Bim4Everyone/BIM4Everyone/pull/41))
+ - ExpressionEvaluator: Добавлена библиотека ([#40](https://github.com/Bim4Everyone/BIM4Everyone/pull/40))
+ - Templates: Добавлены параметры СМР ([#39](https://github.com/Bim4Everyone/BIM4Everyone/pull/39))
+ - Bim4Everyone.lib: Обновлены библиотеки фреймворка ([#38](https://github.com/Bim4Everyone/BIM4Everyone/pull/38))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.01.01...v26.02.01)
+
+ - RevitCreatingFiltersByValues: Изменен подход получения фильтров на виде ([#236](https://github.com/Bim4Everyone/BIMExtensions/pull/236))
+ - RevitSetCoordParams: Удалена подстрока поиска объемных элементов ([#235](https://github.com/Bim4Everyone/BIMExtensions/pull/235))
+ - RevitSetCoordParams: Изменение алгоритма поиска элементов, изменение параметра зон ([#234](https://github.com/Bim4Everyone/BIMExtensions/pull/234))
+ - RevitServerFolders: Скорректирована регенерация документа ([#233](https://github.com/Bim4Everyone/BIMExtensions/pull/233))
+ - RevitServerFolders: Добавлена регенерация документа после создания 3D вида для экспорта в NWC ([#232](https://github.com/Bim4Everyone/BIMExtensions/pull/232))
+ - RevitClashDetective: Исключено дублирование коллизий при их поиске в одном и том же файле ([#231](https://github.com/Bim4Everyone/BIMExtensions/pull/231))
+ - RevitClashDetective: Исключено дублирование коллизий при их поиске в одном и том же файле ([#230](https://github.com/Bim4Everyone/BIMExtensions/pull/230))
+ - RevitServerFolders: Дополнены сообщения логов для экспорта в NWC ([#229](https://github.com/Bim4Everyone/BIMExtensions/pull/229))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.01.01...v26.02.01)
+
+ - Исправлена ошибка окна с предупреждениями ([#97](https://github.com/Bim4Everyone/ARExtensions/pull/97))
+ - RevitFinishing: Исправлены ошибки в проверках ([#96](https://github.com/Bim4Everyone/ARExtensions/pull/96))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.01.01...v26.02.01)
+
+ - Таблицы УПК: Доработан подход вывода ошибок ([#58](https://github.com/Bim4Everyone/KRExtensions/pull/58))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.01.01...v26.02.01)
+
+ - RevitClashDetective: Исключено дублирование коллизий при их поиске в одном и том же файле ([#125](https://github.com/Bim4Everyone/HVACExtension/pull/125))
+
+____
+
 **v26.01.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v25.12.01...v26.01.01)
 
