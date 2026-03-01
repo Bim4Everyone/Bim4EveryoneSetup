@@ -1,3 +1,51 @@
+**v26.03.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.02.01...v26.03.01)
+
+ - Обновлены библиотеки фреймворка
+ - Bim4Everyone.RevitFiltration: Добавлены библиотеки для фильтрации элементов в Revit ([#42](https://github.com/Bim4Everyone/BIM4Everyone/pull/42))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.02.01...v26.03.01)
+
+ - Печать: Обновлен алгоритм получения параметров ([#47](https://github.com/Bim4Everyone/2DExtensions/pull/47))
+ - Печать: Исправлена фильтрации листов и выбор параметра группировки ([#46](https://github.com/Bim4Everyone/2DExtensions/pull/46))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.02.01...v26.03.01)
+
+ - RevitBatchSpecExport: Скорректирована логика именования листов Excel ([#247](https://github.com/Bim4Everyone/BIMExtensions/pull/247))
+ - RevitBatchSpecExport: Добавлена кнопка плагина ([#245](https://github.com/Bim4Everyone/BIMExtensions/pull/245))
+ - RevitBatchSpecExport: Создан плагин для пакетного экспорт спецификаций с листов в Excel ([#246](https://github.com/Bim4Everyone/BIMExtensions/pull/246))
+ - RevitSetCoordParams: Реализация множественного выбора типов моделей ([#244](https://github.com/Bim4Everyone/BIMExtensions/pull/244))
+ - RevitParamsChecker: Добавлена кнопка плагина ([#240](https://github.com/Bim4Everyone/BIMExtensions/pull/240))
+ - RevitParamsChecker: Добавлен плагин для проверки параметров элементов ([#243](https://github.com/Bim4Everyone/BIMExtensions/pull/243))
+ - RevitSetCoordParams: Добавление кнопки выделения всех элементов ([#242](https://github.com/Bim4Everyone/BIMExtensions/pull/242))
+ - RevitOpeningPlacement: Добавлена поддержка уникальных отверстий ([#241](https://github.com/Bim4Everyone/BIMExtensions/pull/241))
+ - Bim4Everyone.RevitFiltration: Подключены библиотеки для фильтрации элементов в Revit ([#239](https://github.com/Bim4Everyone/BIMExtensions/pull/239))
+ - RevitBuildCoordVolumes: Создана кнопка плагина ([#238](https://github.com/Bim4Everyone/BIMExtensions/pull/238))
+ - RevitBuildCoordVolumes: Создан плагин ([#237](https://github.com/Bim4Everyone/BIMExtensions/pull/237))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.02.01...v26.03.01)
+
+ - RevitDeclarations: Добавлена сортировка помещений  ([#100](https://github.com/Bim4Everyone/ARExtensions/pull/100))
+ - RevitDeclarations: Исправлена ошибка в обработке контуров ([#99](https://github.com/Bim4Everyone/ARExtensions/pull/99))
+ - RevitRooms: Уменьшен размер основного окна квартирографии ([#98](https://github.com/Bim4Everyone/ARExtensions/pull/98))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.02.01...v26.03.01)
+
+ - RevitPylonDocumentation: Изменен интерфейс на WPF-UI ([#60](https://github.com/Bim4Everyone/KRExtensions/pull/60))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.02.01...v26.03.01)
+
+ - RevitUnmodelingMep: Параметризация примечаний ([#133](https://github.com/Bim4Everyone/HVACExtension/pull/133))
+ - RevitMechanicalSpecification: Обновление формирования универсальных имен ([#132](https://github.com/Bim4Everyone/HVACExtension/pull/132))
+ - RevitSleeves: Исправлено назначение угла наклона гильзам ([#131](https://github.com/Bim4Everyone/HVACExtension/pull/131))
+ - RevitMechanicalSpecification: Правка расчета толщин фитингов ([#130](https://github.com/Bim4Everyone/HVACExtension/pull/130))
+ - RevitUnmodelingMep: Из bin удалена ненужная сборка Newtonsoft.Json ([#129](https://github.com/Bim4Everyone/HVACExtension/pull/129))
+ - RevitUnmodelingMep: Создание бандлов, обновление файла настроек, перенос старых скриптов ([#126](https://github.com/Bim4Everyone/HVACExtension/pull/126))
+ - RevitUnmodelingMep: Перенос работы немоделируемых на C#, добавление интерфейса и возможности конфигурации ([#128](https://github.com/Bim4Everyone/HVACExtension/pull/128))
+ - Абсолютна отметка: Добавлена обработка сгруппированных элементов ([#127](https://github.com/Bim4Everyone/HVACExtension/pull/127))
+
+____
+
 **v26.02.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.01.01...v26.02.01)
 
