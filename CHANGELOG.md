@@ -1,3 +1,37 @@
+**v26.04.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.03.01...v26.04.01)
+
+ - Templates: Добавлен параметр ФОП_Тип расположения ([#43](https://github.com/Bim4Everyone/BIM4Everyone/pull/43))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.03.01...v26.04.01)
+
+ - RevitSetCoordParams: Исправление обработки гибких труб и смещенной геометрией ([#255](https://github.com/Bim4Everyone/BIMExtensions/pull/255))
+ - RevitRefreshLinks: Добавлено закрепление связей и обновлены окна выбора файлов и папок ([#254](https://github.com/Bim4Everyone/BIMExtensions/pull/254))
+ - RevitCorrectNamingCheck: Добавлен функционал по редактированию РН и закреплению связей ([#253](https://github.com/Bim4Everyone/BIMExtensions/pull/253))
+ - RevitSetCoordParams: Добавление категории гибких труб, воздуховодов и их изоляции. ([#252](https://github.com/Bim4Everyone/BIMExtensions/pull/252))
+ - RevitSetCoordParams: Исправление ошибки получения вложенных элементов ([#251](https://github.com/Bim4Everyone/BIMExtensions/pull/251))
+ - RevitSetCoordParams: Добавление сервиса по проверке элемента в центральной модели ([#250](https://github.com/Bim4Everyone/BIMExtensions/pull/250))
+ - RevitSetCoordParams: Изменение способа назначения параметров для вложенных элементов ([#249](https://github.com/Bim4Everyone/BIMExtensions/pull/249))
+ - RevitSetCoordParams: Ускорение основного алгоритма записи параметров ([#248](https://github.com/Bim4Everyone/BIMExtensions/pull/248))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.03.01...v26.04.01)
+
+ - RevitDeclarations: Добавление нового параметра и корректировки ([#105](https://github.com/Bim4Everyone/ARExtensions/pull/105))
+ - RevitDeclarations: Исправлена кодировка при экспорте в csv ([#104](https://github.com/Bim4Everyone/ARExtensions/pull/104))
+ - RevitDeclarations: Портирование на WPF-UI ([#103](https://github.com/Bim4Everyone/ARExtensions/pull/103))
+ - RevitArchitecturalDocumentation: Исправление инициализации переменной ([#102](https://github.com/Bim4Everyone/ARExtensions/pull/102))
+ - RevitDeclarations: Исправлен расчет УТП Хайфлет и обновлена сортировка помещений ([#101](https://github.com/Bim4Everyone/ARExtensions/pull/101))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.03.01...v26.04.01)
+
+ - RevitMechanicalSpecification: Обработка мультипортов, идентификация узлов  ([#139](https://github.com/Bim4Everyone/HVACExtension/pull/139))
+ - RevitSleeves: Добавлена проверка витражных стен ([#138](https://github.com/Bim4Everyone/HVACExtension/pull/138))
+ - RevitUnmodelingMep: Исключены воздуховоды и трубопроводы по осевой ([#137](https://github.com/Bim4Everyone/HVACExtension/pull/137))
+ - RevitSleeves: Добавлено заполнение рабочего набора гильз ([#135](https://github.com/Bim4Everyone/HVACExtension/pull/135))
+ - Вкладка ОВиВК: Зачистка от кнопок-дубликатов "Полное обновление" ([#134](https://github.com/Bim4Everyone/HVACExtension/pull/134))
+
+____
+
 **v26.03.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.02.01...v26.03.01)
 
