@@ -23,20 +23,20 @@ jobs:
     name: build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           persist-credentials: false
       
       # Install the .NET 8.0 workload
       - name: Install .NET 8.0
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 8.0.x
       
       # Install  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
       - name: Install MSBuild.exe
-        uses: microsoft/setup-msbuild@v2
+        uses: microsoft/setup-msbuild@v3
 
       # Install wix: https://wixtoolset.org/docs/intro/
       - name: Install WIX Tool
@@ -76,7 +76,7 @@ jobs:
       # Upload the test install result: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload Test Install Result
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: test-install-result
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.log
@@ -84,7 +84,7 @@ jobs:
       # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
       - name: Upload MSIX package
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Bim4Everyone
           path: bin/Bim4Everyone_${{ steps.current-date.outputs.content }}.msi
@@ -117,7 +117,7 @@ jobs:
       - name: Publish Release
         id: publish-release
         if: github.ref_name == github.event.repository.default_branch
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
