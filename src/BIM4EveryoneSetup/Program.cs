@@ -88,6 +88,12 @@ internal class Program {
     }
 
     private static string BuildMsi() {
+        // Принудительно устанавливаем версию 4.0.6
+        // в версии 7.0.0 изменили лицензирование, поэтому сидим на старой
+        WixExtension.UI.PreferredVersion = "4.0.6";
+        WixExtension.Util.PreferredVersion = "4.0.6";
+        WixTools.SetWixVersion(Environment.CurrentDirectory, "4.0.6");
+
         // Создаем проект установщика
         var project = new ManagedProject(Constants.ProductName);
 
