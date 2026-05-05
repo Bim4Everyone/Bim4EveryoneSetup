@@ -1,3 +1,70 @@
+**v26.05.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.04.01...v26.05.01)
+
+ - Templates: Добавлены параметры АР для деклараций ([#46](https://github.com/Bim4Everyone/BIM4Everyone/pull/46))
+ - Templates: Добавлены параметры ВИС для масок ([#44](https://github.com/Bim4Everyone/BIM4Everyone/pull/44))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.04.01...v26.05.01)
+
+ - RevitListOfSchedules: Добавление класса, отвечающего за поиск и валидацию шаблонов семейств ([#48](https://github.com/Bim4Everyone/2DExtensions/pull/48))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.04.01...v26.05.01)
+
+ - RevitSetCoordParams: Исправление ошибки получения трансформации ([#282](https://github.com/Bim4Everyone/BIMExtensions/pull/282))
+ - RevitMarkAllDocuments: Добавлен плагин ([#280](https://github.com/Bim4Everyone/BIMExtensions/pull/280))
+ - RevitMarkAllDocuments: Добавлены плагины "Настроить и маркировать" и "Загрузить и маркировать"  ([#281](https://github.com/Bim4Everyone/BIMExtensions/pull/281))
+ - RevitValueModifier: Изменен интерфейс на WPF-UI ([#279](https://github.com/Bim4Everyone/BIMExtensions/pull/279))
+ - RevitBuildVoordVolumes: Добавлен функционал объединения объемных элементов между собой в автоматическом режиме ([#278](https://github.com/Bim4Everyone/BIMExtensions/pull/278))
+ - RevitClashDetective: Исправлены биндинги для чекбоксов в окнах наборы и проверки ([#277](https://github.com/Bim4Everyone/BIMExtensions/pull/277))
+ - RevitClashDetective: Добавлен функционал по объединению отчетов ([#276](https://github.com/Bim4Everyone/BIMExtensions/pull/276))
+ - RevitClashDetective: Добавлен функционал по объединению отчетов ([#275](https://github.com/Bim4Everyone/BIMExtensions/pull/275))
+ - Скорректировать проверку связей на ifc ([#274](https://github.com/Bim4Everyone/BIMExtensions/pull/274))
+ - Скорректировать проверку связей на ifc ([#273](https://github.com/Bim4Everyone/BIMExtensions/pull/273))
+ - RevitCreatingFiltersByValuesFix: Классы модели участвующие в GUI заменены на VM ([#272](https://github.com/Bim4Everyone/BIMExtensions/pull/272))
+ - RevitVolumeModifier: Добавлена ссылка на документацию ([#271](https://github.com/Bim4Everyone/BIMExtensions/pull/271))
+ - RevitBuildCoordVolumes: Добавлена ссылка на документацию ([#270](https://github.com/Bim4Everyone/BIMExtensions/pull/270))
+ - RevitSetCoordParams: Добавлена ссылка на документацию ([#269](https://github.com/Bim4Everyone/BIMExtensions/pull/269))
+ - RevitClashDetective: Ifc связи исключены из обработки плагином ([#268](https://github.com/Bim4Everyone/BIMExtensions/pull/268))
+ - RevitClashDetective: Ifc связи исключены из обработки плагином ([#267](https://github.com/Bim4Everyone/BIMExtensions/pull/267))
+ - RevitParamsChecker: Исправлена загрузка конфигов в пустые списки наборов, правил, проверок ([#266](https://github.com/Bim4Everyone/BIMExtensions/pull/266))
+ - RevitOpeningPlacement: Исправлено получение габаритов заданий на отверстия для смещенных связей ([#265](https://github.com/Bim4Everyone/BIMExtensions/pull/265))
+ - RevitVolumeModifier: Создана кнопка плагина ([#264](https://github.com/Bim4Everyone/BIMExtensions/pull/264))
+ - RevitBuildCoordVolumes: Замена выпадающего списка на множественный выбор ([#263](https://github.com/Bim4Everyone/BIMExtensions/pull/263))
+ - RevitVolumeModifier: Создан плагин по объединению, разделению, вырезанию элементов СМР ([#262](https://github.com/Bim4Everyone/BIMExtensions/pull/262))
+ - RevitSetCoordParams: Улучшение методов получения и генерация ошибки отсутствия BoundingBox  ([#261](https://github.com/Bim4Everyone/BIMExtensions/pull/261))
+ - RevitSetCoordParams: Добавление параметра зоны СМР ([#260](https://github.com/Bim4Everyone/BIMExtensions/pull/260))
+ - RevitSetCoordParams: Добавлены 2 новые категории ([#259](https://github.com/Bim4Everyone/BIMExtensions/pull/259))
+ - RevitParamsChecker: Обновлен layout страницы анализа ([#258](https://github.com/Bim4Everyone/BIMExtensions/pull/258))
+ - RevitBuildCoordVolumes: Прокидывание прогресс-бара в тяжелые классы/методы ([#257](https://github.com/Bim4Everyone/BIMExtensions/pull/257))
+ - RevitParamsChecker: Исправлена проверка операторов "Содержит" и "Не содержит" ([#256](https://github.com/Bim4Everyone/BIMExtensions/pull/256))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.04.01...v26.05.01)
+
+ - RevitRoomTagPlacement: Изменен интерфейс на WPF-UI ([#108](https://github.com/Bim4Everyone/ARExtensions/pull/108))
+ - RevitDeclarations: Добавлены новые УТП и дополнительные столбцы с информацией о квартирах ([#107](https://github.com/Bim4Everyone/ARExtensions/pull/107))
+ - RevitRoomExtrusion: Добавление класса, отвечающего за поиск и валидацию шаблонов семейств ([#106](https://github.com/Bim4Everyone/ARExtensions/pull/106))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.04.01...v26.05.01)
+
+ - RevitKrChecker: Удалена кнопка плагина ([#63](https://github.com/Bim4Everyone/KRExtensions/pull/63))
+ - RevitDocumenter: Добавлен плагин ([#61](https://github.com/Bim4Everyone/KRExtensions/pull/61))
+ - RevitDocumenter: Добавлен плагин "Доп.Арм. Размеры" ([#62](https://github.com/Bim4Everyone/KRExtensions/pull/62))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.04.01...v26.05.01)
+
+ - RevitClashDetective: Добавлен функционал по объединению отчетов ([#150](https://github.com/Bim4Everyone/HVACExtension/pull/150))
+ - Скорректировать проверку связей на ifc ([#149](https://github.com/Bim4Everyone/HVACExtension/pull/149))
+ - RevitMechanicalSpecification: Имена труб ([#148](https://github.com/Bim4Everyone/HVACExtension/pull/148))
+ - RevitClashDetective: Ifc связи исключены из обработки плагином ([#147](https://github.com/Bim4Everyone/HVACExtension/pull/147))
+ - RevitMechanicalSpecification: Обновление масок, принудительных параметров, корректировка работы по выбранным ([#146](https://github.com/Bim4Everyone/HVACExtension/pull/146))
+ - Абсолютная отметка: Редактирование по экземплярам группы  ([#144](https://github.com/Bim4Everyone/HVACExtension/pull/144))
+ - RevitMechanicalSpecification: Добавление кратких наименований в маски ([#145](https://github.com/Bim4Everyone/HVACExtension/pull/145))
+ - Задание СППЗ: Смена рабочего параметра ([#143](https://github.com/Bim4Everyone/HVACExtension/pull/143))
+ - Настройки немоделируемых: Правка настроек по умолчанию ([#142](https://github.com/Bim4Everyone/HVACExtension/pull/142))
+ - RevitMechanicalSpecificationNameUpdate: Новый метод подготовки имен изоляции воздуховодов ([#141](https://github.com/Bim4Everyone/HVACExtension/pull/141))
+
+____
+
 **v26.04.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.03.01...v26.04.01)
 
