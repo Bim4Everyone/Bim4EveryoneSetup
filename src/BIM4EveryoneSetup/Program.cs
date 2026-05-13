@@ -30,7 +30,11 @@ internal class Program {
         // Выкачиваем все расширения
         foreach(FeatureExtension featureExtension in FeatureExtension.GetFeatures()) {
             Console.WriteLine($"Downloading platform extension: {featureExtension.Name}");
-            featureExtension.GitClone();
+            if(Directory.Exists(featureExtension.SourceFullPath)) {
+                featureExtension.GitPull();
+            } else {
+                featureExtension.GitClone();
+            }
         }
 
         Console.WriteLine("Building platform settings msi");
@@ -88,11 +92,11 @@ internal class Program {
     }
 
     private static string BuildMsi() {
-        // Принудительно устанавливаем версию 4.0.6
+        // Принудительно устанавливаем версию 5.0.2
         // в версии 7.0.0 изменили лицензирование, поэтому сидим на старой
-        WixExtension.UI.PreferredVersion = "4.0.6";
-        WixExtension.Util.PreferredVersion = "4.0.6";
-        WixTools.SetWixVersion(Environment.CurrentDirectory, "4.0.6");
+        WixExtension.UI.PreferredVersion = "5.0.2";
+        WixExtension.Util.PreferredVersion = "5.0.2";
+        WixTools.SetWixVersion(Environment.CurrentDirectory, "5.0.2");
 
         // Создаем проект установщика
         var project = new ManagedProject(Constants.ProductName);

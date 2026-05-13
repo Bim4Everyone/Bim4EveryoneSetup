@@ -23,6 +23,10 @@ internal sealed class FeatureExtension {
 
     public string SourceFullPath => Path.GetFullPath(SourcePath);
 
+    public void GitPull() {
+        Process2.StartProcess("git", $"-C {SourceFullPath} pull");
+    }
+    
     public void GitClone() {
         Process2.StartProcess("git", $"clone {RepositoryUrl} {SourceFullPath}");
     }
