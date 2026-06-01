@@ -1,3 +1,46 @@
+**v26.06.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.05.01...v26.06.01)
+
+ - Bim4Everyone.lib: Добавлено копирование общих параметров через мультикатегорийные спецификации ([#48](https://github.com/Bim4Everyone/BIM4Everyone/pull/48))
+ - Обновлены библиотеки фреймворка
+ - RevitFiltration: Обновлены библиотеки ([#47](https://github.com/Bim4Everyone/BIM4Everyone/pull/47))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.05.01...v26.06.01)
+
+ - RevitListOfSchedules: добавление строки "экспликация" для поиска в шапке спецификации ([#49](https://github.com/Bim4Everyone/2DExtensions/pull/49))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.05.01...v26.06.01)
+
+ - RevitBuildCoordVolumes: Изменение наименования режимов плагина ([#289](https://github.com/Bim4Everyone/BIMExtensions/pull/289))
+ - RevitParamsChecker: Исправлено получение значений параметров для проверки ([#288](https://github.com/Bim4Everyone/BIMExtensions/pull/288))
+ - RevitParamsChecker: Обновлен UI ([#287](https://github.com/Bim4Everyone/BIMExtensions/pull/287))
+ - RevitParamsChecker: Скорректирована загрузка конфига проверок ([#286](https://github.com/Bim4Everyone/BIMExtensions/pull/286))
+ - Разделить по уровню СМР: Добавлена кнопка плагина ([#283](https://github.com/Bim4Everyone/BIMExtensions/pull/283))
+ - RevitSplitMepCurve: Создан плагин для авторазделения труб и воздуховодов ([#285](https://github.com/Bim4Everyone/BIMExtensions/pull/285))
+ - RevitParamsChecker: Добавлен функционал по проверке параметров материалов элементов ([#284](https://github.com/Bim4Everyone/BIMExtensions/pull/284))
+ - RevitSetCoordParams: Исправление ошибки получения трансформации ([#282](https://github.com/Bim4Everyone/BIMExtensions/pull/282))
+ - RevitMarkAllDocuments: Добавлен плагин ([#280](https://github.com/Bim4Everyone/BIMExtensions/pull/280))
+ - RevitMarkAllDocuments: Добавлены плагины "Настроить и маркировать" и "Загрузить и маркировать"  ([#281](https://github.com/Bim4Everyone/BIMExtensions/pull/281))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.05.01...v26.06.01)
+
+ - RevitRemoveRoomTags: Изменен интерфейс на WPF-UI ([#110](https://github.com/Bim4Everyone/ARExtensions/pull/110))
+ - FreezeAreas: Изменено название кнопки и описание Bundle-файла ([#109](https://github.com/Bim4Everyone/ARExtensions/pull/109))
+ - RevitRoomTagPlacement: Изменен интерфейс на WPF-UI ([#108](https://github.com/Bim4Everyone/ARExtensions/pull/108))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.05.01...v26.06.01)
+
+ - RevitUnmodelingMep: Обновление шаблонных немоделируемых ([#153](https://github.com/Bim4Everyone/HVACExtension/pull/153))
+ - RevitUnmodelingMep: Обновление интерфейса ([#154](https://github.com/Bim4Everyone/HVACExtension/pull/154))
+ - RevitMechanicalSpecification: Удаление пробелов из конца имен ([#152](https://github.com/Bim4Everyone/HVACExtension/pull/152))
+ - RevitUnmodelingMep: Расширение обработки изоляции воздуховодов ([#151](https://github.com/Bim4Everyone/HVACExtension/pull/151))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v26.05.01...v26.06.01)
+
+ - Обновлена версия WIX Toolset на 5.0.2 ([#28](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/28))
+
+____
+
 **v26.05.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.04.01...v26.05.01)
 
