@@ -23,7 +23,7 @@ dotnet build -c Release
 * `CORP_NAME` - `any value` имя компании установки (`Bim4Everyone`)
 * `CORP_SETTINGS_PATH` - `path` путь до корпоративных настроек компании (`""`)
 
-### Свойства настроек [телеметрии](https://github.com/Bim4Everyone/Bim4EveryoneTelemetry):
+### Свойства настроек [телеметрии](https://github.com/Bim4Everyone/b4e-telemetry):
 
 * `TELEMETRY_ACTIVE` - `enable/disable` включение телеметрии (`disable`)
 * `TELEMETRY_USE_UTC` - `yes/no` включение отправки времени как utc (`yes`)
