@@ -1,3 +1,65 @@
+**v26.07.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.06.01...v26.07.01)
+
+ - ProjectParameters: Обновление DLL ([#51](https://github.com/Bim4Everyone/BIM4Everyone/pull/51))
+ - Templates: Добавлены параметры КР  ([#50](https://github.com/Bim4Everyone/BIM4Everyone/pull/50))
+ - Bim4Everyone.RevitFiltration: Обновлены библиотеки ([#49](https://github.com/Bim4Everyone/BIM4Everyone/pull/49))
+ - Обновлены библиотеки фреймворка
+ - Обновлены библиотеки фреймворка
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.06.01...v26.07.01)
+
+ - RevitBatchPrint: Исправлена ошибка "Ссылка на объект не указывает на экземпляр объекта" ([#51](https://github.com/Bim4Everyone/2DExtensions/pull/51))
+ - RevitListOfSchedules: Исправление ошибки перезаписи семейства. Добавление обработки ошибки ([#50](https://github.com/Bim4Everyone/2DExtensions/pull/50))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.06.01...v26.07.01)
+
+ - RevitOpeningPlacement: Скорректирован алгоритм объединения заданий в многослойных конструкциях ([#292](https://github.com/Bim4Everyone/BIMExtensions/pull/292))
+ - RevitSetCoordParams: Изменение способа получения BoundingBox для элементов без геометрии ([#291](https://github.com/Bim4Everyone/BIMExtensions/pull/291))
+ - RevitBuildCoordVolumes: Исправление ошибки разбиения на квадраты при повороте ([#290](https://github.com/Bim4Everyone/BIMExtensions/pull/290))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.06.01...v26.07.01)
+
+ - RevitDeclarations: Добавление условия для расчета параметра, добавления дефиса префикса ([#119](https://github.com/Bim4Everyone/ARExtensions/pull/119))
+ - RevitDeclarations: Замена устаревших компараторов ([#118](https://github.com/Bim4Everyone/ARExtensions/pull/118))
+ - RevitRooms: Добавление епсилона в число округления ([#117](https://github.com/Bim4Everyone/ARExtensions/pull/117))
+ - RevitRooms: Замена устаревших компараторов ([#116](https://github.com/Bim4Everyone/ARExtensions/pull/116))
+ - RevitRoundingOfAreas: Добавление епсилона в число округления ([#115](https://github.com/Bim4Everyone/ARExtensions/pull/115))
+ - RevitRoundingOfAreas: Исправление ошибки получения параметров для записи ([#114](https://github.com/Bim4Everyone/ARExtensions/pull/114))
+ - RevitRoundingOfAreas: Исправление ошибки названия папки ([#113](https://github.com/Bim4Everyone/ARExtensions/pull/113))
+ - RevitRoundingOfAreas: Добавлена кнопка плагина ([#112](https://github.com/Bim4Everyone/ARExtensions/pull/112))
+ - RevitRoundingOfAreas: Создан плагин для округления площадей (соц. объекты) ([#111](https://github.com/Bim4Everyone/ARExtensions/pull/111))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.06.01...v26.07.01)
+
+ - RevitPylonLoadAreas: Добавлены кнопки на вкладку КР ([#64](https://github.com/Bim4Everyone/KRExtensions/pull/64))
+ - RevitPylonLoadAreas: Создан плагин для расчета грузовой площади пилонов ([#66](https://github.com/Bim4Everyone/KRExtensions/pull/66))
+ - Маркировка пилонов: Изменены наименования семейства и типоразмеров ([#65](https://github.com/Bim4Everyone/KRExtensions/pull/65))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.06.01...v26.07.01)
+
+ - RevitMechanicalSpecification: Обработка соединителей, существование ФОП_ВИС_Число ([#162](https://github.com/Bim4Everyone/HVACExtension/pull/162))
+ - RevitUnmodelingMep: Переход на число ДЕ ([#161](https://github.com/Bim4Everyone/HVACExtension/pull/161))
+ - RevitMechanicalSpecification: Переход на денежную единицу ([#160](https://github.com/Bim4Everyone/HVACExtension/pull/160))
+ - Немоделируемые: Переход на число ДЕ ([#159](https://github.com/Bim4Everyone/HVACExtension/pull/159))
+ - Расчет немоделируемых: Обновление шаблона ([#158](https://github.com/Bim4Everyone/HVACExtension/pull/158))
+ - Задание СС(СППЗ): Забыть элемент ([#157](https://github.com/Bim4Everyone/HVACExtension/pull/157))
+ - Отметки уровня: Расширение функционала ([#156](https://github.com/Bim4Everyone/HVACExtension/pull/156))
+ - Расчет аэродинамики: Получение коннекторов из присоединенной арматуры ([#155](https://github.com/Bim4Everyone/HVACExtension/pull/155))
+
+[05.EOM-SS.extension](https://github.com/Bim4Everyone/EOMSSExtensions/compare/v26.06.01...v26.07.01)
+
+ - RevitRoomAnnotations: Исправление синтаксических ошибок ([#5](https://github.com/Bim4Everyone/EOMSSExtensions/pull/5))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v26.06.01...v26.07.01)
+
+ - Bump actions/checkout from 6 to 7 in the dotnet group ([#31](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/31))
+ - Обновлен README.md
+ - Bump the dotnet group with 1 update ([#30](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/30))
+ - Добавлен dependabot.yml ([#29](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/29))
+
+____
+
 **v26.06.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.05.01...v26.06.01)
 
