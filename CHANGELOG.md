@@ -1,3 +1,43 @@
+**v26.08.01**  
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.07.01...v26.08.01)
+
+ - RevitCreateViewSheet: Обновление сравнения строк ([#52](https://github.com/Bim4Everyone/2DExtensions/pull/52))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.07.01...v26.08.01)
+
+ - RevitAreaBoundaries: Создан плагин по построению границ здания ([#299](https://github.com/Bim4Everyone/BIMExtensions/pull/299))
+ - RevitCorrectNamingCheck: Исправлена логика назначания статусов для РН и связей ([#298](https://github.com/Bim4Everyone/BIMExtensions/pull/298))
+ - RevitMarkAllDocuments: Исправлены ошибки маркировки ([#297](https://github.com/Bim4Everyone/BIMExtensions/pull/297))
+ - RevitMarkAllDocuments: Обновление под новую версию RevitFiltration ([#296](https://github.com/Bim4Everyone/BIMExtensions/pull/296))
+ - RevitServerFolders: Устранены ошибки xaml редактора ([#295](https://github.com/Bim4Everyone/BIMExtensions/pull/295))
+ - RevitParamsChecker: Обновление под новую версию Bim4Everyone.RevitFiltration ([#294](https://github.com/Bim4Everyone/BIMExtensions/pull/294))
+ - RevitExportSpecToExcel: Исправлен стиль заголовков столбцов ([#293](https://github.com/Bim4Everyone/BIMExtensions/pull/293))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.07.01...v26.08.01)
+
+ - RevitAreaBoundaries: Создан плагин по построению границ здания ([#120](https://github.com/Bim4Everyone/ARExtensions/pull/120))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.07.01...v26.08.01)
+
+ - RevitPackageDocumentation: Доработка функционала конфигурации ([#71](https://github.com/Bim4Everyone/KRExtensions/pull/71))
+ - RevitPylonLoadAreas: Нескольких элементов перекрытий теперь считаются одним физическим перекрытием ([#70](https://github.com/Bim4Everyone/KRExtensions/pull/70))
+ - Грузовая площадь и Толщина БИО: Обновлены описания для кнопок на ленте ([#69](https://github.com/Bim4Everyone/KRExtensions/pull/69))
+ - RevitPackageDocumentation: Добавлена кнопка для плагина Документация комплекта ([#68](https://github.com/Bim4Everyone/KRExtensions/pull/68))
+ - RevitPackageDocumentation: Добавлен плагин "Документация комплекта" ([#67](https://github.com/Bim4Everyone/KRExtensions/pull/67))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.07.01...v26.08.01)
+
+ - HVACExtension: Проверка документов  ([#165](https://github.com/Bim4Everyone/HVACExtension/pull/165))
+ - RevitAxonometryViews: Правка CustomStyles ([#164](https://github.com/Bim4Everyone/HVACExtension/pull/164))
+ - RevitMechanicalSpecification: Имя системы, длины переходов в имена, обработка Число_ДЕ ([#163](https://github.com/Bim4Everyone/HVACExtension/pull/163))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v26.07.01...v26.08.01)
+
+ - Bump WixSharp_wix4 from 2.14.0 to 2.14.1 ([#32](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/32))
+ - Bump actions/setup-dotnet from 5 to 6 in the dotnet group ([#33](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/33))
+
+____
+
 **v26.07.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.06.01...v26.07.01)
 
