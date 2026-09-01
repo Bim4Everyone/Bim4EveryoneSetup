@@ -1,3 +1,55 @@
+**v26.09.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.08.01...v26.09.01)
+
+ - Templates: Добавлены параметры МТР ([#54](https://github.com/Bim4Everyone/BIM4Everyone/pull/54))
+ - Bim4Everyone.RevitFiltration: Обновлены библиотеки ([#55](https://github.com/Bim4Everyone/BIM4Everyone/pull/55))
+ - Bim4Everyone.RevitFiltration: Обновлены библиотеки ([#53](https://github.com/Bim4Everyone/BIM4Everyone/pull/53))
+ - Bim4Everyone.libs: Добавлены билбиотеки Bim4Everyone.ClosedXML ([#52](https://github.com/Bim4Everyone/BIM4Everyone/pull/52))
+
+[00.Admin.extension](https://github.com/Bim4Everyone/AdminExtensions/compare/v26.08.01...v26.09.01)
+
+ - RevitPlugins: Обновлен шаблон проекта C# плагина ([#17](https://github.com/Bim4Everyone/AdminExtensions/pull/17))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.08.01...v26.09.01)
+
+ - RevitBatchPrint: Заменена сортировка листов ([#53](https://github.com/Bim4Everyone/2DExtensions/pull/53))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.08.01...v26.09.01)
+
+ - RevitClashDetective: Обновление редактирования проверок и индикатор просмотренных коллизий ([#312](https://github.com/Bim4Everyone/BIMExtensions/pull/312))
+ - RevitClashDetective: Миграция на Bim4Everyone.RevitFiltration ([#311](https://github.com/Bim4Everyone/BIMExtensions/pull/311))
+ - RevitClashDetective: Миграция на Bim4Everyone.RevitFiltration ([#310](https://github.com/Bim4Everyone/BIMExtensions/pull/310))
+ - RevitMarkAllDocuments: Исправлено получение названия документа ([#309](https://github.com/Bim4Everyone/BIMExtensions/pull/309))
+ - RevitServerFolders: Обновление UI ([#308](https://github.com/Bim4Everyone/BIMExtensions/pull/308))
+ - RevitPlugins: Добавлен RevitFiltration.props ([#307](https://github.com/Bim4Everyone/BIMExtensions/pull/307))
+ - RevitPlugins: Добавлен RevitFiltration.props ([#306](https://github.com/Bim4Everyone/BIMExtensions/pull/306))
+ - ClosedXML.props: Добавлены настройки для подключения библиотек ([#301](https://github.com/Bim4Everyone/BIMExtensions/pull/301))
+ - RevitServerFolders: Улучшена обработка ошибок и предупреждений Revit ([#304](https://github.com/Bim4Everyone/BIMExtensions/pull/304))
+ - ClosedXML.props: Добавлены настройки для подключения библиотек ([#303](https://github.com/Bim4Everyone/BIMExtensions/pull/303))
+ - ClosedXML.props: Добавлены настройки для подключения библиотек ([#302](https://github.com/Bim4Everyone/BIMExtensions/pull/302))
+ - ClosedXML.props: Добавлены настройки для подключения библиотек ([#300](https://github.com/Bim4Everyone/BIMExtensions/pull/300))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.08.01...v26.09.01)
+
+ - RevitDeclarations: Добавление условий по определению мастер-спальни ([#122](https://github.com/Bim4Everyone/ARExtensions/pull/122))
+ - RrevitAreaBoundaries: Создана кнопка плагина ([#121](https://github.com/Bim4Everyone/ARExtensions/pull/121))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.08.01...v26.09.01)
+
+ - RevitPlugins: Обновлен шаблон проекта C# плагина ([#172](https://github.com/Bim4Everyone/HVACExtension/pull/172))
+ - RevitAxonometryView: Предупреждение при выборе "Имя системы" ([#171](https://github.com/Bim4Everyone/HVACExtension/pull/171))
+ - RevitUnmodelingMepUpdate: Правила группирования строк ([#170](https://github.com/Bim4Everyone/HVACExtension/pull/170))
+ - RevitClashDetective: Миграция на Bim4Everyone.RevitFiltration ([#169](https://github.com/Bim4Everyone/HVACExtension/pull/169))
+ - RevitMechanicalSpecification: Замена единиц воздуховодов ([#168](https://github.com/Bim4Everyone/HVACExtension/pull/168))
+ - Примечания и номера: Обновление единиц измерения воздуховодов ([#167](https://github.com/Bim4Everyone/HVACExtension/pull/167))
+ - Абсолютная отметка: Исправлена проверка занятости элемента ([#166](https://github.com/Bim4Everyone/HVACExtension/pull/166))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v26.08.01...v26.09.01)
+
+ - Bump appleboy/telegram-action from 1.0.1 to 1.1.1 in the dotnet group ([#34](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/34))
+
+____
+
 **v26.08.01**  
 [01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.07.01...v26.08.01)
 
