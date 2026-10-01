@@ -1,3 +1,55 @@
+**v26.10.01**  
+[BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.09.01...v26.10.01)
+
+ - Bim4Everyone.RevitFiltration: Обновлены библиотеки ([#60](https://github.com/Bim4Everyone/BIM4Everyone/pull/60))
+ - Обновлены библиотеки фреймворка
+ - SimpleServices: Обновлены библиотеки ([#59](https://github.com/Bim4Everyone/BIM4Everyone/pull/59))
+ - Bim4Everyone.RevitFiltration: Обновление библиотек ([#58](https://github.com/Bim4Everyone/BIM4Everyone/pull/58))
+ - ElementEditorTracker: Обновление библиотек ([#57](https://github.com/Bim4Everyone/BIM4Everyone/pull/57))
+
+[01.2D.extension](https://github.com/Bim4Everyone/2DExtensions/compare/v26.09.01...v26.10.01)
+
+ - 2D: Удалены иконки "icon.fatal.png" ([#55](https://github.com/Bim4Everyone/2DExtensions/pull/55))
+ - RevitListOfSchedules: Исправление метода получения имени спецификации ([#54](https://github.com/Bim4Everyone/2DExtensions/pull/54))
+
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.09.01...v26.10.01)
+
+ - ID: Ошибка при вызове OpenClipboard ([#322](https://github.com/Bim4Everyone/BIMExtensions/pull/322))
+ - RevitParamsChecker: Экспорт отчетов в html ([#321](https://github.com/Bim4Everyone/BIMExtensions/pull/321))
+ - BIM: Удалены иконки "icon.fatal.png" ([#319](https://github.com/Bim4Everyone/BIMExtensions/pull/319))
+ - RevitParamsChecker: Добавлена фильтрация по параметрам материалов элементов ([#320](https://github.com/Bim4Everyone/BIMExtensions/pull/320))
+ - RevitClassifierParameters: Добавлена кнопка плагина Параметры ВОР КР ([#315](https://github.com/Bim4Everyone/BIMExtensions/pull/315))
+ - RevitClassifierParameters: Добавлен функционал для работы с КР ([#318](https://github.com/Bim4Everyone/BIMExtensions/pull/318))
+ - RevitOpeningPlacement: Добавлена обработка вентблоков АР ([#317](https://github.com/Bim4Everyone/BIMExtensions/pull/317))
+ - RevitOpeningPlacement: Исправлена настройка DI ([#316](https://github.com/Bim4Everyone/BIMExtensions/pull/316))
+ - RevitOpeningPlacement: Обновление плагина на Bim4Everyone.RevitFiltration ([#314](https://github.com/Bim4Everyone/BIMExtensions/pull/314))
+ - RevitClassifierParameters: Добавлена кнопка плагина Параметры ВОР АР ([#305](https://github.com/Bim4Everyone/BIMExtensions/pull/305))
+ - RevitClassifierParameters: Добавлен плагин "Параметры ВОР АР" ([#313](https://github.com/Bim4Everyone/BIMExtensions/pull/313))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.09.01...v26.10.01)
+
+ - RevitDeclarations: Замена устаревшего метода получения описания Enum ([#124](https://github.com/Bim4Everyone/ARExtensions/pull/124))
+ - AR: Удалены иконки "icon.fatal.png" ([#123](https://github.com/Bim4Everyone/ARExtensions/pull/123))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.09.01...v26.10.01)
+
+ - RevitPackageDocumentation: Добавлен функционал загрузки семейств ([#73](https://github.com/Bim4Everyone/KRExtensions/pull/73))
+ - KR: Удалены иконки "icon.fatal.png" ([#72](https://github.com/Bim4Everyone/KRExtensions/pull/72))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.09.01...v26.10.01)
+
+ - Расчет аэродинамики: Уточнен алгоритм обработки врезок ([#177](https://github.com/Bim4Everyone/HVACExtension/pull/177))
+ - Нумерация: пропуск связей  ([#176](https://github.com/Bim4Everyone/HVACExtension/pull/176))
+ - RevitMechanicalSpecificationHelpersUpdate: Вспомогательные процессы  ([#175](https://github.com/Bim4Everyone/HVACExtension/pull/175))
+ - RevitSleeves: Миграция на Bim4Everyone.RevitFiltration ([#174](https://github.com/Bim4Everyone/HVACExtension/pull/174))
+ - Расчет аэродинамики: Расходы на врезках, указание КМС ([#173](https://github.com/Bim4Everyone/HVACExtension/pull/173))
+
+[05.EOM-SS.extension](https://github.com/Bim4Everyone/EOMSSExtensions/compare/v26.09.01...v26.10.01)
+
+ - EOMSS: Удалены иконки "icon.fatal.png" ([#6](https://github.com/Bim4Everyone/EOMSSExtensions/pull/6))
+
+____
+
 **v26.09.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.08.01...v26.09.01)
 
