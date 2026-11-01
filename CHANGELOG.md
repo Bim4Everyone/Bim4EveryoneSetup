@@ -1,3 +1,29 @@
+**v26.11.01**  
+[01.BIM.extension](https://github.com/Bim4Everyone/BIMExtensions/compare/v26.10.01...v26.11.01)
+
+ - Спеки в JSON: Создание плагина ([#323](https://github.com/Bim4Everyone/BIMExtensions/pull/323))
+ - RevitExportSpecToJson: Создание плагина ([#326](https://github.com/Bim4Everyone/BIMExtensions/pull/326))
+ - RevitOpeningPlacement: Добавлены настройки навигатора ([#325](https://github.com/Bim4Everyone/BIMExtensions/pull/325))
+ - RevitVolumeModifier: Добавление метода для присвоения рабочего набора исходного элемента ([#324](https://github.com/Bim4Everyone/BIMExtensions/pull/324))
+
+[02.AR.extension](https://github.com/Bim4Everyone/ARExtensions/compare/v26.10.01...v26.11.01)
+
+ - RevitDeclarations: Оптимизация анализа связей между помещениями для УТП ([#125](https://github.com/Bim4Everyone/ARExtensions/pull/125))
+
+[03.KR.extension](https://github.com/Bim4Everyone/KRExtensions/compare/v26.10.01...v26.11.01)
+
+ - СМП: Добавлен плагин для раздела КМ ([#74](https://github.com/Bim4Everyone/KRExtensions/pull/74))
+
+[04.OV-VK.extension](https://github.com/Bim4Everyone/HVACExtension/compare/v26.10.01...v26.11.01)
+
+ - RevitMechanicalSpecification: Учет соединителей кабельных лотков ([#178](https://github.com/Bim4Everyone/HVACExtension/pull/178))
+
+[Bim4EveryoneSetup](https://github.com/Bim4Everyone/Bim4EveryoneSetup/compare/v26.10.01...v26.11.01)
+
+ - Bump the dotnet group with 1 update ([#35](https://github.com/Bim4Everyone/Bim4EveryoneSetup/pull/35))
+
+____
+
 **v26.10.01**  
 [BIM4Everyone.lib](https://github.com/Bim4Everyone/BIM4Everyone/compare/v26.09.01...v26.10.01)
 
